@@ -3,7 +3,7 @@
         <div>
             <transition name="fade">
                 <router-view></router-view>
-                <h1>Halo saya Laravel Vue</h1>
+                <h1>Proto.type</h1>
             </transition>
         </div>
     </div>

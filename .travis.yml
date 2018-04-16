@@ -6,7 +6,6 @@ addons:
   chrome: stable
 
 php:
-  - 7.0
   - 7.1
   - 7.2
 
@@ -23,7 +22,8 @@ install:
   - npm run production
 
 before_script:
-  - php artisan serve
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - php artisan serve &
 
 notifications:
   email: false

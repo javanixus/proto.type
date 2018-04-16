@@ -6,6 +6,7 @@ addons:
   chrome: stable
 
 php:
+  - 7.0
   - 7.1
   - 7.2
 
@@ -13,17 +14,17 @@ services:
   - mysql
 
 before_install:
-  - mysql -e 'CREATE DATABASE laravelvue;'
+  - mysql -e 'CREATE DATABASE prototype;'
 
 install:
-  - cp .env.dusk.testing .env
+  - cp .env.example .env
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
   - npm install
   - npm run production
 
 before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  - php artisan serve &
+  - php artisan serve
 
 notifications:
   email: false

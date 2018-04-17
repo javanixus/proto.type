@@ -6,14 +6,13 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 //root routing
-import Example from './../components/ExampleComponent';
+import CoreComponent from './../components/Core';
 
 export default new Router({
     routes: [
         {
-            name: 'Example',
             path: '/',
-            component: Example
+            component: CoreComponent
         },
         {
             path: '*',

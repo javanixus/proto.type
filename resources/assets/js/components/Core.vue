@@ -2,11 +2,10 @@
     <div class="container">
         <div>
             <router-view></router-view>
+            <p>first</p>
         </div>
     </div>
 </template>
-<style>
-</style>
 <script>
     export default{
     }

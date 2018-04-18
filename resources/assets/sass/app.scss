@@ -3,11 +3,16 @@
 
 // Base
 @import "./base/base";
+@import "./base/colors";
+@import "./base/prefix";
 // Components
+@import "./components/_button.scss";
+@import "./components/_input.scss";
 // Debug
 // Helpers
 @import "./helpers/variables";
 
 // Layouts
+@import "./layouts/login--students.scss";
 // Pages
 // Themes

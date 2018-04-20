@@ -4,7 +4,7 @@
             <router-view>
 
             </router-view>
-            <p>first</p>
+            <p class="red">first</p>
             <ul>
                     <li><router-link to="">login</router-link></li>
                     <li><router-link to="">forgot</router-link></li>

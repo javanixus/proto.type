@@ -1,2 +1,28 @@
 @import "./../base/colors";
 @import "./../base/prefix";
+
+.input {
+    font-size: 14px;
+    outline: none;
+}
+
+.input--primary {
+    display: block;
+    width: 100%;
+    line-height: 1.25;
+    padding: 7px 8px;
+    color: $black;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    @extend .borderRadius-s;
+    @extend .easeinout;
+    &:focus {
+        color: $black;
+        border-color: $blue;
+    }
+    &::placeholder {
+        color: $grey;
+    }
+}

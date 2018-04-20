@@ -1,2 +1,23 @@
 @import "./../base/colors";
 @import "./../base/prefix";
+
+.btn {
+    background-color: $blue;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn--primary {
+    padding: 8px 10px;
+    @extend .borderRadius-s;
+    @extend .easeinoutbtn;
+    &:hover {
+        background-color: $blue-darken;
+        @extend .easeinoutbtn;
+    }
+    &:active {
+        opacity: 0.7; 
+    }
+}

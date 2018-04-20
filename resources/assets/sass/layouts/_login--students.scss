@@ -1,2 +1,67 @@
 @import "./../base/colors";
 @import "./../base/prefix";
+
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+        .login__form , .login__cover{
+            flex-grow: 1;
+            height: 100vh;
+            width: 50%;
+            display: flex;
+        }
+        .login__cover {
+            background: $black;
+        }
+}
+
+.formContent {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    .formContent__inner {
+        overflow-y: auto;
+        .formContent__inner__core {
+            max-width: 322px;
+            width: calc(100% - 30px);
+            padding: 32px 4px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.formBlock {
+    position: relative;
+    .formBlock__inner label{
+        display: block;
+        font-weight: 500;
+    }
+}
+.formButton {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    a {
+        @extend .marginRight-s;
+    }
+}
+
+.coverContent {
+    @extend .formContent;
+    .coverContent__inner {
+        @extend .formContent__inner;
+        .coverContent__inner_core {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

@@ -5,26 +5,7 @@
           <div class="formContent">
             <div class="formContent__inner">
               <div class="formContent__inner__core">
-                <div v-if="!loading">
-                  <form>
-                    <div class="formBlock">
-                      <div class="formBlock__inner marginBottom-s">
-                        <label for="userStudent">Username or email</label>
-                        <input type="text" id="userStudent" placeholder="pampam or fahmiirsyad10@protonmail.com" class="input input--primary">
-                      </div>
-                    </div>
-                    <div class="formBlock">
-                      <div class="formBlock__inner marginBottom-s">
-                        <label for="passStudent">Password</label>
-                        <input type="password" id="passStudent" placeholder="•••••••••••••••••" class="input input--primary">
-                      </div>                    
-                    </div>
-                    <div class="formButton">
-                      <router-link to="/forgot">forgot?</router-link>
-                      <button class="btn btn--primary" type="submit" @click.prevent="fetchData">LOG IN TO PROTO.TYPE</button>
-                    </div>
-                  </form>
-                </div>
+                <router-view v-if="loginpage"></router-view>
                 <div v-if="loading">
                   <p>processing... wait pls 😂</p>
                 </div>
@@ -54,6 +35,8 @@ export default {
     return {
       loading: false,
       users: null,
+      forgotpage: false,
+      loginpage: true,
       error: null
     }
   },
@@ -63,19 +46,19 @@ export default {
   methods: {
     fetchData() {
       console.log(this.loading);
-      this.error = this.users = null;
+      this.loginpage = false;
       this.loading = true;
       console.log(this.loading);
       axios.get('https://jsonplaceholder.typicode.com/users')
           .then(res => {
             console.log(res)
             var self = this;
-            setTimeout(()=>{ self.loading = false; }, 2000);
+            setTimeout(()=>{ self.loading = false; this.loginpage = true; }, 2000);
           })
           .catch(error => {
             console.log(error)
           })
-    }
-  }
+    },
+  },
 }
 </script>

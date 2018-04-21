@@ -37,7 +37,12 @@
         }
     }
 }
-
+.formDesc {
+    margin: 15px 0;
+    p {
+        color: $black;
+    }
+}
 .formBlock {
     position: relative;
     .formBlock__inner label{

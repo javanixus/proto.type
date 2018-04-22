@@ -32,6 +32,7 @@
   "dependencies": {
     "eslint": "^4.13.0",
     "eslint-plugin-vue": "^2.1.0",
+    "imagemin-webpack-plugin": "^2.1.1",
     "npm": "^5.8.0",
     "postcss-unprefix": "^2.1.1",
     "vue-acl": "^3.0.4",

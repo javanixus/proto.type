@@ -11,7 +11,10 @@
     padding-bottom: 7px;
     font-size: 14px;
   }
-
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility !important;

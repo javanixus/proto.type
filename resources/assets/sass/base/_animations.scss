@@ -6,4 +6,8 @@
     transition: background-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     transition: background-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: background-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}.easeinouttext {
+    transition: color ease-in-out .15s;
+    transition: color ease-in-out .15s;
+    transition: color ease-in-out .15s;
 }

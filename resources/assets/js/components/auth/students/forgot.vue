@@ -1,45 +1,48 @@
 <template>
   <div>
       <div class="svgicon">
-        <svg width="64px" height="64px" viewBox="0 0 230 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title>Oval</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <circle id="Oval" fill="#00D19A" cx="115" cy="115" r="115"></circle>
-                <g id="email" transform="translate(66.000000, 58.000000)">
-                    <path d="M7,53.0002737 L7,111.717825 C7,113.374679 8.34314575,114.717825 10,114.717825 L94.9812692,114.717825 C96.6381235,114.717825 97.9812692,113.374679 97.9812692,111.717825 C97.9812692,110.732414 97.4973413,109.809837 96.6866281,109.249677 L11.7053589,50.5321264 C10.3422388,49.5902827 8.47369643,49.9317947 7.53185272,51.2949148 C7.18551049,51.7961721 7,52.3910021 7,53.0002737 Z" id="Path-2" fill="#A2F5D0"></path>
-                    <path d="M98.3337826,97.1264912 L98.3337826,53 C98.3337826,51.3431458 96.9906369,50 95.3337826,50 C94.8034972,50 94.282687,50.1405594 93.8244071,50.4073594 L58.4911152,70.9775872 C57.0592393,71.8111923 56.5742451,73.6477275 57.4078502,75.0796034 C57.6380542,75.4750227 57.9556548,75.8125472 58.3363542,76.0663547 L93.6696461,99.6226181 C95.0482189,100.541695 96.9108323,100.169201 97.8299095,98.7906277 C98.1584599,98.2978176 98.3337826,97.7187808 98.3337826,97.1264912 Z" id="Path-3" fill="#A2F5D0"></path>
-                    <path d="" id="Path-4" stroke="#979797"></path>
-                    <path d="" id="Path-5" stroke="#979797"></path>
-                    <path d="M22,15 L82,15 C83.6568542,15 85,16.3431458 85,18 L85,47.2288395 C85,48.3291706 84.3976315,49.3412059 83.4304343,49.8658563 L51.5213228,67.1747673 C50.5798289,67.6854752 49.4374717,67.6554869 48.5240695,67.0960856 L20.4331811,49.8921877 C19.542822,49.3468989 19,48.3779211 19,47.3338526 L19,18 C19,16.3431458 20.3431458,15 22,15 Z" id="Path-6" fill="#FFFFFF"></path>
-                    <rect id="Rectangle" fill="#00D19A" x="25" y="21" width="23" height="5" rx="2.5"></rect>
-                    <rect id="Rectangle" fill="#A2F5D0" x="25" y="30" width="55" height="5" rx="2.5"></rect>
-                    <rect id="Rectangle" fill="#A2F5D0" x="25" y="39" width="36" height="5" rx="2.5"></rect>
-                </g>
-            </g>
-        </svg>
+        <img src="/images/recovery.svg" alt="">
       </div>
       <div class="formDesc">
         <p>Fill in your username or email address and we'll email you a link allowing you to reset your password.</p>
       </div>
       <div class="formBlock">
         <div class="formBlock__inner marginBottom-s">
-         <label for="userStudentForgot">Username or email</label>
-        <input type="text" id="userStudentForgot" placeholder="pampam or fahmiirsyad10@protonmail.com" class="input input--primary">
+            <label for="userStudentForgot">Username or email</label>
+            <input @focus="$event.target.select()" type="text" :class="{'input-disabled': Isdisabled}" :disabled="Isdisabled" id="userStudentForgot" :placeholder="placeholder" class="input input--primary">
         </div>                    
       </div>
       <div class="formButton">
-          <router-link exact to="/">back to login</router-link>
-          <button class="btn btn--primary" type="submit" @click.prevent="fetchData">SEND RESET EMAIL</button>
+            <router-link exact to="/">back to login</router-link>
+            <button :disabled="Isdisabled" :class="{'btn-disabled': Isdisabled}" class="btn btn--primary" type="submit" @click.prevent="fetchData">{{buttontext}}</button>
       </div>    
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
+import axios from 'axios';
 export default {
-  
+  data() {
+    return {
+      buttontext: 'SEND RESET EMAIL',
+      placeholder: 'pampam or fahmiirsyad10@protonmail.com',
+      Isdisabled: false
+    }
+  },
+  methods: {
+    fetchData() {
+    var self = this;
+      self.buttontext = self.placeholder = 'SENDING...';
+      console.log(self.buttontext);
+      self.Isdisabled = true;
+      axios.get('https://jsonplaceholder.typicode.com/users')
+          .then(res => {
+            console.log(res)
+            setTimeout(()=>{ self.buttontext = self.placeholder = 'SUCCESS'; self.Isdisabled = false; }, 2000);
+          })
+          .catch(error => {
+            console.log(error)
+          })
+    },
+  },
 }
 </script>

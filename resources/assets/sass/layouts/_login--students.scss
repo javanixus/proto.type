@@ -134,3 +134,9 @@
         left: 25%;
         bottom: 20%;
     }}
+
+.formBlock__inner p {
+    font-size: 14px;
+    color: $red;
+    @extend .marginTop-xs;
+}

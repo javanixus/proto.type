@@ -15586,26 +15586,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       buttontext: 'LOG IN TO PROTO.TYPE',
-      logItIn: {
+      Isdisabled: false,
+      dataLogin: {
         username: '',
         password: ''
       }
     };
-  },
-  created: function created() {
-    // this.fetchData();
-  },
-
-  computed: {
-    authUserIsPassed: function authUserIsPassed() {
-      return this.logItIn.username && this.logItIn.password;
-    }
   },
   methods: {
     fetchData: function fetchData() {
@@ -15620,6 +15613,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }, 2000);
       }).catch(function (error) {
         console.log(error);
+      });
+    },
+    validateBeforeSubmit: function validateBeforeSubmit() {
+      this.$validator.validateAll().then(function (result) {
+        if (result) {
+          alert('Form Submitted!');
+          return;
+        }
+        alert('Correct them errors!');
       });
     }
   }
@@ -16518,137 +16520,171 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("form", [
-      _c("div", { staticClass: "formBlock" }, [
-        _c("div", { staticClass: "formBlock__inner marginBottom-s" }, [
-          _c("label", { attrs: { for: "userStudent" } }, [
-            _vm._v("Username or email")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.logItIn.username,
-                expression: "logItIn.username"
-              },
-              {
-                name: "validate",
-                rawName: "v-validate",
-                value: "required|alpha",
-                expression: "'required|alpha'"
-              }
-            ],
-            staticClass: "input input--primary",
-            class: {
-              "input-disabled": _vm.Isdisabled,
-              input: true,
-              "input-danger": _vm.errors.has("username or email")
-            },
-            attrs: {
-              name: "username or email",
-              type: "text",
-              disabled: _vm.Isdisabled,
-              id: "userStudent",
-              placeholder: "pampam or fahmiirsyad10@protonmail.com"
-            },
-            domProps: { value: _vm.logItIn.username },
-            on: {
-              focus: function($event) {
-                $event.target.select()
-              },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.logItIn, "username", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "p",
-            {
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            _vm.validateBeforeSubmit($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "formBlock" }, [
+          _c("div", { staticClass: "formBlock__inner marginBottom-s" }, [
+            _c("label", { attrs: { for: "userStudent" } }, [
+              _vm._v("Username or email")
+            ]),
+            _vm._v(" "),
+            _c("input", {
               directives: [
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.errors.has("username or email"),
-                  expression: "errors.has('username or email')"
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.dataLogin.username,
+                  expression: "dataLogin.username"
+                },
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required|alpha",
+                  expression: "'required|alpha'"
                 }
               ],
-              staticClass: "help is-danger"
-            },
-            [_vm._v(_vm._s(_vm.errors.first("username or email")))]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "formBlock" }, [
-        _c("div", { staticClass: "formBlock__inner marginBottom-s" }, [
-          _c("label", { attrs: { for: "passStudent" } }, [_vm._v("Password")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.logItIn.password,
-                expression: "logItIn.password"
-              }
-            ],
-            staticClass: "input input--primary",
-            class: { "input-disabled": _vm.Isdisabled },
-            attrs: {
-              type: "password",
-              disabled: _vm.Isdisabled,
-              id: "passStudent",
-              placeholder: "•••••••••••••••••"
-            },
-            domProps: { value: _vm.logItIn.password },
-            on: {
-              focus: function($event) {
-                $event.target.select()
+              staticClass: "input input--primary",
+              class: {
+                "input-disabled": _vm.Isdisabled,
+                input: true,
+                "input-danger": _vm.errors.has("username or email")
               },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.logItIn, "password", $event.target.value)
-              }
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "formButton" },
-        [
-          _c("router-link", { attrs: { exact: "", to: "forgot" } }, [
-            _vm._v("forgot?")
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn--primary",
-              class: { "btn-disabled": _vm.authUserIsPassed },
-              attrs: { disabled: _vm.authUserIsPassed, type: "submit" },
+              attrs: {
+                name: "username or email",
+                type: "text",
+                disabled: _vm.Isdisabled,
+                id: "userStudent",
+                placeholder: "pampam or fahmiirsyad10@protonmail.com"
+              },
+              domProps: { value: _vm.dataLogin.username },
               on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.fetchData($event)
+                focus: function($event) {
+                  $event.target.select()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.dataLogin, "username", $event.target.value)
                 }
               }
-            },
-            [_vm._v(_vm._s(_vm.buttontext))]
-          )
-        ],
-        1
-      )
-    ])
+            }),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.errors.has("username or email"),
+                    expression: "errors.has('username or email')"
+                  }
+                ],
+                staticClass: "help is-danger"
+              },
+              [_vm._v(_vm._s(_vm.errors.first("username or email")))]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "formBlock" }, [
+          _c("div", { staticClass: "formBlock__inner marginBottom-s" }, [
+            _c("label", { attrs: { for: "passStudent" } }, [
+              _vm._v("Password")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.dataLogin.password,
+                  expression: "dataLogin.password"
+                },
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required|alpha",
+                  expression: "'required|alpha'"
+                }
+              ],
+              staticClass: "input input--primary",
+              class: {
+                "input-disabled": _vm.Isdisabled,
+                input: true,
+                "input-danger": _vm.errors.has("username or email")
+              },
+              attrs: {
+                name: "password",
+                type: "password",
+                disabled: _vm.Isdisabled,
+                id: "passStudent",
+                placeholder: "•••••••••••••••••"
+              },
+              domProps: { value: _vm.dataLogin.password },
+              on: {
+                focus: function($event) {
+                  $event.target.select()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.dataLogin, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.errors.has("password"),
+                    expression: "errors.has('password')"
+                  }
+                ],
+                staticClass: "help is-danger"
+              },
+              [_vm._v(_vm._s(_vm.errors.first("password")))]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "formButton" },
+          [
+            _c("router-link", { attrs: { exact: "", to: "forgot" } }, [
+              _vm._v("forgot?")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn--primary",
+                class: { "btn-disabled": _vm.Isdisabled },
+                attrs: { disabled: _vm.Isdisabled, type: "submit" }
+              },
+              [_vm._v(_vm._s(_vm.buttontext))]
+            )
+          ],
+          1
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []

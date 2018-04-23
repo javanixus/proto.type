@@ -17,7 +17,7 @@
       </div>
       <div class="formButton">
         <router-link exact to='forgot'>forgot?</router-link>
-          <button :disabled="Isdisabled" :class="{'btn-disabled': Isdisabled}" class="btn btn--primary" type="submit">{{buttontext}}</button>
+          <button :disabled="!authUserIsPassed" :class="{'btn-disabled': !authUserIsPassed}" class="btn btn--primary" type="submit">{{buttontext}}</button>
       </div>
     </form>
   </div>
@@ -33,6 +33,11 @@ export default {
       password: ''
     }
   }),
+  computed: {
+    authUserIsPassed() {
+      return this.dataLogin.username && this.dataLogin.password;
+    },
+  },
   methods: {
     fetchData() {
     var self = this;

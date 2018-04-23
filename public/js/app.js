@@ -15600,6 +15600,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     };
   },
+  computed: {
+    authUserIsPassed: function authUserIsPassed() {
+      return this.dataLogin.username && this.dataLogin.password;
+    }
+  },
   methods: {
     fetchData: function fetchData() {
       var self = this;
@@ -16675,8 +16680,8 @@ var render = function() {
               "button",
               {
                 staticClass: "btn btn--primary",
-                class: { "btn-disabled": _vm.Isdisabled },
-                attrs: { disabled: _vm.Isdisabled, type: "submit" }
+                class: { "btn-disabled": !_vm.authUserIsPassed },
+                attrs: { disabled: !_vm.authUserIsPassed, type: "submit" }
               },
               [_vm._v(_vm._s(_vm.buttontext))]
             )

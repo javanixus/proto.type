@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email', 50)->unique();
             $table->string('password');
             $table->rememberToken();
+
+            $table->integer('role'); // 3 macam : 1 = admin, 2 = guru dan 3 = siswa.
+
             $table->timestamps();
         });
     }

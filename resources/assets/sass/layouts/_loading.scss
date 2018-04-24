@@ -1,0 +1,14 @@
+#loader {
+    width: 100%;
+    height: 100vh;
+}
+
+.loaderCore {
+    img {
+        image-rendering: pixelated;
+        animation-direction: normal;
+        animation-play-state: running;
+        animation-duration: 1s;
+        animation: spin 1s infinite;
+    }
+}

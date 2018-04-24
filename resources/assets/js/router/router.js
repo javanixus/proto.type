@@ -6,10 +6,11 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 //root routing
-import CoreComponent from './../components/Core';
 import LoginStudents from './../components/auth/students/login';
 import LoginStudentsForm from './../components/auth/students/loginForm';
 import ForgotStudents from './../components/auth/students/forgot';
+import loading from './../components/loading';
+import notfound from './../components/404';
 
 export default new Router({
     routes: [
@@ -27,9 +28,17 @@ export default new Router({
             ]
         },
         {
+            path: '/loading',
+            component: loading
+        },
+        {
             path: '*',
             redirect: '/404'
         },
+        {
+            path: '/404',
+            component: notfound
+        }
     ],
     mode: 'history'
   });

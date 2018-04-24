@@ -6,16 +6,19 @@
       <div class="formDesc">
         <p>Fill in your username or email address and we'll email you a link allowing you to reset your password.</p>
       </div>
-      <div class="formBlock">
-        <div class="formBlock__inner marginBottom-s">
+      <form @submit.prevent="validateBeforeSubmit">
+        <div class="formBlock">
+          <div class="formBlock__inner marginBottom-s">
             <label for="userStudentForgot">Username or email</label>
-            <input @focus="$event.target.select()" type="text" :class="{'input-disabled': Isdisabled}" :disabled="Isdisabled" id="userStudentForgot" :placeholder="placeholder" class="input input--primary">
-        </div>                    
-      </div>
-      <div class="formButton">
+            <input name="email" v-validate="'required|email'" v-model="recovery" @focus="$event.target.select()" type="text" :class="{'input-disabled': Isdisabled, 'input': true, 'input-danger': errors.has('email')}" id="userStudentForgot" :placeholder="placeholder" class="input input--primary">
+            <p v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</p>
+          </div>                    
+        </div>
+        <div class="formButton">
             <router-link exact to="/">back to login</router-link>
-            <button :disabled="Isdisabled" :class="{'btn-disabled': Isdisabled}" class="btn btn--primary" type="submit" @click.prevent="fetchData">{{buttontext}}</button>
-      </div>    
+            <button :disabled="!authUserIsPassed" :class="{'btn-disabled': !authUserIsPassed}" class="btn btn--primary" type="submit">{{buttontext}}</button>
+        </div>
+      </form>    
   </div>
 </template>
 <script>
@@ -24,9 +27,15 @@ export default {
   data() {
     return {
       buttontext: 'SEND RESET EMAIL',
-      placeholder: 'pampam or fahmiirsyad10@protonmail.com',
-      Isdisabled: false
+      placeholder: 'fahmiirsyad10@protonmail.com',
+      Isdisabled: false,
+      recovery: ''
     }
+  },
+  computed: {
+    authUserIsPassed() {
+      return this.recovery;
+    },
   },
   methods: {
     fetchData() {
@@ -43,6 +52,15 @@ export default {
             console.log(error)
           })
     },
+    validateBeforeSubmit() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.fetchData();
+          return;
+        }
+        alert('Correct them errors!');
+    });
+    }    
   },
 }
 </script>

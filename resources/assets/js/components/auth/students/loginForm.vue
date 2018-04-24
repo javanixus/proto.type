@@ -56,7 +56,7 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          alert('Form Submitted!');
+          this.fetchData();
           return;
         }
         alert('Correct them errors!');

@@ -16,8 +16,13 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('name');
-            $table->string('password');
+            $table->string('nis');
+            $table->string('avatar')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('bio')->nullable();
+            $table->enum('gender',['male', 'female']);
+
 
             $table->timestamps();
         });
@@ -26,6 +31,7 @@ class CreateStudentsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
+
     }
 
     /**

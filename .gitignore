@@ -17,6 +17,8 @@ storage/*.key
 .env.*.php
 .env.php
 .env
+package-lock.json
+yarn.lock
 Homestead.yaml
 Homestead.json
 vendor

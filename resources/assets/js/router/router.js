@@ -11,6 +11,9 @@ import LoginStudentsForm from './../components/auth/students/loginForm';
 import ForgotStudents from './../components/auth/students/forgot';
 import loading from './../components/loading';
 import notfound from './../components/404';
+import dashboardStudents from './../components/dashboards/students/dashboard';
+import dashboardStudentsProject from './../components/dashboards/students/project';
+import dashboardStudentsTeam from './../components/dashboards/students/team';
 
 export default new Router({
     routes: [
@@ -38,6 +41,21 @@ export default new Router({
         {
             path: '/404',
             component: notfound
+        },
+        {
+            path: '/home',
+            component: dashboardStudents,
+            children: [{
+                path: '',
+                component: dashboardStudentsProject,
+                name: 'studentproject'
+            },
+            {
+                path: 'team',
+                component: dashboardStudentsTeam,
+                name: 'studentteam'
+            }
+        ]
         }
     ],
     mode: 'history'

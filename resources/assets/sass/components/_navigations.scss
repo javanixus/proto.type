@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    flex-shrink: 0;
+    backface-visibility: hidden;
+}.navbar--primary {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.nav-active{
+    color: $blue!important;
+
+}

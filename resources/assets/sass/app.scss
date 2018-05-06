@@ -7,8 +7,11 @@
 @import "./base/prefix";
 @import "./base/animations";
 // Components
-@import "./components/_button.scss";
-@import "./components/_input.scss";
+@import "./components/button.scss";
+@import "./components/input.scss";
+@import "./components/extras.scss";
+@import "./components/navigations.scss";
+
 // Debug
 // Helpers
 @import "./helpers/variables";
@@ -17,5 +20,6 @@
 @import "./layouts/login--students.scss";
 @import "./layouts/loading.scss";
 @import "./layouts/404.scss";
+@import "./layouts/dashboard-students.scss";
 // Pages
 // Themes

@@ -1,0 +1,128 @@
+.appHeader__content, .appHeader__content__logo {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.appHeader__content {
+    @extend .marginLeft-m;
+    @extend .marginRight-m;
+}
+.appHeader__content__navigation {
+    display: flex;
+    align-items: center;
+    ul {
+        display: flex;
+        flex: 1;
+        line-height: 46px;
+        @extend .marginLeft-s;
+        li span {
+            padding: 0 12px;
+            color : $grey;
+            font-size: 14px;
+            @extend .easeinouttext;
+            cursor: pointer;
+            &:hover {
+                @extend .easeinouttext;
+                color: $blue;
+            }
+        }
+    }
+}
+
+.appHeader__content__navigation--secondary {
+    @extend .appHeader__content__navigation;
+    ul {
+        display: flex;
+        flex: 1;
+        line-height: 46px;
+    }
+}
+
+.searchWrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-top: 13px;
+    .searchicon {
+        width: 20px;
+        height: 20px;
+        @extend .borderRadius-circle;
+        background: $blue;
+        position: absolute;
+        margin-left: 3px;
+    }
+}
+
+.avatarWrap {
+    @extend .searchWrap;
+    cursor: pointer;
+    padding: 10px!important;
+}
+
+ul.navigationWrap-items li a {
+    padding: 0 12px;
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none!important;
+}
+
+.popupClose {
+    width: 100%;
+    @extend .paddingAppear-n;
+    display: flex;
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    justify-content: flex-end;
+    span {
+        width: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        height: 20px;
+        @extend .borderRadius-circle;
+        background: $red;
+    }
+}
+
+.popupContent__desc {
+    @extend .paddingAppear-n;
+    label {
+        color: $black-young;
+        font-weight: 600;
+    }
+    #informations {
+        @extend .paddingLeft-xs;
+        @extend .paddingRight-s;
+        @extend .marginTop-xs;
+        @extend .marginLeft-xs;
+        border-left: 3px solid $blue;
+        span {
+            font-size: 14px;
+            color: $black-young;
+        }
+    }
+}
+.popupContent__images {
+    @extend .overflow-disable;
+    position: relative;
+    width: 100%;
+    max-height: 200px;
+    .popupContent__images__dp {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+        height: 200px;
+    }
+}
+
+.informations__button {
+    @extend .paddingAppear-n;
+    text-align: center;
+}

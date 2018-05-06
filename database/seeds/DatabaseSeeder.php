@@ -11,6 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+
+        $clear = DB::table('users')->delete();
+        $clear = DB::table('grades')->delete();
+        $clear = DB::table('study_programs')->delete();
+
+        $this->call(UsersTableSeeder::class);
+        $this->call(GradesTableSeeder::class);
+        $this->call(StudyProgramsTableSeeder::class);
     }
 }

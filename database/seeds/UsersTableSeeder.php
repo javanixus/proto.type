@@ -14,15 +14,16 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create('App\User');
 
-      for($i=1; $i <= 20; $i++){
-        DB::table('users')->insert([
-            'name' => $faker->name(),
-            'email' => $faker->email(25),
-            'password' => $faker->password(),
-            'remember_token' => $faker->sha256(),
-            'created_at' => $faker->dateTime(),
-            'updated_at' => $faker->dateTime(),
-        ]);
-      }
+    //   for($i=1; $i <= 20; $i++){
+    //     DB::table('users')->insert([
+    //         'name' => $faker->name(),
+    //         'email' => $faker->email(25),
+    //         'password' => bcrypt('secret'),
+    //         'remember_token' => $faker->sha256(),
+    //         'created_at' => $faker->dateTime(),
+    //         'updated_at' => $faker->dateTime(),
+    //     ]);
+    //   }
+
     }
 }

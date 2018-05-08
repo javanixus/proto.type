@@ -126,3 +126,113 @@ ul.navigationWrap-items li a {
     @extend .paddingAppear-n;
     text-align: center;
 }
+
+.project__content {
+    @extend .paddingAppear-n;
+    .projectCore {
+        @extend .paddingLeft-m;
+        @extend .paddingTop-xxl;
+    }
+}
+
+.container {
+    background: #F0F0F0;
+    min-height: 100vh;
+}
+
+// project item list 
+#projectItems {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.appHeader__content__project {
+    margin-left: -3%;
+}
+.projectItems__item {
+    @extend .borderRadius-s;
+    @extend .overflow-disable;
+    cursor: pointer;
+    background: white;
+    @extend .marginTop-s;
+    @extend .marginBottom-s;
+    @extend .marginRight-s;
+    @extend .easeinoutanimate;
+    position: relative;
+    &:hover {
+        @extend .easeinoutanimate;
+        box-shadow: 1px 9px 18px 1px rgba(60,60,60,.15)!important;
+    }
+    @extend .easeinoutbg;
+    &:hover > .overlay {
+        background-color: rgba(46, 47, 48, 0.9);
+        @extend .easeinoutbg;
+    }
+}.project__item__content {
+    position: absolute;
+    bottom:0;
+    @extend .paddingAppear-n;
+}.project__item__header {
+    @extend .overflow-disable;
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 150px;
+}.project__item__core__title {
+    h5 {
+        color: white;
+        font-weight: 500;
+    }
+}.project__item__core__content {
+    @extend .marginTop-xxs;
+}.overlay {
+    @extend .universe;
+    background-color: rgba(46, 47, 48, 0.5);
+}.projectPeople {
+    display: inline-flex;
+}div.projectPeople > div:nth-child(n + 2) { margin-left: -8px;}
+.createProjectPopup__header {
+    text-align: center;
+    @extend .paddingTop-xs;
+    @extend .paddingBottom-xs;
+    p {
+        color: $black-young;
+    }
+}
+.createProjectPopup__content {
+    position: relative;
+}.createProjectPopup__content__cover {
+    width: 100%;
+    height: 200px;
+    @extend .overflow-disable;
+}.createProjectPopup__content form {
+    @extend .popupContent__desc;
+    padding-top: 25px!important;
+}.createProjectPopup__content__title input {
+    border: none;
+    outline: none;
+    font-size: 25px;
+    color: $black-young;
+    font-weight: 600;
+    @extend .marginBottom-s;
+}.createProjectPopup__content__desc textarea {
+    outline: none;
+    border: none;
+    color: $black-young;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    resize: none;
+}.createProjectPopup__footer {
+    @extend .paddingAppear-n;
+}div.createProjectPopup__footer > button:nth-child(1) { margin-bottom: 10px;}
+.nothingShow {
+    @extend .flexCenter;
+    align-items: center;
+    height: 60vh;
+    span {
+        font-weight: 500;
+        color: $grey;
+    }
+}

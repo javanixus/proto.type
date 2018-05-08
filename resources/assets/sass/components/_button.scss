@@ -37,9 +37,17 @@
         opacity: 0.7; 
     }
 }
-
 .btn-disabled {
     @extend .btn--primary;
     cursor: not-allowed!important;
     background: $grey!important;
+}
+
+.btn--danger {
+    background: $red!important;
+    &:hover {
+        background: $red-darken!important;
+    }
+}.btn--done {
+    background: $green!important;
 }

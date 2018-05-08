@@ -14,6 +14,7 @@ import notfound from './../components/404';
 import dashboardStudents from './../components/dashboards/students/dashboard';
 import dashboardStudentsProject from './../components/dashboards/students/project';
 import dashboardStudentsTeam from './../components/dashboards/students/team';
+import GetWelcome from './../components/auth/students/getstarted/welcome';
 
 export default new Router({
     routes: [
@@ -56,7 +57,11 @@ export default new Router({
                 name: 'studentteam'
             }
         ]
-        }
+        },
+        {
+            path: '/catchup',
+            component: GetWelcome
+        },
     ],
     mode: 'history'
   });

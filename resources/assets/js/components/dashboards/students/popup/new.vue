@@ -7,7 +7,7 @@
                 </div>
                 <img class="img-default" src="/images/image.png" alt="our time">
                 <div class="popupContent__images__dp">
-                    <div class="avatar avatar--xl avatar--border-white" style="background-image: url(/images/sample.jpg);" />
+                    <div class="avatar avatar--xl avatar--border-white--5" style="background-image: url(/images/sample.jpg);" />
                 </div>
             </div>
             <div class="popupContent__desc">

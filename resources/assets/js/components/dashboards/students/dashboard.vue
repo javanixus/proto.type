@@ -4,8 +4,8 @@
         <!-- <div class="notif notif--primary">
             <p>Thanks you for using prototype 🎉 , here some <a href="javascript:void(0)">reward</a> for you 🙌.</p>
         </div> -->
-        <div class="notif notif--dev">
-            <p>Hooray 🎉 ! we just updated version to 2.0 <a href="javascript:void(0)">check what's new.</a></p>
+        <div class="notif notif--danger">
+            <p>🚨 whoops! we tracked a mysterious person 🕵‍, go check it now ! 🚨 </p>
         </div>
         <div id="appHeader" class="nav navbar--primary">
             <div class="appHeader__content">
@@ -27,6 +27,9 @@
                         </li>
                     </ul>
                 </div>
+                <div class="appHeader__content__project">
+                    <button class="btn btn--primary" @click.prevent="createproject">Create new project</button>
+                </div>
                 <div class="appHeader__content__navigation--secondary">
                     <ul>
                         <li>
@@ -47,18 +50,27 @@
         <div id="appContent">
             <router-view></router-view>
             <new-popup></new-popup>
+            <create-project-popup></create-project-popup>
         </div>
       </div>
   </div>
 </template>
 <script>
 import newPopup from './../students/popup/new';
+import createProjectPopup from './../students/popup/createproject';
+
 export default {
     components: {
-        'new-popup' : newPopup
+        'new-popup' : newPopup,
+        'create-project-popup': createProjectPopup
     },
     mounted() {
         this.$modal.show('new');
     },
+    methods: {
+        createproject(){
+            this.$modal.show('create-project');
+        }
+    }
 }
 </script>

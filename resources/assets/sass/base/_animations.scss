@@ -10,6 +10,14 @@
     transition: color ease-in-out .15s;
     transition: color ease-in-out .15s;
     transition: color ease-in-out .15s;
+}.easeinoutanimate {
+    transition: ease-in-out .15s;
+    transition: ease-in-out .15s;
+    transition: ease-in-out .15s;
+}.easeinoutbg {
+    transition: background-color ease-in-out .15s;
+    transition: background-color ease-in-out .15s;
+    transition: background-color ease-in-out .15s;
 }
 
 @-webkit-keyframes spin {

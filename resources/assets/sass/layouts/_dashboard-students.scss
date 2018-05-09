@@ -236,3 +236,17 @@ ul.navigationWrap-items li a {
         color: $grey;
     }
 }
+
+.headlineProjectItem {
+    width: 100%;
+    z-index: 99;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    background-color: $red;
+    color: white;
+    @extend .paddingBottom-xxs;
+    @extend .paddingTop-xxs;
+}
+
+// popup profile

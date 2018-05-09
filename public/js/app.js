@@ -17807,16 +17807,7 @@ var staticRenderFns = [
       { staticClass: "appHeader__content__navigation--secondary" },
       [
         _c("ul", [
-          _c("li", [
-            _c("div", { staticClass: "searchWrap" }, [
-              _c("div", { staticClass: "searchicon" }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "search",
-                attrs: { type: "text", placeholder: "Search here..." }
-              })
-            ])
-          ]),
+          _c("li"),
           _vm._v(" "),
           _c("li", [
             _c("div", { staticClass: "avatarWrap" }, [

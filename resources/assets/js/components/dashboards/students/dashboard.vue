@@ -1,12 +1,12 @@
 <template>
   <div id="dashstudent">
       <div class="dashstudent__content">
-        <!-- <div class="notif notif--primary">
+        <div class="notif notif--primary">
             <p>Thanks you for using prototype 🎉 , here some <a href="javascript:void(0)">reward</a> for you 🙌.</p>
-        </div> -->
-        <div class="notif notif--danger">
-            <p>🚨 whoops! we tracked a mysterious person 🕵‍, go check it now ! 🚨 </p>
         </div>
+        <!-- <div class="notif notif--danger">
+            <p>🚨 whoops! we tracked a mysterious person 🕵‍, go check it now ! 🚨 </p>
+        </div> -->
         <div id="appHeader" class="nav navbar--primary">
             <div class="appHeader__content">
                 <div class="appHeader__content__navigation">
@@ -33,14 +33,14 @@
                 <div class="appHeader__content__navigation--secondary">
                     <ul>
                         <li>
-                            <!-- <div class="searchWrap">
+                            <div class="searchWrap">
                                 <div class="searchicon"></div>
-                                <input type="text" class="search" placeholder="Search here...">
-                            </div> -->
+                                <input type="text" disabled class="search" placeholder="Search here...">
+                            </div>
                         </li>
                         <li>
                             <div class="avatarWrap">
-                                <div class="avatar avatar--xs avatarWrap" style="background-image: url(/images/sample.jpg);" />
+                                <div @click.prevent="menuProfileClick" class="avatar avatar--xs avatarWrap" style="background-image: url(/images/sample.jpg);" />
                             </div>
                         </li>
                     </ul>
@@ -51,6 +51,7 @@
             <router-view></router-view>
             <new-popup></new-popup>
             <create-project-popup></create-project-popup>
+            <menu-profile-popup></menu-profile-popup>
         </div>
       </div>
   </div>
@@ -58,11 +59,13 @@
 <script>
 import newPopup from './../students/popup/new';
 import createProjectPopup from './../students/popup/createproject';
+import menuProfilePopup from './../students/popup/menuprofile';
 
 export default {
     components: {
         'new-popup' : newPopup,
-        'create-project-popup': createProjectPopup
+        'create-project-popup': createProjectPopup,
+        'menu-profile-popup': menuProfilePopup
     },
     mounted() {
         this.$modal.show('new');
@@ -70,6 +73,9 @@ export default {
     methods: {
         createproject(){
             this.$modal.show('create-project');
+        },
+        menuProfileClick(){
+            this.$modal.show('menu-profile');
         }
     }
 }

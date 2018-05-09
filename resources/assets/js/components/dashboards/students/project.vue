@@ -24,6 +24,7 @@
             </div>
             <!-- item list -->
             <div class="projectItems__item">
+            <span class="headlineProjectItem">28 days left</span>
               <div class="project__item__header" style="background-image: url(/images/image.png);"></div>
               <div class="overlay"></div>
               <div class="project__item__content">

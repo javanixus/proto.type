@@ -33,10 +33,10 @@
                 <div class="appHeader__content__navigation--secondary">
                     <ul>
                         <li>
-                            <div class="searchWrap">
+                            <!-- <div class="searchWrap">
                                 <div class="searchicon"></div>
                                 <input type="text" class="search" placeholder="Search here...">
-                            </div>
+                            </div> -->
                         </li>
                         <li>
                             <div class="avatarWrap">

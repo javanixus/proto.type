@@ -17807,16 +17807,7 @@ var staticRenderFns = [
       { staticClass: "appHeader__content__navigation--secondary" },
       [
         _c("ul", [
-          _c("li", [
-            _c("div", { staticClass: "searchWrap" }, [
-              _c("div", { staticClass: "searchicon" }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "search",
-                attrs: { type: "text", placeholder: "Search here..." }
-              })
-            ])
-          ]),
+          _c("li"),
           _vm._v(" "),
           _c("li", [
             _c("div", { staticClass: "avatarWrap" }, [
@@ -17976,6 +17967,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -18053,6 +18045,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "projectItems__item" }, [
+      _c("span", { staticClass: "headlineProjectItem" }, [
+        _vm._v("28 days left")
+      ]),
+      _vm._v(" "),
       _c("div", {
         staticClass: "project__item__header",
         staticStyle: { "background-image": "url(/images/image.png)" }

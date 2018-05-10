@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
 
             $table->integer('role'); // 3 macam : 0 = admin, 1 = guru dan 2 = siswa.
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

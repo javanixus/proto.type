@@ -18,14 +18,11 @@ use Illuminate\Http\Request;
 // });
 
 Route::group(['prefix'=>'v1'], function(){
-    Route::post('/test', function(){
-        $response = [
-                'msg' => 'List of Teachers',
-                'teachers' => 'tset',
-                'teachers_count' => 'etss',
-            ];
-            return response()->json($response, 200);
-    });
+
+    // Login User
+    Route::post('auth', 'AuthController@login');
+    Route::post('user/add', 'UserController@store');
+
 });
 
 

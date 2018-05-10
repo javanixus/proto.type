@@ -44,6 +44,7 @@
     display: inline-flex;
     align-items: center;
     padding-top: 13px;
+    filter: grayscale(100);
     .searchicon {
         width: 20px;
         height: 20px;
@@ -57,6 +58,7 @@
 .avatarWrap {
     @extend .searchWrap;
     cursor: pointer;
+    filter: none;
     padding: 10px!important;
 }
 
@@ -136,7 +138,7 @@ ul.navigationWrap-items li a {
 }
 
 .container {
-    background: #F0F0F0;
+    // background: #F0F0F0;
     min-height: 100vh;
 }
 
@@ -250,3 +252,38 @@ ul.navigationWrap-items li a {
 }
 
 // popup profile
+
+.menuProfile {
+    padding: 10px 15px;
+    .menuProfile__header {
+        h5 {
+            font-weight: 600;
+            color: $black-young;
+        }
+        p {
+            font-size: 12px;
+            color: $grey;
+            font-weight: 400;
+            @extend .marginTop-xxs;
+            @extend .marginBottom-xxs;
+        }
+        border-bottom: 1px solid #eee;
+    }
+    .menuProfile__content {
+        @extend .paddingTop-xxs;
+        ul li {
+            padding: 5px 10px;
+            &:hover {
+                background: $grey-young;
+            }
+            &:hover > a {
+                color: $black;
+            }
+            @extend .borderRadius-s;
+            a {
+                text-decoration: none;
+                font-weight: 400;
+            }
+        }
+    }
+}

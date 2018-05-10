@@ -6,15 +6,16 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 //root routing
-import LoginStudents from './../components/auth/students/login';
-import LoginStudentsForm from './../components/auth/students/loginForm';
-import ForgotStudents from './../components/auth/students/forgot';
-import loading from './../components/loading';
-import notfound from './../components/404';
-import dashboardStudents from './../components/dashboards/students/dashboard';
-import dashboardStudentsProject from './../components/dashboards/students/project';
-import dashboardStudentsTeam from './../components/dashboards/students/team';
+const LoginStudents = () => import('./../components/auth/students/login');
+const LoginStudentsForm = () => import('./../components/auth/students/loginForm');
+const LoginStudentsForgot = () => import('./../components/auth/students/forgot');
+const NotFound = () => import('./../components/404');
+const StudentDash = () => import('./../components/dashboards/students/dashboard');
+const StudentDashProject = () => import('./../components/dashboards/students/project');
+const StudentDashTeam = () => import('./../components/dashboards/students/team');
+const Loading = () => import('./../components/loading');
 import GetWelcome from './../components/auth/students/getstarted/welcome';
+
 
 export default new Router({
     routes: [
@@ -23,7 +24,7 @@ export default new Router({
             component: LoginStudents,
             children: [{
                 path: '/forgot',
-                component: ForgotStudents
+                component: LoginStudentsForgot
             },
             {
                 path: '/',
@@ -33,7 +34,7 @@ export default new Router({
         },
         {
             path: '/loading',
-            component: loading
+            component: Loading
         },
         {
             path: '*',
@@ -41,19 +42,19 @@ export default new Router({
         },
         {
             path: '/404',
-            component: notfound
+            component: NotFound
         },
         {
             path: '/home',
-            component: dashboardStudents,
+            component: StudentDash,
             children: [{
                 path: '',
-                component: dashboardStudentsProject,
+                component: StudentDashProject,
                 name: 'studentproject'
             },
             {
                 path: 'team',
-                component: dashboardStudentsTeam,
+                component: StudentDashTeam,
                 name: 'studentteam'
             }
         ]

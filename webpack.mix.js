@@ -2,7 +2,10 @@ const mix = require('laravel-mix');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 mix.webpackConfig({
-
+  output: {
+    publicPath: '/',
+    chunkFilename: 'js/[name].[chunkhash].js',
+},
   plugins: [
     new ImageminPlugin({
       disable: process.env.NODE_ENV !== 'production', // Disable during development

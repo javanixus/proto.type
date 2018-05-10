@@ -7,20 +7,21 @@
 @import "./base/prefix";
 @import "./base/animations";
 // Components
-@import "./components/button.scss";
-@import "./components/input.scss";
-@import "./components/extras.scss";
-@import "./components/navigations.scss";
+@import "./components/button";
+@import "./components/input";
+@import "./components/extras";
+@import "./components/navigations";
 
 // Debug
 // Helpers
 @import "./helpers/variables";
 
 // Layouts
-@import "./layouts/login--students.scss";
-@import "./layouts/loading.scss";
-@import "./layouts/404.scss";
-@import "./layouts/dashboard-students.scss";
-@import "./layouts/_getstart.scss";
+@import "./layouts/login--students";
+@import "./layouts/loading";
+@import "./layouts/404";
+@import "./layouts/dashboard-students";
+@import "./layouts/getstart";
+@import "./layouts/profile";
 // Pages
 // Themes

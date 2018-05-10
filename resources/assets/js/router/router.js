@@ -14,8 +14,8 @@ const StudentDash = () => import('./../components/dashboards/students/dashboard'
 const StudentDashProject = () => import('./../components/dashboards/students/project');
 const StudentDashTeam = () => import('./../components/dashboards/students/team');
 const Loading = () => import('./../components/loading');
-import GetWelcome from './../components/auth/students/getstarted/welcome';
-
+const GetWelcome = () => import('./../components/auth/students/getstarted/welcome');
+const StudentDashProfile = () => import('./../components/dashboards/students/profile');
 
 export default new Router({
     routes: [
@@ -56,7 +56,13 @@ export default new Router({
                 path: 'team',
                 component: StudentDashTeam,
                 name: 'studentteam'
+            },
+            {
+                path: 'profile',
+                component: StudentDashProfile,
+                name: 'studentprofile'
             }
+            
         ]
         },
         {

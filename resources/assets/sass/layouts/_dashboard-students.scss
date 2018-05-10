@@ -1,3 +1,11 @@
+#appContent {
+    position: relative;
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: flex;
+}
+
 .appHeader__content, .appHeader__content__logo {
     display: flex;
     align-content: center;
@@ -141,7 +149,14 @@ ul.navigationWrap-items li a {
     // background: #F0F0F0;
     min-height: 100vh;
 }
-
+.dashstudent__content {
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 950px;
+}
 // project item list 
 #projectItems {
     display: inline-flex;

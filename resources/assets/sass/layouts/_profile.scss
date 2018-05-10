@@ -1,0 +1,23 @@
+.profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    color: #424242;
+    font-size: 14px;
+}.profile__sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    border-right: 1px solid #eee;
+    padding: 20px 10px;
+}.profile__core {
+    width: 50%;
+    height: calc(100vh - 1285px);
+    background: $red;
+}

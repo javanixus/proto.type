@@ -11,10 +11,12 @@ import LoginStudentsForm from './../components/auth/students/loginForm';
 import ForgotStudents from './../components/auth/students/forgot';
 import loading from './../components/loading';
 import notfound from './../components/404';
-import dashboardStudents from './../components/dashboards/students/dashboard';
-import dashboardStudentsProject from './../components/dashboards/students/project';
-import dashboardStudentsTeam from './../components/dashboards/students/team';
+// const dashboardStudents = () => import('./../components/dashboards/students/dashboard.vue');
+// const dashboardStudents = resolve => { require.ensure(['./../components/dashboards/students/dashboard'],() => { resolve(require('./../components/dashboards/students/dashboard')) })}
+// const dashboardStudentsProject = resolve => { require.ensure(['./../components/dashboards/students/project'],() => { resolve(require('./../components/dashboards/students/project')) })}
+// import dashboardStudentsTeam from './../components/dashboards/students/team';
 import GetWelcome from './../components/auth/students/getstarted/welcome';
+
 
 export default new Router({
     routes: [
@@ -45,15 +47,15 @@ export default new Router({
         },
         {
             path: '/home',
-            component: dashboardStudents,
+            component: () => import('./../components/dashboards/students/dashboard'),
             children: [{
                 path: '',
-                component: dashboardStudentsProject,
+                component: () => import('./../components/dashboards/students/project'),
                 name: 'studentproject'
             },
             {
                 path: 'team',
-                component: dashboardStudentsTeam,
+                component: () => import('./../components/dashboards/students/team'),
                 name: 'studentteam'
             }
         ]

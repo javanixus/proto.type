@@ -9,9 +9,8 @@
     padding: 20px 10px;
 }.profileSidebar__header {
     @extend .paddingTop-s;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: block;
+    text-align: center;
     .profileSidebarHeader__title {
         text-align: center;
         @extend .marginTop-s;
@@ -37,6 +36,9 @@
         font-weight: 500;
         color: $grey;
     }
+}
+p.emailtitle {
+    color: $blue!important;
 }.profileCore__content {
     padding: 40px;
     @extend .marginMagic;

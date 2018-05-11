@@ -2,10 +2,11 @@
   <div class="profile">
       <div class="profile__sidebar">
           <div class="profileSidebar__header">
-              <div class="avatar avatar--xl" style="background-image: url(/images/sample.jpg);"></div>
+              <div class="avatar avatar--xl marginMagic" style="background-image: url(/images/sample.jpg);"></div>
               <div class="profileSidebarHeader__title">
-                  <h3>Fahmi irsyad khairi</h3>
-                  <p>JVNX Co-founder & Front End Dev</p>
+                  <h3>{{namebind}}</h3>
+                  <p>{{quotebind}}</p>
+                  <p class="emailtitle">{{emailbind}}</p>
               </div>
           </div>
       </div>
@@ -24,15 +25,15 @@
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceName">Name</label>
-                            <input type="text" id="preferenceName" placeholder="Fill name" value="fahmi irsyad">
+                            <input type="text" v-model="namebind" id="preferenceName" placeholder="Fill name">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceStatus">Quotes</label>
-                            <input type="text" id="preferenceStatus" placeholder="Ar u seriously dude ? ah nvm" value="JVNX Co-founder & Front End Dev">
+                            <input type="text" v-model="quotebind" id="preferenceStatus" placeholder="Ar u seriously dude ? ah nvm">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceEmail">Email address</label>
-                            <input type="text" id="preferenceEmail" placeholder="Fill email address" value="fahmiirsyad11@icloud.com">
+                            <input type="text" v-model="emailbind" id="preferenceEmail" placeholder="Fill email address">
                           </fieldset>
                       </section>
                   </div>
@@ -47,3 +48,12 @@
       </div>
   </div>
 </template>
+<script>
+export default {
+  data: () => ({
+    namebind: 'Fahmi irsyad k',
+    quotebind: 'JVNX Co-founder & Front End Dev',
+    emailbind: 'fahmiirsyad11@icloud.com'
+  })
+}
+</script>

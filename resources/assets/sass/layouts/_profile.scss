@@ -11,6 +11,7 @@
     @extend .paddingTop-s;
     display: block;
     text-align: center;
+    height: 250px;
     .profileSidebarHeader__title {
         text-align: center;
         @extend .marginTop-s;
@@ -34,6 +35,11 @@
     padding: 10px 15px;
     h4 {
         font-weight: 500;
+        color: $grey;
+    }
+}.profileSidebar__content {
+    padding: 10px;
+    p {
         color: $grey;
     }
 }
@@ -83,5 +89,18 @@ p.emailtitle {
             // border: 1px solid rgba(0,0,0,.15);
             border: 1px solid $blue;
         }
+    }
+}.preference__submit {
+    text-align: right;
+    button {
+        font-size: 14px;
+    }
+}.profileSidebarContent__core {
+    @extend .paddingTop-xl;
+    text-align: center;
+    img {
+        margin-left: -30px;
+        @extend .marginBottom-s;
+        width: 120px;
     }
 }

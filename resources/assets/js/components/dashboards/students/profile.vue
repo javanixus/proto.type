@@ -9,6 +9,13 @@
                   <p class="emailtitle">{{emailbind}}</p>
               </div>
           </div>
+          <div class="profileSidebar__content">
+              <p>My projects:</p>
+              <div class="profileSidebarContent__core">
+                <img src="/images/nocard.svg" alt="">
+                <p>You dont have any project.</p>
+              </div>
+          </div>
       </div>
       <div class="profile__core">
           <div class="profileCore__header">
@@ -25,23 +32,40 @@
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceName">Name</label>
-                            <input type="text" v-model="namebind" id="preferenceName" placeholder="Fill name">
+                            <input type="text" v-model="namebind" maxlength="30" id="preferenceName" placeholder="Fill name">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceStatus">Quotes</label>
-                            <input type="text" v-model="quotebind" id="preferenceStatus" placeholder="Ar u seriously dude ? ah nvm">
+                            <input type="text" v-model="quotebind" maxlength="50" id="preferenceStatus" placeholder="Ar u seriously dude ? ah nvm">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceEmail">Email address</label>
-                            <input type="text" v-model="emailbind" id="preferenceEmail" placeholder="Fill email address">
+                            <input type="text" v-model="emailbind" maxlength="50" id="preferenceEmail" placeholder="Fill email address">
                           </fieldset>
+                          <fieldset class="preference__form">
+                            <label for="preferencePhone">Phone</label>
+                            <input type="text" v-model="phonebind" maxlength="12" id="preferencePhone" v-on:keypress="isNumber(event)" placeholder="08562719206">
+                          </fieldset>
+                          <div class="preference__submit">
+                              <button class="btn btn--primary">Save changes</button>
+                          </div>
                       </section>
                   </div>
                 <div class="preference__privacy">
                       <h2>Privacy</h2>
                       <section class="preference__content">
-                          <p>privacy setting </p>
+                        <fieldset class="preference__form">
+                            <label for="preferencePassOld">Old password</label>
+                            <input type="password" v-model="oldpassbind" id="preferencePassOld" placeholder="•••••••••••••••••">
+                        </fieldset>
+                        <fieldset class="preference__form">
+                            <label for="preferencePassNew">New password</label>
+                            <input type="password" v-model="newpassbind" id="preferencePassNew" placeholder="•••••••••••••••••">
+                        </fieldset>
                       </section>
+                    <div class="preference__submit">
+                        <button class="btn btn--primary">Save changes</button>
+                    </div>
                   </div>
               </div>
           </div>
@@ -53,7 +77,21 @@ export default {
   data: () => ({
     namebind: 'Fahmi irsyad k',
     quotebind: 'JVNX Co-founder & Front End Dev',
-    emailbind: 'fahmiirsyad11@icloud.com'
-  })
+    emailbind: 'fahmiirsyad11@icloud.com',
+    oldpassbind: '',
+    newpassbind: '',
+    phonebind: '',
+  }),
+  methods: {
+    isNumber: function(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+        evt.preventDefault();
+      } else {
+        return true;
+      }
+    }
+  }
 }
 </script>

@@ -266,6 +266,26 @@ ul.navigationWrap-items li a {
     @extend .paddingTop-xxs;
 }
 
+.team--empty {
+    text-align: center;
+    @extend .universe;
+    img {
+        width: 60px;
+        padding-top: 20vh;
+        @extend .paddingBottom-s;
+    }
+    h3 {
+        @extend .marginBottom-xxs;
+    }
+    p {
+        color: $grey;
+        @extend .marginBottom-s;
+    }
+    button {
+        font-size: 14px;
+    }
+}
+
 // popup profile
 
 .menuProfile {

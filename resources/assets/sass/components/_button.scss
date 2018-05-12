@@ -50,4 +50,7 @@
     }
 }.btn--done {
     background: $green!important;
+    &:hover {
+        background: $green-darken!important;
+    }
 }

@@ -7,7 +7,7 @@
             </div>
             <div class="menuProfile__content">
                 <ul>
-                    <li><a href="">Account Preferences</a></li>
+                    <li><router-link :to="{name: 'studentprofile'}">Account Preferences</router-link></li>
                     <li><a href="">Settings</a></li>
                     <li><a href="">Support</a></li>
                     <li><a href="">Logout</a></li>

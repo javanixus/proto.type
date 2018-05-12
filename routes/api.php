@@ -22,6 +22,8 @@ Route::group(['prefix'=>'v1'], function(){
     // Login User
     Route::post('auth', 'AuthController@login');
     Route::post('user/add', 'UserController@store');
+    Route::get('users', 'UserController@index');
+    Route::get('user/{id}', 'UserController@show');
 
 });
 

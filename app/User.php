@@ -5,8 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-
-
 class User extends Authenticatable
 {
     use Notifiable;
@@ -17,25 +15,29 @@ class User extends Authenticatable
      * @var array
      */
 
+    public function setPasswordAttribute($value){
+        return $this->attributes['password'] = bcrypt($value);
+    }
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'role', 'username', 'password','email',
     ];
 
-
     public function student(){
-        return $this->hasOne('App/Student');
+        return $this->hasOne('App\Student');
     }
 
     public function studyprogram(){
-        return $this->hasOne('App/StudyProgram');
+        return $this->hasOne('App\StudyProgram');
     }
 
-    public function teacher(){
-        return $this->hasOne('App/Teacher');
+    public function teacher()
+    {
+        return $this->hasOne('App\Teacher');
     }
 
     public function grade(){
-        return $this->hasOne('App/Grade');
+        return $this->hasOne('App\Grade');
     }
 
     /**

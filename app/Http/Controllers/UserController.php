@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User as User;
+use App\Teacher as Teacher;
+// use App\Student as Student;
 
 class UserController extends Controller
 {
@@ -14,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,8 +37,36 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $store = User::insert($request->all());
-        return response()->json($store, 200);
+        if ($request->role == 0) {
+
+            $user = User::create($request->all());
+
+        } elseif($request->role == 1) {
+
+            $userid = User::create($request->all())->id;
+            $userfind = User::find($userid);
+            $teacher = New Teacher($request->only([
+                'phone',
+                'gender',
+                'avatar',
+                'user_id' => $userid,
+            ]));
+
+            $insert = $userfind->teacher()->save($teacher);
+
+        } else {
+
+            $userid = User::create($request->all())->id;
+            $userfind = User::find($userid);
+            $teacher = New Teacher($request->only([
+                'phone',
+                'gender',
+                'avatar',
+                'user_id' => $userid,
+            ]));
+
+        }
+        return response()->json($teacher, 200);
     }
 
     /**
@@ -48,6 +78,10 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $user = User::findOrFail($id);
+
+        return response()->json($user, 200);
+
     }
 
     /**

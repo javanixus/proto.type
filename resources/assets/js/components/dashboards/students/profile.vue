@@ -10,8 +10,18 @@
               </div>
           </div>
           <div class="profileSidebar__content">
-              <p>My projects:</p>
-              <div class="profileSidebarContent__core">
+              <p class="profileSidebarContent__title">My projects:</p>
+              <div v-if="isHasProjects" class="profileSidebarContent__core--alter">
+                <div class="projectSidebar--item">
+                  <h4>Project A</h4>
+                  <p>5 peoples on project</p>
+                </div>
+                <div class="projectSidebar--item">
+                  <h4>Project B</h4>
+                  <p>3 peoples on project</p>
+                </div>
+              </div>
+              <div v-else class="profileSidebarContent__core">
                 <img src="/images/nocard.svg" alt="">
                 <p>You dont have any project.</p>
               </div>
@@ -44,7 +54,7 @@
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferencePhone">Phone</label>
-                            <input type="text" v-model="phonebind" maxlength="12" id="preferencePhone" v-on:keypress="isNumber(event)" placeholder="08562719206">
+                            <input type="text" v-model="phonebind" maxlength="12" id="preferencePhone" v-on:keypress="isNumber(event)" placeholder="Fill your phone number here">
                           </fieldset>
                           <div class="preference__submit">
                               <button class="btn btn--primary">Save changes</button>
@@ -75,6 +85,7 @@
 <script>
 export default {
   data: () => ({
+    isHasProjects: false,
     namebind: 'Fahmi irsyad k',
     quotebind: 'JVNX Co-founder & Front End Dev',
     emailbind: 'fahmiirsyad11@icloud.com',

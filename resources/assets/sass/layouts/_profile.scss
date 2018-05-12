@@ -11,7 +11,7 @@
     @extend .paddingTop-s;
     display: block;
     text-align: center;
-    height: 250px;
+    height: 230px;
     .profileSidebarHeader__title {
         text-align: center;
         @extend .marginTop-s;
@@ -39,6 +39,10 @@
     }
 }.profileSidebar__content {
     padding: 10px;
+    .profileSidebarContent__title {
+        color: $grey;
+        @extend .paddingBottom-s;
+    }
     p {
         color: $grey;
     }
@@ -96,11 +100,35 @@ p.emailtitle {
         font-size: 14px;
     }
 }.profileSidebarContent__core {
-    @extend .paddingTop-xl;
     text-align: center;
     img {
         margin-left: -30px;
         @extend .marginBottom-s;
         width: 120px;
+    }
+}.profileSidebarContent__core--alter {
+    @extend .profileSidebarContent__core;
+    text-align: left!important;
+    overflow-y: auto;
+    max-height: 200px;
+}.projectSidebar--item {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: $grey-alter;
+    @extend .borderRadius-s;
+    @extend .marginTop-xs;
+    @extend .marginRight-xs;
+    @extend .easeinoutanimate;
+    &:hover {
+        @extend .easeinoutanimate;
+        box-shadow: 1px 9px 18px 1px rgba(60,60,60,.05)!important;
+    }
+    h4 {
+        font-weight: 400;
+        color: $black-young;
+        @extend .marginBottom-xxs;
+    }
+    p {
+        font-size: 12px;
     }
 }

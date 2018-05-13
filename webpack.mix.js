@@ -4,7 +4,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 mix.webpackConfig({
   output: {
     publicPath: '/',
-    chunkFilename: 'js/[name].[chunkhash].js',
+    chunkFilename: 'js/[name].js',
 },
   plugins: [
     new ImageminPlugin({

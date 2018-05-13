@@ -275,6 +275,7 @@ ul.navigationWrap-items li a {
         @extend .paddingBottom-s;
     }
     h3 {
+        color: $blue-darken;
         @extend .marginBottom-xxs;
     }
     p {
@@ -283,6 +284,24 @@ ul.navigationWrap-items li a {
     }
     button {
         font-size: 14px;
+    }
+}
+.nothingShow {
+    @extend .team--empty;
+    @extend .universe;
+    display: block!important;
+    img {
+        width: 300px;
+        padding-top: 20vh;
+        @extend .paddingBottom-s;
+    }
+    h3 {
+        color: $blue-darken;
+        @extend .marginBottom-xxs;
+    }
+    p {
+        color: $grey;
+        @extend .marginBottom-s;
     }
 }
 

@@ -1,11 +1,11 @@
 <template>
   <div id="project">
-      <div class="project__content">
+      <div class="project__content" v-if="hasProject">
         <div class="projectCore">
           <div v-if="hasProject" class="projectContentTitle">
             <label for="projectItems">5 project showed</label>
           </div>
-          <div id="projectItems" v-if="hasProject" class="marginTop-s">
+          <div id="projectItems" class="marginTop-s">
             <!-- item list -->
             <div class="projectItems__item">
               <div class="project__item__header" style="background-image: url(/images/wallpaper.jpg);"></div>
@@ -72,11 +72,13 @@
               </div>
             </div>
           </div>
-          <div v-else>
-            <div class="nothingShow">
-              <span>Nothing to show</span>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div v-else>
+        <div class="nothingShow">
+            <img src="/images/folder.png" alt="">
+            <h3>Look like you dont have any project</h3>
+            <p>Your cloud storage is haunted by ghosts.</p>
         </div>
       </div>
   </div>
@@ -85,7 +87,7 @@
 export default {
   data: () => ({
     hover: false,
-    hasProject: true
+    hasProject: false
   })
 }
 </script>

@@ -1,0 +1,17 @@
+#board {
+    width: 100%;
+    #boardApp {
+        padding: 10px;
+    }
+}
+.navbar--extend {
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+}
+
+ul.navigationWrap-items--extended {
+    line-height: 44px;
+    @extend .navigationWrap-items;
+    li a {
+        font-size: 12px!important;
+    }
+}

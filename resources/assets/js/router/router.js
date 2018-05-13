@@ -16,8 +16,11 @@ const StudentDashTeam = () => import('./../components/dashboards/students/team')
 const Loading = () => import('./../components/loading');
 const GetWelcome = () => import('./../components/auth/students/getstarted/welcome');
 const StudentDashProfile = () => import('./../components/dashboards/students/profile');
+const StudentBoard = () => import('./../components/dashboards/students/board/board');
 const StudentBoardOverview = () => import('./../components/dashboards/students/board/overview');
 const StudentBoardStorage = () => import('./../components/dashboards/students/board/storage');
+const StudentBoardTask = () => import('./../components/dashboards/students/board/task');
+const StudentBoardTeam = () => import('./../components/dashboards/students/board/team');
 const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting');
 
 export default new Router({
@@ -67,18 +70,33 @@ export default new Router({
             },
             {
                 path: 'b/jvnx',
-                component: StudentBoardOverview,
-                name: 'studentboardoverview',
-            },
-            {
-                path: 'b/jvnx/storage',
-                component: StudentBoardStorage,
-                name: 'studentboardstorage'
-            },
-            {
-                path: 'b/jvnx/setting',
-                component: StudentBoardSetting,
-                name: 'studentboardsetting'
+                component: StudentBoard,
+                children: [
+                    {
+                        path: '',
+                        component: StudentBoardOverview,
+                        name: 'studentboard'
+                    },
+                    {
+                        path: 'storage',
+                        component: StudentBoardStorage,
+                        name: 'studentboardstorage'
+                    },
+                    {
+                        path: 'task',
+                        component: StudentBoardTask,
+                        name: 'studentboardtask'
+                    },
+                    {
+                        path: 'team',
+                        component: StudentBoardTeam,
+                        name: 'studentboardteam'
+                    },
+                    {
+                        path: 'setting',
+                        component: StudentBoardSetting,
+                        name: 'studentboardsetting'
+                    }]
             }]
         },
         {

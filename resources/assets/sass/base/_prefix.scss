@@ -6,6 +6,13 @@
     display: flex;
     justify-content: center;
 }
+
+.bg {
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 // end of instant prefix //
 
 //border-radius Scheme //

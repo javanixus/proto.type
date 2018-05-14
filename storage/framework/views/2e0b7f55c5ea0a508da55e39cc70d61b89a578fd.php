@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
         <title>Proto.type</title>
-
         <!-- Fonts -->
         <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet" type="text/css">
+        <link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" crossorigin>
         <!-- Styles -->
     </head>
     <body>
@@ -19,6 +19,6 @@
                'csrfToken' => csrf_token(),
                     ]); ?>
           </script>
-        <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/app.js')); ?>" async></script>
     </body>
 </html>

@@ -1,4 +1,24 @@
 {
+    "name": "Prototype",
+    "short_name": "Prototype",
+    "start_url": ".",
+    "background_color": "#fff",
+    "description": "Our website is currently undergoing scheduled maintenance.",
+    "display": "standalone",
     "/js/app.js": "/js/app.js",
+    "theme_color": "#3367D6",
+    "orientation": "landscape",
+    "icons": [
+        {
+          "src": "/images/icon.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "/images/icon.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ],
     "/css/app.css": "/css/app.css"
 }

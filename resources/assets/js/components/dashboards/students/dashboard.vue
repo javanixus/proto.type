@@ -4,9 +4,9 @@
 </div>
   <div v-else id="dashstudent">
       <div class="dashstudent__content">
-        <div class="notif notif--primary">
+        <!-- <div class="notif notif--primary">
             <p>Thanks you for using prototype 🎉 , here some <a href="javascript:void(0)">reward</a> for you 🙌.</p>
-        </div>
+        </div> -->
         <!-- <div class="notif notif--danger">
             <p>🚨 whoops! we tracked a mysterious person 🕵‍, go check it now ! 🚨 </p>
         </div> -->

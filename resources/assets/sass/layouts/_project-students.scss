@@ -1,9 +1,15 @@
 #board {
     flex-grow: 1;
     background: $bg;
+    overflow-y: auto;
+}
+#boardApp {
+    padding-top: 47px;
 }
 .navbar--extend {
     box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
 }
 
 ul.navigationWrap-items--extended {
@@ -18,7 +24,6 @@ ul.navigationWrap-items--extended {
 .overview__header {
     padding-left: 50px;
     flex-grow: 1;
-    // background-color: $pink;
     @extend .gradientBlue;
     @extend .bg;
     align-items: center;
@@ -32,8 +37,33 @@ ul.navigationWrap-items--extended {
             font-weight: 400;
             line-height: 2em;
         }
+        img {
+            width: 12px;
+            opacity: 0.8;
+            margin-left: 3px;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
         p {
             font-weight: lighter;
+            font-size: 12px;
         }
     }
+}.overview__content {
+    flex-grow: 1;
+    display: flex;
+    padding: 20px 50px;
+    justify-content: space-between;
+}.overviewContent__core {
+}.overview__progress {
+    width: 50vw;
+    height: 100px;
+    background: $blue;
+}
+.overviewSidebar__team {
+    width: 200px;
+    height: 500px;
+    background: $red;
 }

@@ -243,7 +243,6 @@ ul.navigationWrap-items li a {
 .nothingShow {
     @extend .flexCenter;
     align-items: center;
-    height: 60vh;
     span {
         font-weight: 500;
         color: $grey;

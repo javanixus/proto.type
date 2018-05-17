@@ -120,7 +120,14 @@ typings/
 !.vscode/extensions.json
 .history
 
-
-# End of https://www.gitignore.io/api/node,macos,laravel,visualstudiocode
+# public genoc
 public/js/
 public/*.js
+public/images/
+public/images/*.png
+public/images/*.jpg
+public/images/*.svg
+public/css/*.css
+
+# End of https://www.gitignore.io/api/node,macos,laravel,visualstudiocode
+

@@ -15,8 +15,18 @@ $green-darken: #21a76d;
 $green-young: #25E788;
 $purple: #CE4CC9;
 $purple-young: #FD53BF;
-$whiteblue: #F7F9FA;
+$bg: #F5F5F5;
+$pink: #FD53BF;
 
 .textBlack {
     color: $black;
+}
+
+// background gradient 
+.gradientBlue {
+    background-color: #49b3f9;
+    background-image: linear-gradient(to left, #3bd4e6,#49b3f9);
+}.gradientGreen {
+    background-color: #55d5db;
+    background-image: linear-gradient(to left, #21e1a4,#55d5db);
 }

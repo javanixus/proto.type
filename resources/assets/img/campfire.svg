@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="36px" height="48px" viewBox="0 0 36 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Path</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="4,3,5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3,37 C-1.17885374,27.8587575 0,22 14,7 C23.3333333,-3 25.3333333,-1.33333333 20,12 C17.7753538,18.8307373 17.1323352,22.7966166 18.0709441,23.8976378 C18.9557968,24.9356011 20.4271173,27.5437296 23,26 C27.6506815,23.2095911 24.09185,17.609528 25,15 C26.0445746,11.9984622 28.3253408,15.3253408 31,18 C37,27.3333333 36.6666667,35.3333333 30,42 C20,52 7.17885374,46.1412425 3,37 Z" id="Path" stroke="#434445" fill="#FD8A3E"></path>
-    </g>
-</svg>
+<svg height="48" viewBox="0 0 36 48" width="36" xmlns="http://www.w3.org/2000/svg"><path d="m3 37c-4.17885374-9.1412425-3-15 11-30 9.3333333-10 11.3333333-8.33333333 6 5-2.2246462 6.8307373-2.8676648 10.7966166-1.9290559 11.8976378.8848527 1.0379633 2.3561732 3.6460918 4.9290559 2.1023622 4.6506815-2.7904089 1.09185-8.390472 2-11 1.0445746-3.0015378 3.3253408.3253408 6 3 6 9.3333333 5.6666667 17.3333333-1 24-10 10-22.82114626 4.1412425-27-5z" style="stroke:#434445;fill:#fd8a3e;fill-rule:evenodd;stroke-dasharray:4 3 5;stroke-linecap:round;stroke-linejoin:round"/></svg>

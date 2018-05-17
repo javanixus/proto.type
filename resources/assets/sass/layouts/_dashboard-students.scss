@@ -124,8 +124,7 @@ ul.navigationWrap-items li a {
     .popupContent__images__dp {
         position: absolute;
         top: 0;
-        display: flex;
-        justify-content: center;
+        @extend .flexCenter;
         align-items: center;
         width: inherit;
         height: 200px;
@@ -190,10 +189,7 @@ ul.navigationWrap-items li a {
     @extend .paddingAppear-n;
 }.project__item__header {
     @extend .overflow-disable;
-    background-origin: border-box;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @extend .bg;
     width: 300px;
     height: 150px;
 }.project__item__core__title {
@@ -247,7 +243,6 @@ ul.navigationWrap-items li a {
 .nothingShow {
     @extend .flexCenter;
     align-items: center;
-    height: 60vh;
     span {
         font-weight: 500;
         color: $grey;
@@ -275,6 +270,7 @@ ul.navigationWrap-items li a {
         @extend .paddingBottom-s;
     }
     h3 {
+        color: $blue-darken;
         @extend .marginBottom-xxs;
     }
     p {
@@ -283,6 +279,24 @@ ul.navigationWrap-items li a {
     }
     button {
         font-size: 14px;
+    }
+}
+.nothingShow {
+    @extend .team--empty;
+    @extend .universe;
+    display: block!important;
+    img {
+        width: 300px;
+        padding-top: 20vh;
+        @extend .paddingBottom-s;
+    }
+    h3 {
+        color: $blue-darken;
+        @extend .marginBottom-xxs;
+    }
+    p {
+        color: $grey;
+        @extend .marginBottom-s;
     }
 }
 

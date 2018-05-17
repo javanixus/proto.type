@@ -1,9 +1,12 @@
 <template>
-  <div id="dashstudent">
+<div v-if="loading">
+    loading...
+</div>
+  <div v-else id="dashstudent">
       <div class="dashstudent__content">
-        <div class="notif notif--primary">
+        <!-- <div class="notif notif--primary">
             <p>Thanks you for using prototype 🎉 , here some <a href="javascript:void(0)">reward</a> for you 🙌.</p>
-        </div>
+        </div> -->
         <!-- <div class="notif notif--danger">
             <p>🚨 whoops! we tracked a mysterious person 🕵‍, go check it now ! 🚨 </p>
         </div> -->
@@ -49,7 +52,7 @@
         </div>
         <div id="appContent">
             <router-view></router-view>
-            <new-popup></new-popup>
+            <!-- <new-popup></new-popup> -->
             <create-project-popup></create-project-popup>
             <menu-profile-popup></menu-profile-popup>
         </div>
@@ -57,18 +60,23 @@
   </div>
 </template>
 <script>
-import newPopup from './../students/popup/new';
+// import newPopup from './../students/popup/new';
 import createProjectPopup from './../students/popup/createproject';
 import menuProfilePopup from './../students/popup/menuprofile';
 
 export default {
+    data: {
+        loading: true
+    },
     components: {
-        'new-popup' : newPopup,
+        // 'new-popup' : newPopup,
         'create-project-popup': createProjectPopup,
         'menu-profile-popup': menuProfilePopup
     },
-    mounted() {
-        this.$modal.show('new');
+    created(){
+        setTimeout(() => {
+            this.loading = false;
+        },1000);
     },
     methods: {
         createproject(){

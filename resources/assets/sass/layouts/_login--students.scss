@@ -19,12 +19,11 @@
 .formContent {
     -webkit-box-flex: 1;
     flex-grow: 1;
-    display: flex;
+    @extend .flexCenter;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
     -webkit-box-pack: center;
-    justify-content: center;
     overflow: hidden;
     position: relative;
     .formContent__inner {
@@ -68,8 +67,7 @@
         position: relative;
         z-index: 2;
         .coverContent__inner_core {
-            display: flex;
-            justify-content: center;
+            @extend .flexCenter;
             span {
                 text-align: center;
                 max-width: 500px;

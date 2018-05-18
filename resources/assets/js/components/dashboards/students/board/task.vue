@@ -11,7 +11,7 @@
                 </div>
                 <div class="task-listCore__content">
                   <!-- task-list -->
-                  <draggable v-model="el.task" :options="{group:'.fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" :move="onMove" @start="isDragging=true" @end="isDragging=false">
+                  <draggable style="min-height: 30px;" v-model="el.task" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" :move="onMove" @start="isDragging=true" @end="isDragging=false">
                     <div v-for="task in el.task" :key="task.id" class="task-card">
                       <div class="task-card__desc">
                         <span class="task-card__desc-title">{{task.name}}</span>

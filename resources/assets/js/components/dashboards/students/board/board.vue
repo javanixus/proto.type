@@ -8,10 +8,10 @@
                             <router-link :to="{name: 'studentboard'}" active-class="nav-active" exact>Overview</router-link>
                         </li>
                         <li>
-                            <router-link :to="{name: 'studentboardstorage'}" active-class="nav-active">Storage</router-link>
+                            <router-link :to="{name: 'studentboardstorage'}" active-class="nav-active">Files</router-link>
                         </li>
                         <li>
-                            <router-link :to="{name: 'studentboardtask'}" active-class="nav-active">My tasks</router-link>
+                            <router-link :to="{name: 'studentboardtask'}" active-class="nav-active">Tasks</router-link>
                         </li>
                         <li>
                             <router-link :to="{name: 'studentboardteam'}" active-class="nav-active">My team</router-link>

@@ -11,13 +11,13 @@
                 </div>
                 <div class="task-listCore__content">
                   <!-- task-list -->
-                  <div v-for="task in el.task" :key="task.id" class="task-card">
-                    <div class="task-card__desc">
-                      <span class="task-card__desc-title">
-                        {{task.name}}
-                      </span>
+                  <draggable v-model="el.task" :options="{group:'.fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" :move="onMove" @start="isDragging=true" @end="isDragging=false">
+                    <div v-for="task in el.task" :key="task.id" class="task-card">
+                      <div class="task-card__desc">
+                        <span class="task-card__desc-title">{{task.name}}</span>
+                      </div>
                     </div>
-                  </div>
+                  </draggable>
                   <!-- task-list -->
                 </div> 
               </div>
@@ -30,9 +30,12 @@
 </template>
 <script>
 import axios from 'axios';
+import draggable from 'vuedraggable';
+
 export default {
   data(){
     return {
+      isDragging: false,
       board: [
           {
             idcard: 1,
@@ -68,6 +71,34 @@ export default {
         this.board[0].task = Response.data
         console.log(this.board);
       })
+  },
+  components:{
+    draggable,
+  },
+  computed: {
+    dragOptions () {
+      return  {
+        ghostClass: 'ghost'
+      };
+    },
+  },
+  methods: {
+    onMove ({relatedContext, draggedContext}) {
+      const relatedElement = relatedContext.element;
+      const draggedElement = draggedContext.element;
+      return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+    }
+  },
+  watch: {
+    isDragging (newValue) {
+      if (newValue){
+        this.delayedDragging= true
+        return
+      }
+      this.$nextTick( () =>{
+           this.delayedDragging =false
+      })
+    }
   }
 }
 </script>

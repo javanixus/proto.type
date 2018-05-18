@@ -1,5 +1,5 @@
 <template>
-    <modal name="menu-profile" class="overflow-disable" :pivotX="0.971" :pivotY="0.24" transtition="nice-modal-fade" :min-width="270" :min-height="200" :adaptive="true" :reset="true" width="200px" height="auto" :clickToClose="true">
+    <modal name="menu-profile" class="overflow-disable" :pivotX="0.971" :pivotY="0.14" transtition="nice-modal-fade" :min-width="270" :min-height="200" :adaptive="true" :reset="true" width="200px" height="auto" :clickToClose="true">
         <div class="menuProfile">
             <div class="menuProfile__header">
                 <h5>Fahmi irsyad k</h5>

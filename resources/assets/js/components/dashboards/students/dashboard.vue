@@ -65,9 +65,9 @@ import createProjectPopup from './../students/popup/createproject';
 import menuProfilePopup from './../students/popup/menuprofile';
 
 export default {
-    data: {
+    data: () => ({
         loading: true
-    },
+    }),
     components: {
         // 'new-popup' : newPopup,
         'create-project-popup': createProjectPopup,

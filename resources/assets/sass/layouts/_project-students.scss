@@ -1,5 +1,6 @@
 #board {
     flex-grow: 1;
+    // background: #FAFBFF;
     background: $bg;
     overflow-y: auto;
 }
@@ -110,8 +111,7 @@ ul.navigationWrap-items--extended {
     min-height: 0;
 }.task-card {
     background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    border-radius: 3px;
+    @extend .borderRadius-s;
     cursor: pointer;
     display: block;
     margin-bottom: 6px;
@@ -134,10 +134,27 @@ ul.navigationWrap-items--extended {
     word-wrap: break-word;
     color: #4d4d4d;
 }.ghost {
-    opacity: .5;
-    background: #C8EBFB;
+    opacity: .7;
+    background: $blue;
 }.fix {
     position: fixed!important;
 }.drag {
     transform: scale(1.5);
+}.taskNavbar {
+    width: 100%;
+    padding: 20px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}.taskNavbar--center {
+    margin-left: -130px;
+    button {
+        font-size: 13px;
+    }
+}.taskNavbar--left h3{
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

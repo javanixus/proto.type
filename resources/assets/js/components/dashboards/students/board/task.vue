@@ -1,6 +1,17 @@
 <template>
   <div id="boardTask">
       <div class="boardTask-main">
+        <div class="taskNavbar">
+          <div class="taskNavbar--left">
+            <h3>
+              Board JVNX
+            </h3>
+          </div>
+          <div class="taskNavbar--center">
+            <button class="btn btn--primary btn--done">+ Add new task</button>
+          </div>
+          <div class="taskNavbar--right">r</div>
+        </div>
         <div class="task-canvas">
           <div class="task-canvas__core">
             <!-- list item -->
@@ -11,7 +22,7 @@
                 </div>
                 <div class="task-listCore__content">
                   <!-- task-list -->
-                  <draggable style="min-height: 30px;" v-model="el.task" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" :move="onMove" @start="isDragging=true" @end="isDragging=false">
+                  <draggable style="min-height: 30px;" v-model="el.task" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" @start="isDragging=true" @end="isDragging=false">
                     <div v-for="task in el.task" :key="task.id" class="task-card">
                       <div class="task-card__desc">
                         <span class="task-card__desc-title">{{task.name}}</span>
@@ -49,7 +60,7 @@ export default {
               {
                 id: 1,
                 from: 2,
-                name: "Leanne Graham",
+                name: "kanban test",
               },
               {
                 id: 2,
@@ -62,7 +73,34 @@ export default {
                 name: "Choco",
               },
             ]
-      }]
+          },
+          {
+            idcard: 3,
+            title: 'IN PROGRESS',
+            task: []
+          },
+          {
+            idcard: 4,
+            title: 'NEED REVIEW',
+            task: []
+          },
+          {
+            idcard: 5,
+            title: 'DONE',
+            task: []
+          },
+          {
+            idcard: 6,
+            title: 'DOCS',
+            task: [
+              {
+                id: 34,
+                from: 6,
+                name: "PROTOTYPE DOCS",
+              },
+            ]
+          }
+      ]
     }
   },
   created(){
@@ -83,11 +121,7 @@ export default {
     },
   },
   methods: {
-    onMove ({relatedContext, draggedContext}) {
-      const relatedElement = relatedContext.element;
-      const draggedElement = draggedContext.element;
-      return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
-    }
+
   },
   watch: {
     isDragging (newValue) {

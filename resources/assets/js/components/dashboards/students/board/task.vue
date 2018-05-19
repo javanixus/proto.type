@@ -1,5 +1,6 @@
 <template>
   <div id="boardTask">
+      <task-sidebar></task-sidebar>
       <div class="boardTask-main">
         <div class="taskNavbar">
           <div class="taskNavbar--left">
@@ -10,7 +11,9 @@
           <div class="taskNavbar--center">
             <button class="btn btn--primary btn--done">+ Add new task</button>
           </div>
-          <div class="taskNavbar--right">r</div>
+          <div class="taskNavbar--right">
+            <div class="sidebar-small" @click="sidebarOpen"></div>
+          </div>
         </div>
         <div class="task-canvas">
           <div class="task-canvas__core">
@@ -42,6 +45,7 @@
 <script>
 import axios from 'axios';
 import draggable from 'vuedraggable';
+import taskSidebar from './../popup/sidebar';
 
 export default {
   data(){
@@ -112,6 +116,7 @@ export default {
   },
   components:{
     draggable,
+    'task-sidebar': taskSidebar
   },
   computed: {
     dragOptions () {
@@ -121,7 +126,9 @@ export default {
     },
   },
   methods: {
-
+    sidebarOpen(){
+      this.$modal.show('task-sidebar');
+    }
   },
   watch: {
     isDragging (newValue) {

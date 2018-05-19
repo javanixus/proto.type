@@ -51,6 +51,7 @@ ul.navigationWrap-items--extended {
 .boardTask-main {
     height: 100%;
     display: flex;
+    @extend .bg;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -64,8 +65,8 @@ ul.navigationWrap-items--extended {
 }.task-canvas__core {
     user-select: none;
     white-space: nowrap;
-    margin-bottom: 10px;
     overflow-x: auto;
+    margin-bottom: 10px;
     overflow-y: hidden;
     padding: 30px;
     @extend .universe;
@@ -79,7 +80,8 @@ ul.navigationWrap-items--extended {
     vertical-align: top;
     white-space: nowrap;
 }.task-list__core {
-    background: #e2e4e6;
+    background: rgba(226, 228, 230, 0.8);
+    backdrop-filter: blur(10px);
     @extend .borderRadius-s;
     box-sizing: border-box;
     display: -webkit-box;
@@ -157,4 +159,27 @@ ul.navigationWrap-items--extended {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: $black;
+}.sidebar-small {
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    border-radius: 4px;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('/images/sidebar.svg');
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+    }
+}.v--modal-overlay {
+    background: rgba(0, 0, 0, 0.1);
+}.nice-modal {
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.05), 0 2px 12px 0 rgba(0,0,0,0.02)!important;
+    background: white;
+    @extend .borderRadius-s;
+    padding: 8px;
+}.v--modal-overlay[data-modal="task-sidebar"] {
+    background: transparent;
 }

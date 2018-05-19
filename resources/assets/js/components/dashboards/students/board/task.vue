@@ -18,6 +18,17 @@
                       </div>
                     </div>
                   </draggable>
+                  <template>
+                    <draggable style="min-height: 30px;" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}">
+                      <div v-for="(todo, index) in todos" :key="index" class="task-card">
+                        <div class="task-card__desc">
+                          <span class="task-card__desc-title">{{todo.body}}</span>
+                        </div>
+                      </div>
+                    </draggable>
+                    <input type="text" :value="newTodo" @change="getTodo">
+                    <button @click="addTodo">Add task</button>
+                  </template>
                   <!-- task-list -->
                 </div> 
               </div>
@@ -81,12 +92,24 @@ export default {
         ghostClass: 'ghost'
       };
     },
+    newTodo(){
+      return this.$store.getters.newTodo
+    },
+    todos(){
+      return this.$store.state.todos
+    }
   },
   methods: {
     onMove ({relatedContext, draggedContext}) {
       const relatedElement = relatedContext.element;
       const draggedElement = draggedContext.element;
       return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+    },
+    getTodo(e){
+      this.$store.dispatch('getTodo', e.target.value)
+    },
+    addTodo(){
+      this.$store.dispatch('addTodo')
     }
   },
   watch: {

@@ -1,7 +1,7 @@
 #board {
     flex-grow: 1;
     // background: #FAFBFF;
-    background: $bg;
+    background: #F7F9FC;
     overflow-y: auto;
 }
 #boardApp {
@@ -80,7 +80,7 @@ ul.navigationWrap-items--extended {
     vertical-align: top;
     white-space: nowrap;
 }.task-list__core {
-    background: rgba(226, 228, 230, 0.8);
+    background: rgb(226, 228, 230);
     backdrop-filter: blur(10px);
     @extend .borderRadius-s;
     box-sizing: border-box;
@@ -182,4 +182,18 @@ ul.navigationWrap-items--extended {
     padding: 8px;
 }.v--modal-overlay[data-modal="task-sidebar"] {
     background: transparent;
+}.task-sidebar__content {
+    ul li {
+        padding: 5px 10px;
+        &:hover {
+            background: #f0f0f0;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 400;
+            &:hover {
+                color: #2e2f30;
+            }
+        }
+    }
 }

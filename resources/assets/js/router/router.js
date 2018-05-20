@@ -22,6 +22,7 @@ const StudentBoardStorage = () => import('./../components/dashboards/students/bo
 const StudentBoardTask = () => import('./../components/dashboards/students/board/task');
 const StudentBoardTeam = () => import('./../components/dashboards/students/board/team');
 const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting');
+const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity');
 
 export default new Router({
     routes: [
@@ -96,7 +97,13 @@ export default new Router({
                         path: 'setting',
                         component: StudentBoardSetting,
                         name: 'studentboardsetting'
-                    }]
+                    },
+                    {
+                        path: 'activity',
+                        component: StudentBoardActivity,
+                        name: 'studentboardactivity'
+                    }
+                ]
             }]
         },
         {

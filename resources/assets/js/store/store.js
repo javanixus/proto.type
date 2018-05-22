@@ -1,17 +1,29 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import actions from './actions';
-import getters from './getters';
-import mutations from './mutations';
-
 Vue.use(Vuex);
 
-export default store = new Vuex.Store({
-    state: {
-        value: 0
+/* eslint-disable no-param-reassign */
+export default new Vuex.Store({
+  state: {
+    items: {
+      todo: [],
+      inProgress: [],
+      needReview:[],
+      done: [],
+      docs:[],
+      issue:[],
+      misc:[]
     },
-    getters,
-    mutations,
-    actions,
+    nextId: 1
+  },
+  mutations: {
+    addItem(state, item) {
+      state.items.todo.push(Object.assign(item, { id: state.nextId }));
+      state.nextId += 1;
+    },
+    updateItems(state, { items, id }) {
+      state.items[id] = items;
+    }
+  }
 });

@@ -1,6 +1,6 @@
 <template>
   <div>
-              <div class="notif notif--danger">
+  <div class="notif notif--danger">
             <p>whoops ! we tracked a mysterious person, go check it now !</p>
         </div>
         <div class="notif notif--warning">
@@ -16,58 +16,33 @@
             <p>welcome back my owner 🙇‍ . our app is getting optimized.</p>
         </div>
   </div>
+</template>
+<template>
               <!-- list item -->
-            <div class="task-list">
+            <div v-for="el in board" :key="el.idcard" class="task-list">
               <div class="task-list__core">
                 <div class="task-listCore__header">
-                  <h5>TO DO</h5>
+                  <h5>{{el.title}}</h5>
                 </div>
                 <div class="task-listCore__content">
                   <!-- task-list -->
-                  <div class="task-card">
-                    <div class="task-card__desc">
-                      <span class="task-card__desc-title">
-                        Proto.type Repository
-                      </span>
+                  <draggable style="min-height: 30px;" v-model="el.task" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" @start="isDragging=true" @end="isDragging=false">
+                    <div v-for="task in el.task" :key="task.id" class="task-card">
+                      <div class="task-card__desc">
+                        <span class="task-card__desc-title">{{task.name}}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="task-card">
-                    <div class="task-card__desc">
-                      <span class="task-card__desc-title">
-                        Proto.type Docs
-                      </span>
-                    </div>
-                  </div>
+                  </draggable>
                   <!-- task-list -->
                 </div> 
               </div>
             </div>
             <!-- list item -->
-            <!-- list item -->
-            <div class="task-list">
-              <div class="task-list__core">
-                <div class="task-listCore__header">
-                  <h5>IN PROGRESS</h5>
-                </div>
-                <div class="task-listCore__content">
-                  <!-- task-list -->
-                  <div class="task-card">
-                    <div class="task-card__desc">
-                      <span class="task-card__desc-title">
-                        Splitting JS bundles with chunksname caches
-                      </span>
+</template>
+<template>
+                      <div v-for="task in el.task" :key="task.id" class="task-card">
+                      <div class="task-card__desc">
+                        <span class="task-card__desc-title">{{task.name}}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="task-card">
-                    <div class="task-card__desc">
-                      <span class="task-card__desc-title">
-                        Task Page
-                      </span>
-                    </div>
-                  </div>
-                  <!-- task-list -->
-                </div> 
-              </div>
-            </div>
-            <!-- list item -->
 </template>

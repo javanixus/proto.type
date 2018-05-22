@@ -4,12 +4,6 @@
 </div>
   <div v-else id="dashstudent">
       <div class="dashstudent__content">
-        <!-- <div class="notif notif--primary">
-            <p>Thanks you for using prototype 🎉 , here some <a href="javascript:void(0)">reward</a> for you 🙌.</p>
-        </div> -->
-        <!-- <div class="notif notif--danger">
-            <p>🚨 whoops! we tracked a mysterious person 🕵‍, go check it now ! 🚨 </p>
-        </div> -->
         <div id="appHeader" class="nav navbar--primary">
             <div class="appHeader__content">
                 <div class="appHeader__content__navigation">
@@ -76,7 +70,7 @@ export default {
     created(){
         setTimeout(() => {
             this.loading = false;
-        },1000);
+        },100);
     },
     methods: {
         createproject(){

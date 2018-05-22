@@ -34,7 +34,7 @@
 import axios from 'axios';
 import { mapState } from 'vuex'
 import taskSidebar from './../popup/sidebar';
-import taskCard from './TaskCard';
+import taskCard from './taskCard';
 
 export default {
   data(){

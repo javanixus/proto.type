@@ -1,6 +1,6 @@
 #board {
     flex-grow: 1;
-    background: $bg;
+    background: #F7F9FC;
     overflow-y: auto;
 }
 #boardApp {
@@ -50,6 +50,7 @@ ul.navigationWrap-items--extended {
 .boardTask-main {
     height: 100%;
     display: flex;
+    @extend .bg;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -63,8 +64,8 @@ ul.navigationWrap-items--extended {
 }.task-canvas__core {
     user-select: none;
     white-space: nowrap;
-    margin-bottom: 10px;
     overflow-x: auto;
+    margin-bottom: 10px;
     overflow-y: hidden;
     padding: 30px;
     @extend .universe;
@@ -78,7 +79,8 @@ ul.navigationWrap-items--extended {
     vertical-align: top;
     white-space: nowrap;
 }.task-list__core {
-    background: #e2e4e6;
+    background: rgb(226, 228, 230);
+    backdrop-filter: blur(10px);
     @extend .borderRadius-s;
     box-sizing: border-box;
     display: -webkit-box;
@@ -110,8 +112,7 @@ ul.navigationWrap-items--extended {
     min-height: 0;
 }.task-card {
     background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    border-radius: 3px;
+    @extend .borderRadius-s;
     cursor: pointer;
     display: block;
     margin-bottom: 6px;
@@ -134,10 +135,64 @@ ul.navigationWrap-items--extended {
     word-wrap: break-word;
     color: #4d4d4d;
 }.ghost {
-    opacity: .5;
-    background: #C8EBFB;
+    opacity: .7;
+    background: $blue;
 }.fix {
     position: fixed!important;
 }.drag {
     transform: scale(1.5);
+}.taskNavbar {
+    width: 100%;
+    padding: 20px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}.taskNavbar--center {
+    margin-left: -130px;
+    button {
+        font-size: 13px;
+    }
+}.taskNavbar--left h3{
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $black;
+}.sidebar-small {
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    border-radius: 4px;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('/images/sidebar.svg');
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+    }
+}.v--modal-overlay {
+    background: rgba(0, 0, 0, 0.1);
+}.nice-modal {
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.05), 0 2px 12px 0 rgba(0,0,0,0.02)!important;
+    background: white;
+    @extend .borderRadius-s;
+    padding: 8px;
+}.v--modal-overlay[data-modal="task-sidebar"] {
+    background: transparent;
+}.task-sidebar__content {
+    ul li {
+        padding: 5px 10px;
+        &:hover {
+            background: #f0f0f0;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 400;
+            &:hover {
+                color: #2e2f30;
+            }
+        }
+    }
 }

@@ -1,39 +1,30 @@
 <template>
   <div id="boardTask">
+      <task-sidebar></task-sidebar>
       <div class="boardTask-main">
+        <div class="taskNavbar">
+          <div class="taskNavbar--left">
+            <h3>
+              Board JVNX
+            </h3>
+          </div>
+          <div class="taskNavbar--center">
+            <input type="text" v-model="itemText" placeholder="Add something to the backlog">
+            <button class="btn btn--primary btn--done" @click="submitTask">+ Add new task</button>
+          </div>
+          <div class="taskNavbar--right">
+            <div class="sidebar-small" @click="sidebarOpen"></div>
+          </div>
+        </div>
         <div class="task-canvas">
           <div class="task-canvas__core">
-            <!-- list item -->
-            <div v-for="el in board" :key="el.idcard" class="task-list">
-              <div class="task-list__core">
-                <div class="task-listCore__header">
-                  <h5>{{el.title}}</h5>
-                </div>
-                <div class="task-listCore__content">
-                  <!-- task-list -->
-                  <draggable style="min-height: 30px;" v-model="el.task" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}" :move="onMove" @start="isDragging=true" @end="isDragging=false">
-                    <div v-for="task in el.task" :key="task.id" class="task-card">
-                      <div class="task-card__desc">
-                        <span class="task-card__desc-title">{{task.name}}</span>
-                      </div>
-                    </div>
-                  </draggable>
-                  <template>
-                    <draggable style="min-height: 30px;" :options="{group:'fix', dragOptions, animation:200,ghostClass: 'ghost',dragClass:'drag'}">
-                      <div v-for="(todo, index) in todos" :key="index" class="task-card">
-                        <div class="task-card__desc">
-                          <span class="task-card__desc-title">{{todo.body}}</span>
-                        </div>
-                      </div>
-                    </draggable>
-                    <input type="text" :value="newTodo" @change="getTodo">
-                    <button @click="addTodo">Add task</button>
-                  </template>
-                  <!-- task-list -->
-                </div> 
-              </div>
-            </div>
-            <!-- list item -->
+            <task-card id="todo" title="TO DO" :items="todoItems"></task-card>
+            <task-card id="inProgress" title="In progress" :items="inProgressItems"></task-card>
+            <task-card id="needReview" title="In review" :items="needReviewItems"></task-card>
+            <task-card id="done" title="Done" :items="doneItems"></task-card>
+            <task-card id="docs" title="DOCS" :items="docsItems"></task-card>
+            <task-card id="issue" title="Issues" :items="issueItems"></task-card>
+            <task-card id="misc" title="MISC" :items="miscItems"></task-card>
           </div>
         </div>
       </div>
@@ -41,75 +32,41 @@
 </template>
 <script>
 import axios from 'axios';
-import draggable from 'vuedraggable';
+import { mapState } from 'vuex'
+import taskSidebar from './../popup/sidebar';
+import taskCard from './TaskCard';
 
 export default {
   data(){
     return {
       isDragging: false,
-      board: [
-          {
-            idcard: 1,
-            title: 'Team member',
-            task: []
-          },
-          {
-            idcard: 2,
-            title: 'TO DO',
-            task: [
-              {
-                id: 1,
-                from: 2,
-                name: "Leanne Graham",
-              },
-              {
-                id: 2,
-                from: 2,
-                name: "Fahmi irsad k",
-              },
-              {
-                id: 3,
-                from: 2,
-                name: "Choco",
-              },
-            ]
-      }]
+      itemText: ''
     }
-  },
-  created(){
-    axios.get('https://jsonplaceholder.typicode.com/users')
-      .then((Response) =>{
-        this.board[0].task = Response.data
-        console.log(this.board);
-      })
   },
   components:{
-    draggable,
+    'task-sidebar': taskSidebar,
+    'task-card': taskCard
   },
-  computed: {
-    dragOptions () {
-      return  {
-        ghostClass: 'ghost'
-      };
-    },
-    newTodo(){
-      return this.$store.getters.newTodo
-    },
-    todos(){
-      return this.$store.state.todos
-    }
-  },
+  computed: mapState({
+    todoItems: s => s.items.todo,
+    inProgressItems: s => s.items.inProgress,
+    needReviewItems: s => s.items.needReview,
+    doneItems: s => s.items.done,
+    docsItems: s => s.items.docs,
+    issueItems: s => s.items.issue,
+    miscItems: s => s.items.misc
+  }),
   methods: {
-    onMove ({relatedContext, draggedContext}) {
-      const relatedElement = relatedContext.element;
-      const draggedElement = draggedContext.element;
-      return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+    sidebarOpen(){
+      this.$modal.show('task-sidebar');
     },
-    getTodo(e){
-      this.$store.dispatch('getTodo', e.target.value)
-    },
-    addTodo(){
-      this.$store.dispatch('addTodo')
+    submitTask(){
+      if (this.itemText) {
+        this.$store.commit('addItem', {
+          text: this.itemText
+        });
+        this.itemText = '';
+      }
     }
   },
   watch: {

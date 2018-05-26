@@ -19,9 +19,6 @@
                         <li>
                             <router-link :to="{name: 'studentteam'}" active-class="nav-active">Team</router-link>
                         </li>
-                        <li>
-                            <span>Tasks</span>
-                        </li>
                     </ul>
                 </div>
                 <div class="appHeader__content__project">

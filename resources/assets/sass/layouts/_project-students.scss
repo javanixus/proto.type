@@ -37,11 +37,27 @@ ul.navigationWrap-items--extended {
 .overviewContent__sidebar {
     width: 320px;
     border-right: 1px solid #eee;
-    padding: 20px 10px;
+    padding: 20px 30px;
     @extend .universe;
     background: #fff;
+    span {
+        font-size: 12px;
+        color: $grey;
+    }
 }
-
+.overviewSidebar-desc {
+    @extend .marginTop-xs;
+    span {
+        font-size: 14px;
+        color: $grey;
+    }
+}
+.overviewSidebar-title {
+    @extend .marginTop-xs;;
+}
+.sidebarTeam {
+    @extend .paddingTop-xs;
+}
 // task
 #boardTask {
     width: 100%;

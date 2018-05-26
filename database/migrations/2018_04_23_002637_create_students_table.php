@@ -16,15 +16,17 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('nis');
+            $table->string('nis')->nullable();
             $table->string('avatar')->nullable();
+            $table->string('quotes')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->string('bio')->nullable();
+            $table->string('grade');
+            $table->integer('program_id')->unsigned()->nullable();
             $table->enum('gender',['male', 'female']);
 
-
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
 
         Schema::table('students', function (Blueprint $table) {

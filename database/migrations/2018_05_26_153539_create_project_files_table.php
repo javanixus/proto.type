@@ -16,9 +16,14 @@ class CreateProjectFilesTable extends Migration
         Schema::create('project_files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('project_id')->unsigned();
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+        });
+
+        Schema::table('project_files', function(Blueprint $table){
+            $table->unsignedInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
         });
     }
 

@@ -17,10 +17,12 @@ class CreateTeachersTable extends Migration
             $table->increments('id');
 
             $table->string('avatar')->nullable();
+            $table->string('quotes')->nullable();
             $table->integer('phone')->nullable();
             $table->enum('gender',['male', 'female']);
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();;
         });
 
         Schema::table('teachers', function (Blueprint $table){

@@ -19,8 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 191)->unique();
             $table->string('email', 50)->unique();
             $table->string('password');
-            $table->rememberToken();
-
+            // $table->rememberToken();
             $table->integer('role'); // 3 macam : 0 = admin, 1 = guru dan 2 = siswa.
 
             $table->timestamp('created_at')->useCurrent();

@@ -19,9 +19,14 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->date('deadline');
-            $table->integer('team_id');
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+        });
+
+        Schema::table('projects', function (Blueprint $table){
+            $table->unsignedInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
         });
     }
 

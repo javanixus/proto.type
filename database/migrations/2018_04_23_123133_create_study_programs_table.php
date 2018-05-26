@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,10 +15,10 @@ class CreateStudyProgramsTable extends Migration
     {
         Schema::create('study_programs', function (Blueprint $table) {
             $table->increments('id');
-
             $table->string('program');
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
 
         Schema::table('students', function (Blueprint $table){

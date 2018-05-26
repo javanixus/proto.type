@@ -17,8 +17,14 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->date('deadline');
-            $table->integer('team_id')->unsigned();
-            $table->timestamps();
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+        });
+
+        Schema::table('tasks' ,function(Blueprint $table){
+            $table->unsignedInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
         });
     }
 

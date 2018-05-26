@@ -23,6 +23,10 @@ class User extends Authenticatable
         'name', 'role', 'username', 'password','email',
     ];
 
+    protected $guarded = [
+        ''
+    ];
+
     public function student(){
         return $this->hasOne('App\Student');
     }

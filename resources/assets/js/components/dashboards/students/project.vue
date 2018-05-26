@@ -87,7 +87,7 @@
 export default {
   data: () => ({
     hover: false,
-    hasProject: false
+    hasProject: true
   })
 }
 </script>

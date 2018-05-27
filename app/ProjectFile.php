@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectFile extends Model
 {
     //
+
+    public function Project(){
+        return $this->belongstTo('App\Project');
+    }
 }

@@ -21,8 +21,7 @@ class CreateTeachersTable extends Migration
             $table->integer('phone')->nullable();
             $table->enum('gender',['male', 'female']);
 
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();;
+            $table->timestamps();
         });
 
         Schema::table('teachers', function (Blueprint $table){

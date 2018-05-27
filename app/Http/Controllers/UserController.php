@@ -16,8 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
-        return response()->json($data, 200);
+
     }
 
     /**
@@ -38,41 +37,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->role == 0) {
+        $user = User::create($request->all());
 
-            $user = User::create($request->all());
-
-        } elseif($request->role == 1) {
-
-            $userid = User::create($request->all())->id;
-            $userfind = User::find($userid);
-            $teacher = New Teacher($request->only([
-                'phone',
-                'gender',
-                'avatar',
-                'user_id' => $userid,
-            ]));
-
-            $insert = $userfind->teacher()->save($teacher);
-
-        } else {
-
-            $userid = User::create($request->all())->id;
-            $userfind = User::find($userid);
-            $teacher = New Student($request->only([
-                'nis',
-                'phone',
-                'address',
-                'bio',
-                'study_program_id',
-                'grade_id',
-                'gender',
-                'avatar',
-                'user_id' => $userid,
-            ]));
-
+        if ($request->role == 1) {
+            $user->teacher()->create($request->all());
+        } elseif ($request->role == 2) {
+            $user->student()->create($request->all());
         }
-        return response()->json($teacher, 200);
+
+        return response()->json($user, 200);
     }
 
     /**

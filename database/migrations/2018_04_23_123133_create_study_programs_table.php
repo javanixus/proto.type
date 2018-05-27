@@ -17,12 +17,11 @@ class CreateStudyProgramsTable extends Migration
             $table->increments('id');
             $table->string('program');
 
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamps();
         });
 
         Schema::table('students', function (Blueprint $table){
-            $table->unsignedInteger('study_program_id');
+            $table->unsignedInteger('study_program_id')->nullable();
             $table->foreign('study_program_id')->references('id')->on('study_programs');
         });
     }

@@ -22,11 +22,9 @@ class CreateStudentsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('grade');
-            $table->integer('program_id')->unsigned()->nullable();
             $table->enum('gender',['male', 'female']);
 
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamps();
         });
 
         Schema::table('students', function (Blueprint $table) {

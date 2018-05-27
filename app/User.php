@@ -15,33 +15,33 @@ class User extends Authenticatable
      * @var array
      */
 
-    public function setPasswordAttribute($value){
+    public function setPasswordAttribute($value)
+    {
         return $this->attributes['password'] = bcrypt($value);
     }
 
     protected $fillable = [
-        'name', 'role', 'username', 'password','email',
+        'name', 'role', 'username', 'password','email'
     ];
 
-    protected $guarded = [
-        ''
-    ];
-
-    public function student(){
-        return $this->hasOne('App\Student');
+    public function student()
+    {
+        return $this->hasOne(Student::class);
     }
 
-    public function studyprogram(){
-        return $this->hasOne('App\StudyProgram');
+    public function studyprogram()
+    {
+        return $this->hasOne(StudyProgram::class);
     }
 
     public function teacher()
     {
-        return $this->hasOne('App\Teacher');
+        return $this->hasOne(Teacher::class);
     }
 
-    public function grade(){
-        return $this->hasOne('App\Grade');
+    public function team()
+    {
+        return $this->belongsToMany(Team::class);
     }
 
     /**
@@ -50,6 +50,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token','user_id',
+        'password', 'user_id'
     ];
 }

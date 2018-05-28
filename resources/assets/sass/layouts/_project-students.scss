@@ -20,7 +20,6 @@ ul.navigationWrap-items--extended {
         font-size: 12px!important;
     }
 }
-
 // overview 
 #boardOverview {
     display: flex;
@@ -57,6 +56,58 @@ ul.navigationWrap-items--extended {
 }
 .sidebarTeam {
     @extend .paddingTop-xs;
+}
+.overviewContent__core {
+    left: 320px!important;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @extend .paddingTop-xl;
+    @extend .paddingBottom-s;
+}
+.overviewCore-wrap {
+    @extend .marginMagic;
+    width: 900px;
+}
+.overviewCore-summary {
+    label {
+        color: $grey;
+    }
+    #overviewSummary {
+        @extend .marginTop-s;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        border: 1px solid #eee;
+    }
+}
+.overviewSummary--item {
+    display: inline-flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    margin: 0px auto;
+    .overviewSummaryItem__count {
+        color: $grey;
+        @extend .marginBottom-s;
+    }
+    .overviewSummaryItem__title{
+        color: $black-young!important;
+    }
+    &:nth-child(5){
+        border-right: 0!important;
+    }
+    &:nth-child(n+1){
+        border-right: 1px solid rgb(234, 234, 234);
+    }
 }
 // task
 #boardTask {

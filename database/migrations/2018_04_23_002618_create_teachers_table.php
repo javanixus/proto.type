@@ -16,17 +16,15 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->string('avatar')->nullable();
             $table->string('quotes')->nullable();
             $table->integer('phone')->nullable();
             $table->enum('gender',['male', 'female']);
 
             $table->timestamps();
-        });
-
-        Schema::table('teachers', function (Blueprint $table){
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
     }

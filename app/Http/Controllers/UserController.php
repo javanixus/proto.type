@@ -56,7 +56,6 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
         $user = User::findOrFail($id);
             if ($user->role == 1) {
                 $user = $user->join('teachers','users.id', '=', 'teachers.user_id')->first();

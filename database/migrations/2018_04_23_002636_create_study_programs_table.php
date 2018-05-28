@@ -20,10 +20,6 @@ class CreateStudyProgramsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('students', function (Blueprint $table){
-            $table->unsignedInteger('study_program_id')->nullable();
-            $table->foreign('study_program_id')->references('id')->on('study_programs');
-        });
     }
 
     /**

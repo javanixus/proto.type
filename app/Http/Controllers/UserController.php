@@ -16,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all();
 
+        return response()->json($users, 201);
     }
 
     /**
@@ -58,13 +60,12 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
             if ($user->role == 1) {
-                $user = $user->join('teachers','users.id', '=', 'teachers.user_id')->first();
+                $user->teacher;
             } elseif ($user->role == 2) {
-                $user = $user->join('students', 'users.id', '=', 'students.user_id')->first();
+                $user->student;
             }
 
         return response()->json($user, 200);
-
     }
 
     /**
@@ -87,7 +88,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->update($request->all());
+
+        return response()->json($user, 200);
     }
 
     /**
@@ -99,7 +104,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         $delete = User::findOrFail($id)->delete();
-
-        return response()->json($delete, 200);
+            return response()->json($delete, 200);
     }
 }

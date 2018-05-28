@@ -11,6 +11,10 @@ class Student extends Model
         'address', 'grade', 'program_id', 'nis'
     ];
 
+    protected $hidden = [
+        'user_id',
+    ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }

@@ -24,6 +24,7 @@ Route::group(['prefix'=>'v1'], function(){
     Route::post('user/add', 'UserController@store');
     Route::get('users', 'UserController@index');
     Route::get('user/{id}', 'UserController@show');
+    Route::patch('user/{id}', 'UserController@update');
     Route::delete('user/{id}', 'UserController@destroy');
 
 });

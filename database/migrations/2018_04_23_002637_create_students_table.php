@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->string('nis')->nullable();
             $table->string('avatar')->nullable();
@@ -26,7 +26,7 @@ class CreateStudentsTable extends Migration
             $table->string('address')->nullable();
             $table->string('grade');
 
-            $table->unsignedInteger('study_program_id');
+            $table->unsignedInteger('study_program_id')->nullable();
             $table->foreign('study_program_id')->references('id')->on('study_programs');
 
             $table->enum('gender',['male', 'female']);

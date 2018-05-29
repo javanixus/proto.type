@@ -37,7 +37,7 @@
                 <div class="overviewSummaryItem__title">Status</div>
               </div>
               <div class="overviewSummary--item">
-                <div class="overviewSummaryItem__count">28 Days</div>
+                <div class="overviewSummaryItem__count">28 Days left</div>
                 <div class="overviewSummaryItem__title">Deadline</div>
               </div>
               <div class="overviewSummary--item">

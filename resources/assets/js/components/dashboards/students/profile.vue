@@ -38,7 +38,17 @@
                       <section class="preference__content">
                           <fieldset class="preference__form">
                             <label for="preferencePhot">Photo</label>
-                            <div id="preferencePhoto"></div>
+                            <div id="preferencePhoto">
+                              <file-pond
+                                name="test"
+                                ref="pond"
+                                label-idle="Drop files here..."
+                                allow-multiple="true"
+                                accepted-file-types="image/jpeg, image/png"
+                                server="/api"
+                                v-bind:files="myFiles"
+                                v-on:init="handleFilePondInit"/>
+                            </div>
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceName">Name</label>
@@ -83,6 +93,19 @@
   </div>
 </template>
 <script>
+import vueFilePond from 'vue-filepond';
+
+// Import FilePond styles
+import 'filepond/dist/filepond.min.css';
+
+// Import image preview plugin styles
+import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
+
+// Import image preview and file type validation plugins
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview);
+
 export default {
   data: () => ({
     isHasProjects: false,
@@ -92,6 +115,7 @@ export default {
     oldpassbind: '',
     newpassbind: '',
     phonebind: '',
+    myFiles: []
   }),
   methods: {
     isNumber: function(evt) {
@@ -103,6 +127,9 @@ export default {
         return true;
       }
     }
+  },
+  components:{
+    FilePond
   }
 }
 </script>

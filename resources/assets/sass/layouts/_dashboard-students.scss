@@ -156,13 +156,12 @@ ul.navigationWrap-items li a {
     height: 100vh;
     min-width: 750px;
 }
-// project item list 
 #projectItems {
     display: inline-flex;
     flex-wrap: wrap;
 }
 .appHeader__content__project {
-    margin-left: -3%;
+    // margin-left: -3%;
 }
 .projectItems__item {
     @extend .borderRadius-s;

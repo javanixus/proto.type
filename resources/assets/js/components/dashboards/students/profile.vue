@@ -42,12 +42,13 @@
                               <file-pond
                                 name="test"
                                 ref="pond"
-                                label-idle="Drop files here..."
-                                allow-multiple="true"
+                                instantUpload= "false"
+                                class="filepond"
+                                label-idle="Drop files here or click"
+                                label-file-waiting-for-size="calculate size"
                                 accepted-file-types="image/jpeg, image/png"
-                                server="/api"
-                                v-bind:files="myFiles"
-                                v-on:init="handleFilePondInit"/>
+                                server="https://httpbin.org/post"
+                                v-bind:files="myFiles"/>
                             </div>
                           </fieldset>
                           <fieldset class="preference__form">
@@ -102,9 +103,14 @@ import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
 
 // Import image preview and file type validation plugins
-import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
-const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview);
+import  FilePondPluginFileEncode from 'filepond-plugin-file-encode'
+import  FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
+import  FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
+import  FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+import  FilePondPluginImageCrop from 'filepond-plugin-image-crop'
+import  FilePondPluginImageResize from 'filepond-plugin-image-resize'
+import  FilePondPluginImageTransform from 'filepond-plugin-image-transform'
+const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview, FilePondPluginFileEncode, FilePondPluginImageExifOrientation, FilePondPluginImageCrop, FilePondPluginImageResize, FilePondPluginImageTransform);
 
 export default {
   data: () => ({

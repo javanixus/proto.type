@@ -54,3 +54,25 @@
         background: $green-darken!important;
     }
 }
+
+.btn--close {
+    font-size: 1em;
+    width: 1.625em;
+    height: 1.625em;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    outline: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.5);
+    will-change: transform,opacity;
+    box-shadow: 0 0 0 0 hsla(0,0%,100%,0);
+    transition: box-shadow .25s ease-in;
+    &:hover {
+        box-shadow : 0 0 0 .2em hsla(0,0%,100%,.9);
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}

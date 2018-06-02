@@ -6,7 +6,10 @@
     display: flex;
     justify-content: center;
 }
-
+.updown {
+    top: 0;
+    bottom:0;
+}
 .bg {
     background-origin: border-box;
     background-position: center;
@@ -25,7 +28,7 @@
 // prefix layouting //
 .overflow-disable { overflow: hidden; }
 .clearfix {clear:both;}
-.universe { left: 0;position: absolute;right: 0;top: 0; bottom: 0;}
+.universe { left: 0;position: absolute;right: 0; @extend .updown;}
 .marginMagic { margin: 0 auto; }
 .margin-xxs { margin: 5px; }
 .margin-xs { margin: 10px; }

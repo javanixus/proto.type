@@ -52,7 +52,7 @@ ul.navigationWrap-items--extended {
     }
 }
 .overviewSidebar-title {
-    @extend .marginTop-xs;;
+    @extend .marginTop-xs;
 }
 .sidebarTeam {
     @extend .paddingTop-xs;
@@ -62,8 +62,7 @@ ul.navigationWrap-items--extended {
     overflow-y: auto;
     position: absolute;
     right: 0;
-    top: 0;
-    bottom: 0;
+    @extend .updown;
     @extend .paddingTop-xl;
     @extend .paddingBottom-s;
 }
@@ -94,7 +93,7 @@ ul.navigationWrap-items--extended {
     align-items: center;
     align-content: center;
     height: 100%;
-    margin: 0px auto;
+    @extend .marginMagic;
     .overviewSummaryItem__count {
         color: $grey;
         @extend .marginBottom-s;
@@ -107,6 +106,50 @@ ul.navigationWrap-items--extended {
     }
     &:nth-child(n+1){
         border-right: 1px solid rgb(234, 234, 234);
+    }
+}
+// files 
+
+.boardStorage {
+    @extend #boardOverview;
+}.boardStorage__sidebar {
+    @extend .overviewContent__sidebar;
+    width: 270px;
+}.boardStorage__content {
+    @extend .overviewContent__core;
+    left: 270px!important;
+    padding-left: 30px;
+    padding-right: 45px;
+}.boardStorage__content--notif {
+    @extend .paddingAppear-n;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    font-size: 14px;
+    @extend .borderRadius-s;
+    background: $blue;
+}.projectUpload{
+    padding: 10px;
+    @extend .marginTop-s;
+    @extend .marginBottom-s;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
+    @extend .borderRadius-s;
+    border: 1px solid #eee;
+    background: white;
+    label.project-upload--label{
+        @extend .marginLeft-xs;
+        color: $grey;
+    }
+    .projectUploadWrap {
+        display: flex;
+    }
+    .projectUpload__core , .projectUpload__misc{
+        width: 50%;
+    }
+    .projectUpload__core {
+        border-right: 1px solid #eee;
     }
 }
 // task
@@ -261,5 +304,21 @@ ul.navigationWrap-items--extended {
                 color: #2e2f30;
             }
         }
+    }
+}
+
+// custom upload 
+.storageFile {
+    cursor: pointer;
+    .filepond--root{
+        cursor: pointer;
+    }
+    .filepond--panel-root {
+        cursor: pointer;
+        background: white;
+    }
+    .filepond--drop-label label {
+        cursor: pointer;
+        font-weight: bolder;
     }
 }

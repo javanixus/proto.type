@@ -155,6 +155,75 @@ ul.navigationWrap-items--extended {
         border-right: 1px solid #ddd;
     }
 }
+
+.storageExtend {
+    @extend .marginTop-xs;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+    .storageExtend__item{
+        width: 32%;
+        @extend .paddingAppear-n;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        background: white;
+    }
+}
+.lastUpdate {
+    span {
+        font-size: 12px;
+        color: $grey;
+    }
+    .lastUpdate__content{
+        width: inherit;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
+        @extend .borderRadius-s;
+        @extend .marginTop-xs;
+        p {
+            font-weight: bolder;
+        }
+    }
+    .lastUpdate__footer {
+        @extend .paddingTop-xxs;
+        @extend .marginTop-xs;
+        text-align: right;
+        border-top: 1px solid #ddd;
+    }
+}
+
+.lastIssue {
+    @extend .lastUpdate;
+    .lastIssue__content{
+        @extend .lastUpdate__content;
+        border: none;
+        box-shadow: none;
+    }
+    .lastIssue__footer{
+        @extend .lastUpdate__footer;
+    }
+}
+.projectProgress {
+    span {
+        font-size: 12px;
+        color: $grey;
+    }
+    .projectProgress__card {
+        width: 200px;
+        text-align: center;
+        margin-top: 20px;
+        @extend .marginMagic;
+        @extend .paddingAppear-n;
+        @extend .borderRadius-s;
+        h2 {
+            color: white;
+            font-weight: 400;
+        }
+    }
+}
 // task
 #boardTask {
     width: 100%;

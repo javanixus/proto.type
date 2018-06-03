@@ -17,12 +17,6 @@
                 <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path d="M11.586 13l-2.293 2.293a1 1 0 0 0 1.414 1.414L13 14.414l2.293 2.293a1 1 0 0 0 1.414-1.414L14.414 13l2.293-2.293a1 1 0 0 0-1.414-1.414L13 11.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L11.586 13z" fill="currentColor" fill-rule="nonzero"></path></svg>
               </button>
       </div>
-      <!-- <div class="boardStorage__content--topbar">
-              <ul>
-                <li>flowchart template</li>
-                <li>proposal template</li>
-              </ul>
-            </div> -->
       <div class="boardStorage__content--core">
         <div id="project-upload" class="projectUpload">
           <label for="project-upload" class="project-upload--label">Project data drops :</label>
@@ -34,6 +28,40 @@
             <div class="projectUpload__misc">
               <file-pond name="miscUpload" ref="pond" allow-multiple="true" instantUpload="false" class="storageFile" label-idle="Drop or click to upload files here" label-file-waiting-for-size="calculate size" server="https://httpbin.org/post"
                 v-bind:files="myFiles" />
+            </div>
+          </div>
+        </div>
+        <div class="storageExtend">
+          <div class="storageExtend__item">
+            <div class="lastUpdate">
+              <span>Last update: </span>
+              <div class="lastUpdate__content">
+                <p>project-jvnx.zip</p>
+                <span>at 3 june 2018</span>
+              </div>
+              <div class="lastUpdate__footer">
+                <button class="btn btn--primary">See all</button>
+              </div>
+            </div>
+          </div>
+          <div class="storageExtend__item">
+            <div class="lastIssue">
+              <span>Lastest issue: </span>
+              <div class="lastIssue__content">
+                <p><b>#13l2 - </b>Can't deliver extend data</p>
+                <span>Opened by Pampam</span>
+              </div>
+              <div class="lastIssue__footer">
+                <button class="btn btn--primary">See all</button>
+              </div>
+            </div>
+          </div>
+          <div class="storageExtend__item">
+            <div class="projectProgress">
+              <span>Project status:</span>
+              <div class="projectProgress__card green">
+                <h2>Passed</h2>
+              </div>
             </div>
           </div>
         </div>

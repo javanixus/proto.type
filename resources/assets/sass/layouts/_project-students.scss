@@ -81,7 +81,8 @@ ul.navigationWrap-items--extended {
         width: 100%;
         height: 100px;
         background: #fff;
-        border: 1px solid #eee;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
     }
 }
 .overviewSummary--item {
@@ -122,21 +123,23 @@ ul.navigationWrap-items--extended {
     padding-right: 45px;
 }.boardStorage__content--notif {
     @extend .paddingAppear-n;
+    @extend .flexCenter;
     color: white;
-    display: flex;
     justify-content: space-between;
-    align-content: center;
     align-items: center;
     font-size: 14px;
     @extend .borderRadius-s;
     background: $blue;
+    span {
+        @extend .flexCenter;
+    }
 }.projectUpload{
     padding: 10px;
     @extend .marginTop-s;
     @extend .marginBottom-s;
     box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
     @extend .borderRadius-s;
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
     background: white;
     label.project-upload--label{
         @extend .marginLeft-xs;
@@ -149,7 +152,7 @@ ul.navigationWrap-items--extended {
         width: 50%;
     }
     .projectUpload__core {
-        border-right: 1px solid #eee;
+        border-right: 1px solid #ddd;
     }
 }
 // task
@@ -320,5 +323,27 @@ ul.navigationWrap-items--extended {
     .filepond--drop-label label {
         cursor: pointer;
         font-weight: bolder;
+    }
+}
+
+// custom highlight
+.circle--heart {
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    border-radius: 50%;
+    @extend .marginRight-xs;
+    overflow: hidden;
+    &::after{
+        background-color: rgba(255, 255, 255, 0.274);
+        height: 38px;
+        width: 38px;
+        display: block;
+        content: "";
+        position: absolute;
+        transform-origin: center center 0px;
+        border-radius: 50%;
+        animation: pulse 2s ease-out infinite;
     }
 }

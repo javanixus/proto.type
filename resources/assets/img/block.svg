@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="211px" height="138px" viewBox="0 0 211 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(0.000000, -1.000000)">
+            <rect id="Rectangle" fill="#25C782" transform="translate(140.000000, 68.500000) rotate(45.000000) translate(-140.000000, -68.500000) " x="114" y="-2" width="52" height="141" rx="3"></rect>
+            <path d="M47.7157108,46.7856448 L89.6623321,136.150186 C90.1316715,137.150083 89.7015696,138.341134 88.7016725,138.810474 C88.4357569,138.935291 88.1456107,139 87.8518582,139 L2.14814181,139 C1.04357231,139 0.148141813,138.104569 0.148141813,137 C0.148141813,136.706248 0.2128504,136.416101 0.337667925,136.150186 L42.2842892,46.7856448 C42.9882984,45.2857991 44.7748757,44.6406462 46.2747214,45.3446554 C46.908476,45.642132 47.4182342,46.1518903 47.7157108,46.7856448 Z" id="Triangle" fill="#5D91FF"></path>
+            <circle id="Oval" fill="#FB5C5E" cx="181" cy="107" r="30"></circle>
+            <rect id="Rectangle-2" fill="#FF8B11" transform="translate(77.068973, 63.068973) rotate(-18.000000) translate(-77.068973, -63.068973) " x="59.0689735" y="45.0689735" width="36" height="36" rx="3"></rect>
+        </g>
+    </g>
+</svg>

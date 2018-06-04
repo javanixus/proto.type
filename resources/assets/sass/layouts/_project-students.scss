@@ -116,6 +116,14 @@ ul.navigationWrap-items--extended {
 }.boardStorage__sidebar {
     @extend .overviewContent__sidebar;
     width: 270px;
+    ul {
+        padding-top: 20px;
+        li {
+        font-size: 14px;
+        color: $grey;
+        margin-bottom: 5px;
+        }
+    }
 }.boardStorage__content {
     @extend .overviewContent__core;
     left: 270px!important;

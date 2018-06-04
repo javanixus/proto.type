@@ -240,9 +240,23 @@ ul.navigationWrap-items li a {
 }.createProjectPopup__content__title input {
 
 }.createProjectPopup__content__desc textarea {
-
+    width: 100%;
+    height: 100px;
+    @extend .borderRadius-s;
+    resize: none;
+    @extend .marginTop-xs;
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.15);
+    &:focus {
+        border-color: $blue;
+    }
 }.createProjectPopup__footer {
     @extend .paddingAppear-n;
+    text-align: right;
+    button {
+        font-size: 14px;
+    }
 }div.createProjectPopup__footer > button:nth-child(1) { margin-bottom: 10px;}
 .nothingShow {
     @extend .flexCenter;

@@ -74,3 +74,22 @@
 .avatar--border-white--3 { border: 3px solid white;}
 .avatar--border-white--4 { border: 4px solid white;}
 .avatar--border-white--5 { border: 5px solid white;}
+.avatar--heartbeat{
+    @extend .avatar--l;
+    overflow: visible;
+    position: relative;
+    &::before{
+        background-color: rgba(37, 199, 129, 0.53);
+        border: 1px solid $green-young;
+        top: 15px;
+        left: 15px;
+        height: 38px;
+        width: 38px;
+        display: block;
+        content: "";
+        position: absolute;
+        transform-origin: center center 0px;
+        border-radius: 50%;
+        animation: pulse 2s ease-out infinite;
+    }
+}

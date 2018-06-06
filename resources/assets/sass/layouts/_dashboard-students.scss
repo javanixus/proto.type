@@ -147,6 +147,10 @@ ul.navigationWrap-items li a {
 .container {
     // background: #F0F0F0;
     min-height: 100vh;
+    overflow-y: hidden;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 .dashstudent__content {
     display: flex;
@@ -246,9 +250,11 @@ ul.navigationWrap-items li a {
     resize: none;
     @extend .marginTop-xs;
     padding: 5px;
+    color: $grey;
     outline: none;
     border: 1px solid rgba(0,0,0,.15);
     &:focus {
+        color: $black;
         border-color: $blue;
     }
 }.createProjectPopup__footer {
@@ -258,12 +264,40 @@ ul.navigationWrap-items li a {
         font-size: 14px;
     }
 }div.createProjectPopup__footer > button:nth-child(1) { margin-bottom: 10px;}
+.select-details{
+    font-size: 12px;
+    color: $grey;
+    margin-left: 25px;
+    &:nth-child(n+1){
+        @extend .marginBottom-s;
+    }
+}
+.connectBadge{
+    display: inline-flex;
+    @extend .marginBottom-s;
+}
+.select--item {
+    @extend .marginBottom-xs;
+    p {
+        @extend .marginBottom-xxs;
+        color: $grey;
+    }
+}
 .nothingShow {
     @extend .flexCenter;
     align-items: center;
     span {
         font-weight: 500;
         color: $grey;
+    }
+}
+
+.createProjectPopup__content__select {
+    @extend .paddingTop-s;
+    border-top: 1px solid #eee;
+    label {
+        display: inline-flex;
+        align-items: center;
     }
 }
 

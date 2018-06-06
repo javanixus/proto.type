@@ -22,6 +22,10 @@
     }
 }
 
+.btn--grey {
+    background: $grey!important;
+}
+
 .btn--big {
     @extend .paddingAppear-n;
     width: 100%;

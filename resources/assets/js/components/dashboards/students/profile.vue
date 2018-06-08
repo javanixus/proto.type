@@ -4,9 +4,9 @@
           <div class="profileSidebar__header">
               <div class="avatar avatar--xl marginMagic" style="background-image: url(/images/sample.jpg);"></div>
               <div class="profileSidebarHeader__title">
-                  <h3>{{namebind}}</h3>
-                  <p>{{quotebind}}</p>
-                  <p class="emailtitle">{{emailbind}}</p>
+                  <h3>{{profile.namebind}}</h3>
+                  <p>{{profile.quotebind}}</p>
+                  <p class="emailtitle">{{profile.emailbind}}</p>
               </div>
           </div>
           <div class="profileSidebar__content">
@@ -37,35 +37,20 @@
                       <h2>General</h2>
                       <section class="preference__content">
                           <fieldset class="preference__form">
-                            <label for="preferencePhot">Photo</label>
-                            <div id="preferencePhoto">
-                              <file-pond
-                                name="test"
-                                ref="pond"
-                                instantUpload= "false"
-                                class="filepond"
-                                label-idle="Drop files here or click"
-                                label-file-waiting-for-size="calculate size"
-                                accepted-file-types="image/jpeg, image/png"
-                                server="https://httpbin.org/post"
-                                v-bind:files="myFiles"/>
-                            </div>
-                          </fieldset>
-                          <fieldset class="preference__form">
                             <label for="preferenceName">Name</label>
-                            <input type="text" v-model="namebind" maxlength="30" id="preferenceName" placeholder="Fill name">
+                            <input type="text" v-model="profile.namebind" maxlength="30" id="preferenceName" placeholder="Fill name">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceStatus">Quotes</label>
-                            <input type="text" v-model="quotebind" maxlength="50" id="preferenceStatus" placeholder="Ar u seriously dude ? ah nvm">
+                            <input type="text" v-model="profile.quotebind" maxlength="50" id="preferenceStatus" placeholder="Ar u seriously dude ? ah nvm">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferenceEmail">Email address</label>
-                            <input type="text" v-model="emailbind" maxlength="50" id="preferenceEmail" placeholder="Fill email address">
+                            <input type="text" v-model="profile.emailbind" maxlength="50" id="preferenceEmail" placeholder="Fill email address">
                           </fieldset>
                           <fieldset class="preference__form">
                             <label for="preferencePhone">Phone</label>
-                            <input type="text" v-model="phonebind" maxlength="12" id="preferencePhone" v-on:keypress="isNumber(event)" placeholder="Fill your phone number here">
+                            <input type="text" v-model="profile.phonebind" maxlength="12" id="preferencePhone" v-on:keypress="isNumber(event)" placeholder="Fill your phone number here">
                           </fieldset>
                           <div class="preference__submit">
                               <button class="btn btn--primary">Save changes</button>
@@ -77,11 +62,15 @@
                       <section class="preference__content">
                         <fieldset class="preference__form">
                             <label for="preferencePassOld">Old password</label>
-                            <input type="password" v-model="oldpassbind" id="preferencePassOld" placeholder="•••••••••••••••••">
+                            <input type="password" v-model="profile.oldpassbind" id="preferencePassOld" placeholder="•••••••••••••••••">
                         </fieldset>
                         <fieldset class="preference__form">
                             <label for="preferencePassNew">New password</label>
-                            <input type="password" v-model="newpassbind" id="preferencePassNew" placeholder="•••••••••••••••••">
+                            <input type="password" v-model="profile.newpassbind" id="preferencePassNew" placeholder="•••••••••••••••••">
+                        </fieldset>
+                        <fieldset class="preference__form">
+                            <label for="preferencePassNew">Confirm new password</label>
+                            <input type="password" v-model="profile.confirmnewpassbind" id="preferencePassNew" placeholder="•••••••••••••••••">
                         </fieldset>
                       </section>
                     <div class="preference__submit">
@@ -94,34 +83,18 @@
   </div>
 </template>
 <script>
-import vueFilePond from 'vue-filepond';
-
-// Import FilePond styles
-import 'filepond/dist/filepond.min.css';
-
-// Import image preview plugin styles
-import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
-
-// Import image preview and file type validation plugins
-import  FilePondPluginFileEncode from 'filepond-plugin-file-encode'
-import  FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
-import  FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
-import  FilePondPluginImagePreview from 'filepond-plugin-image-preview'
-import  FilePondPluginImageCrop from 'filepond-plugin-image-crop'
-import  FilePondPluginImageResize from 'filepond-plugin-image-resize'
-import  FilePondPluginImageTransform from 'filepond-plugin-image-transform'
-const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview, FilePondPluginFileEncode, FilePondPluginImageExifOrientation, FilePondPluginImageCrop, FilePondPluginImageResize, FilePondPluginImageTransform);
-
 export default {
   data: () => ({
     isHasProjects: false,
-    namebind: 'Fahmi irsyad k',
-    quotebind: 'JVNX Co-founder & Front End Dev',
-    emailbind: 'fahmiirsyad11@icloud.com',
-    oldpassbind: '',
-    newpassbind: '',
-    phonebind: '',
-    myFiles: []
+    profile:{
+      namebind: 'Fahmi irsyad k',
+      quotebind: 'JVNX Co-founder & Front End Dev',
+      emailbind: 'fahmiirsyad11@icloud.com',
+      phonebind: '',
+      oldpassbind: '',
+      newpassbind: '',
+      confirmnewind: '',
+    }
   }),
   methods: {
     isNumber: function(evt) {
@@ -134,8 +107,5 @@ export default {
       }
     }
   },
-  components:{
-    FilePond
-  }
 }
 </script>

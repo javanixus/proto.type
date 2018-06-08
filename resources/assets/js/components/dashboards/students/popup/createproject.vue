@@ -164,7 +164,7 @@ export default {
   data:() =>({
       projectTitle:'Name your new project 😍',
       dataFlow: 1,
-      dataProcess: true,
+      dataProcess: false,
       data: {
           dataLinked: false,
           dataEncrypt: true

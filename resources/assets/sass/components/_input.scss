@@ -75,7 +75,7 @@
     opacity: 0;
     position: absolute;
     top: 4px;
-    transition: all 150ms linear;
+    transition: opacity linear 100ms,transform cubic-bezier(0.4, 0.2, 0.3, 1.35) 250ms;
     border-right: none;
     content: "";
     transform: rotate(-45deg);
@@ -89,7 +89,7 @@
   .checkbox--circle input[type="checkbox"]:checked + label {
     background-color: $green;
     border-color: $green;
-    transition: all 150ms linear;
+    transition: opacity linear 100ms,transform cubic-bezier(0.4, 0.2, 0.3, 1.35) 250ms;
   }
   
   .checkbox--circle input[type="checkbox"]:checked + label:after {

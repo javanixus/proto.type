@@ -121,24 +121,37 @@
         </div>
         <div v-else-if="dataFlow === 4">
             <div class="createProjectPopup__header">
-                <button class="btn--close" @click="close">
+                <button v-if="dataProcess === false" class="btn--close" @click="close">
                     <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path d="M11.586 13l-2.293 2.293a1 1 0 0 0 1.414 1.414L13 14.414l2.293 2.293a1 1 0 0 0 1.414-1.414L14.414 13l2.293-2.293a1 1 0 0 0-1.414-1.414L13 11.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L11.586 13z" fill="currentColor" fill-rule="nonzero"></path></svg>
                 </button>
             </div>
-            <div class="createProjectPopup__content">
-                <div class="createProjectPopup__content__cover">
-                    <p>Almost done Hooray!</p>
-                    <div class="createProjectCover--tips">
-                        <span>For now this setting will be applied permanently. In the future we acctualy make dis customizable / not longer permanently , so be carefull in taking action.</span>
+            <div v-if="dataProcess">
+                <div class="createProjectPopup__content">
+                    <div class="createProjectPopup__content__cover">
+                        <p>Almost done Hooray!</p>
+                        <div class="createProjectCover--tips">
+                            <span>Wait for a seconds , we are encrypting your project.</span>
+                        </div>
+                        <div class="shield-pulse" style="padding-bottom: 100px;">
+                            <div class="shield-pulse--core">
+                                <img src="/images/blackShield.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <form>
-                    <!-- some -->
-                </form>
             </div>
-            <div class="createProjectPopup__footer">
-                <button class="btn btn--primary btn--grey paddingLeft-m paddingRight-m" @click="swapData(2)">Back</button>
-                <button class="btn btn--primary paddingLeft-m paddingRight-m">Next</button>
+            <div v-else>
+                <div class="createProjectPopup__content">
+                    <div class="createProjectPopup__content__cover">
+                        <p>Okay, all done !</p>
+                        <div class="createProjectCover--tips">
+                            <span>Now you can choose close the dialog popup or redirect to the project have you been created.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="createProjectPopup__footer" style="text-align: center!important; margin-top: 30px!important;">
+                    <button class="btn btn--primary paddingLeft-m paddingRight-m">Go to project</button>
+                </div>
             </div>
         </div>
     </modal>
@@ -151,6 +164,7 @@ export default {
   data:() =>({
       projectTitle:'Name your new project 😍',
       dataFlow: 1,
+      dataProcess: true,
       data: {
           dataLinked: false,
           dataEncrypt: true

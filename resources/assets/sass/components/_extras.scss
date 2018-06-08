@@ -93,3 +93,53 @@
         animation: pulse 2s ease-out infinite;
     }
 }
+
+
+// loading 
+.shield-pulse{
+    width: 100%;
+    height: 50px;
+    @extend .marginTop-xl;
+    text-align: center;
+}
+.shield-pulse--core {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    &::before{
+        background-color: rgba(67, 68, 69, 0.51);
+        border: 1px solid $green-young;
+        top: 15px;
+        left: 10px;
+        height: 25px;
+        width: 25px;
+        display: block;
+        content: "";
+        position: absolute;
+        transform-origin: center center 0;
+        border-radius: 50%;
+        animation: pulse .9s ease-out infinite;
+    }
+    &::after{
+        background-color: rgba(67, 68, 69, 0.51);
+        border: 1px solid $green-young;
+        top: 15px;
+        left: 10px;
+        height: 25px;
+        width: 25px;
+        display: block;
+        content: "";
+        position: absolute;
+        transform-origin: center center 0;
+        border-radius: 50%;
+        animation: pulse .9s 1.5s ease-out infinite;
+}
+img {
+    position: absolute;
+    z-index: 1;
+    left: 8px;
+    width: 30px!important;
+    animation: heartbeat .9s ease-out infinite;
+}
+}

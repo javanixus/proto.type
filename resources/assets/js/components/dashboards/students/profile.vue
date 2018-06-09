@@ -70,7 +70,7 @@
                         </fieldset>
                         <fieldset class="preference__form">
                             <label for="preferencePassNew">Confirm new password</label>
-                            <input type="password" v-model="profile.confirmnewpassbind" id="preferencePassNew" placeholder="•••••••••••••••••">
+                            <input type="password" v-model="profile.confirmnewpassbind" id="preferenceConfirmPassNew" placeholder="•••••••••••••••••">
                         </fieldset>
                       </section>
                     <div class="preference__submit">

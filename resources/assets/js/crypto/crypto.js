@@ -4,10 +4,10 @@ import pbkdf2 from 'pbkdf2';
 export default class {
     // membuat base construksi hash encrypt
     constructor (encryptionKey){
-        this.salt = window.Laravel.salt;
+        this.csrfToken = window.Laravel.csrfToken;
         this.encryptionKey = encryptionKey;
         // base hex = 8
-        this.key_256 = pbkdf2.pbkdf2Sync(this.encryptionKey, this.salt, 1, 256/8, 'sha512')
+        this.key_256 = pbkdf2.pbkdf2Sync(this.encryptionKey, this.csrfToken, 1, 256/8, 'sha512')
     }
     // encrypt base call args to encrypt
     encrypt (stringToEncrypt){

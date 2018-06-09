@@ -15,8 +15,9 @@ export default new Vuex.Store({
       issue:[],
       misc:[],
     },
-    isLogged: false,
-    nextId: 1
+    isLogged: true,
+    nextId: 1,
+    encryptedKey: ''
   },
   mutations: {
     addItem(state, item) {

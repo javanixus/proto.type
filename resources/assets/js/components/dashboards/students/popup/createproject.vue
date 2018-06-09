@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="createProjectPopup__footer" style="text-align: center!important; margin-top: 30px!important;">
-                    <button class="btn btn--primary paddingLeft-m paddingRight-m">Go to project</button>
+                    <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="postData">Go to project</button>
                 </div>
             </div>
         </div>
@@ -160,7 +160,8 @@
 
 </style>
 <script>
-export default {
+import Crypto from './../../../../crypto/crypto.js';
+export default {    
   data:() =>({
       projectTitle:'Name your new project 😍',
       dataFlow: 1,
@@ -171,6 +172,11 @@ export default {
       }
   }),
   methods: {
+      postData(){
+          let crypto = new Crypto('base64:n2xyMxL55nQOMlpIUVgDRtlvKe6zLPCMf3lhZZBKT7M=').encrypt(this.projectTitle)
+          this.projectTitle = crypto
+          console.log(this.projectTitle)
+      },
       close(){
           this.$modal.hide('create-project')
       },

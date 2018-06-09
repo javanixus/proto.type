@@ -13,8 +13,9 @@ export default new Vuex.Store({
       done: [],
       docs:[],
       issue:[],
-      misc:[]
+      misc:[],
     },
+    isLogged: false,
     nextId: 1
   },
   mutations: {

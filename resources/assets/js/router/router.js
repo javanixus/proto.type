@@ -54,6 +54,7 @@ export default new Router({
         {
             path: '/h',
             component: StudentDash,
+            meta: {requiresAuth: true},
             children: [{
                 path: '',
                 component: StudentDashProject,
@@ -111,5 +112,5 @@ export default new Router({
             component: GetWelcome
         },
     ],
-    mode: 'history'
+    mode: 'history',
   });

@@ -143,7 +143,7 @@
             <div v-else>
                 <div class="createProjectPopup__content">
                     <div class="createProjectPopup__content__cover">
-                        <p>Okay, all done !</p>
+                        <p>{{decrypted}}</p>
                         <div class="createProjectCover--tips">
                             <span>Now you can choose close the dialog popup or redirect to the project have you been created.</span>
                         </div>
@@ -151,6 +151,7 @@
                 </div>
                 <div class="createProjectPopup__footer" style="text-align: center!important; margin-top: 30px!important;">
                     <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="postData">Go to project</button>
+                    <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="getData">Get Decrypted Data</button>
                 </div>
             </div>
         </div>
@@ -160,22 +161,44 @@
 
 </style>
 <script>
-import Crypto from './../../../../crypto/crypto.js';
+import Crypto from 'crypto-js/aes'
+import CryptoLatin1 from 'crypto-js/enc-latin1'
+// import Crypto from './../../../../crypto/crypto.js'
+
 export default {    
   data:() =>({
       projectTitle:'Name your new project 😍',
+      secretPharse: 'pampam',
+      output: '',
       dataFlow: 1,
       dataProcess: false,
       data: {
           dataLinked: false,
           dataEncrypt: true
-      }
+      },
+      encrypted: false,
   }),
+  computed: {
+      decrypted: function() {
+          return (this.encrypted ? Crypto.decrypt(this.encrypted.str, this.secretPharse).toString(CryptoLatin1) : this.output);
+    }
+  },
   methods: {
       postData(){
-          let crypto = new Crypto('base64:n2xyMxL55nQOMlpIUVgDRtlvKe6zLPCMf3lhZZBKT7M=').encrypt(this.projectTitle)
-          this.projectTitle = crypto
-          console.log(this.projectTitle)
+        var cryptobject = Crypto.encrypt(this.projectTitle, this.secretPharse);
+        this.encrypted = {
+            key: cryptobject.key + '', // don't send this
+            iv: cryptobject.iv + '', // don't send this
+            salt: cryptobject.salt + '', // don't send this
+            ciphertext: cryptobject.ciphertext + '', // don't send this
+            str: cryptobject + '' // send or store this
+        }
+        this.dataPharse = this.encrypted.str
+        console.log(this.dataPharse)
+      },
+      getData(){
+          this.output = Crypto.decrypt(this.encrypted.str, this.secretPharse).toString(CryptoLatin1)
+          console.log(this.output)
       },
       close(){
           this.$modal.hide('create-project')

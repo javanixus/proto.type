@@ -4,9 +4,12 @@ import router from './router/router';
 import VeeValidate from 'vee-validate';
 import Vmodal from 'vue-js-modal';
 import store from './store/store';
+import crypto from './crypto/crypto';
 
 Vue.use(Vmodal);
 Vue.use(VeeValidate);
+Vue.mixin(crypto);
+
 // guard point
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
@@ -29,6 +32,7 @@ new Vue({
     el: '#app',
     router,
     store,
+    crypto,
     template: '<App/>',
     components: { App },
   });

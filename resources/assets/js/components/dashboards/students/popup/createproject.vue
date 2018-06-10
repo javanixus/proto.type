@@ -143,7 +143,7 @@
             <div v-else>
                 <div class="createProjectPopup__content">
                     <div class="createProjectPopup__content__cover">
-                        <p>{{decrypted}}</p>
+                        <p>{{this.output}}</p>
                         <div class="createProjectCover--tips">
                             <span>Now you can choose close the dialog popup or redirect to the project have you been created.</span>
                         </div>
@@ -161,11 +161,7 @@
 
 </style>
 <script>
-import Crypto from 'crypto-js/aes'
-import CryptoLatin1 from 'crypto-js/enc-latin1'
-// import Crypto from './../../../../crypto/crypto.js'
-
-export default {    
+export default {
   data:() =>({
       projectTitle:'Name your new project 😍',
       secretPharse: 'pampam',
@@ -178,28 +174,7 @@ export default {
       },
       encrypted: false,
   }),
-  computed: {
-      decrypted: function() {
-          return (this.encrypted ? Crypto.decrypt(this.encrypted.str, this.secretPharse).toString(CryptoLatin1) : this.output);
-    }
-  },
   methods: {
-      postData(){
-        var cryptobject = Crypto.encrypt(this.projectTitle, this.secretPharse);
-        this.encrypted = {
-            key: cryptobject.key + '', // don't send this
-            iv: cryptobject.iv + '', // don't send this
-            salt: cryptobject.salt + '', // don't send this
-            ciphertext: cryptobject.ciphertext + '', // don't send this
-            str: cryptobject + '' // send or store this
-        }
-        this.dataPharse = this.encrypted.str
-        console.log(this.dataPharse)
-      },
-      getData(){
-          this.output = Crypto.decrypt(this.encrypted.str, this.secretPharse).toString(CryptoLatin1)
-          console.log(this.output)
-      },
       close(){
           this.$modal.hide('create-project')
       },

@@ -1,0 +1,1 @@
+webpackJsonp([13],{126:function(e,t,n){var r=n(7)(n(83),n(84),!1,null,null,null);e.exports=r.exports},83:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={}},84:function(e,t){e.exports={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("Welcome")])},staticRenderFns:[]}}});

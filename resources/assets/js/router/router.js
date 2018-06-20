@@ -62,7 +62,7 @@ const StudentBoard = resolve => {
         resolve(require('./../components/dashboards/students/board/board'));
     })
 }
-const StudentsBoardOverview = resolve => {
+const StudentBoardOverview = resolve => {
     require.ensure(['./../components/dashboards/students/board/overview'],() => {
         resolve(require('./../components/dashboards/students/board/overview'));
     })

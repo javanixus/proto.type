@@ -33,4 +33,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
     ]
   })
   .copy(['resources/assets/img'], 'public/images', false)
-  .copy(['resources/assets/img/avatar'], 'public/images/avatar', false);
+  .copy(['resources/assets/img/avatar'], 'public/images/avatar', false)

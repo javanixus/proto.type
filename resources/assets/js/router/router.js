@@ -7,91 +7,23 @@ import { resolve } from 'path';
 Vue.use(Router);
 
 //root routing
-const LoginStudents = resolve => {
-    require.ensure(['./../components/auth/students/login'],() => {
-        resolve(require('./../components/auth/students/login'));
-    })
-}
-const LoginStudentsForm = resolve => {
-    require.ensure(['./../components/auth/students/loginForm'],() => {
-        resolve(require('./../components/auth/students/loginForm'));
-    })
-}
-const LoginStudentsForgot = resolve => {
-    require.ensure(['./../components/auth/students/forgot'],() => {
-        resolve(require('./../components/auth/students/forgot'));
-    })
-}
-const NotFound = resolve => {
-    require.ensure(['./../components/404'],() => {
-        resolve(require('./../components/404'));
-    })
-}
-const StudentDash = resolve => {
-    require.ensure(['./../components/dashboards/students/dashboard'],() => {
-        resolve(require('./../components/dashboards/students/dashboard'));
-    })
-}
-const StudentsDashProject = resolve => {
-    require.ensure(['./../components/dashboards/students/project'],() => {
-        resolve(require('./../components/dashboards/students/project'));
-    })
-}
-const StudentsDashTeam = resolve => {
-    require.ensure(['./../components/dashboards/students/team'],() => {
-        resolve(require('./../components/dashboards/students/team'));
-    })
-}
-const Loading = resolve => {
-    require.ensure(['./../components/loading'],() => {
-        resolve(require('./../components/loading'));
-    })
-}
-const GetWelcome = resolve => {
-    require.ensure(['./../components/auth/students/getstarted/welcome'],() => {
-        resolve(require('./../components/auth/students/getstarted/welcome'));
-    })
-}
-const StudentsDashProfile = resolve => {
-    require.ensure(['./../components/dashboards/students/profile'],() => {
-        resolve(require('./../components/dashboards/students/profile'));
-    })
-}
-const StudentsBoard = resolve => {
-    require.ensure(['./../components/dashboards/students/board/board'],() => {
-        resolve(require('./../components/dashboards/students/board/board'));
-    })
-}
-const StudentsBoardOverview = resolve => {
-    require.ensure(['./../components/dashboards/students/board/overview'],() => {
-        resolve(require('./../components/dashboards/students/board/overview'));
-    })
-}
-const StudentsBoardStorage = resolve => {
-    require.ensure(['./../components/dashboards/students/board/storage'],() => {
-        resolve(require('./../components/dashboards/students/board/storage'));
-    })
-}
-const StudentsBoardTask = resolve => {
-    require.ensure(['./../components/dashboards/students/board/task'],() => {
-        resolve(require('./../components/dashboards/students/board/task'));
-    })
-}
-const StudentsBoardTeam = resolve => {
-    require.ensure(['./../components/dashboards/students/board/team'],() => {
-        resolve(require('./../components/dashboards/students/board/team'));
-    })
-}
-const StudentsBoardSetting = resolve => {
-    require.ensure(['./../components/dashboards/students/board/setting'],() => {
-        resolve(require('./../components/dashboards/students/board/setting'));
-    })
-}
-const StudentsBoardActivity = resolve => {
-    require.ensure(['./../components/dashboards/students/board/activity'],() => {
-        resolve(require('./../components/dashboards/students/board/activity'));
-    })
-}
+const LoginStudents = () => import('./../components/auth/students/login'); 
+const LoginStudentsForm = () => import('./../components/auth/students/loginForm'); 
+const LoginStudentsForgot = () => import('./../components/auth/students/forgot'); 
+const NotFound = () => import('./../components/404'); 
+const StudentDash = () => import('./../components/dashboards/students/dashboard'); 
+const StudentDashProject = () => import('./../components/dashboards/students/project'); 
+const StudentDashTeam = () => import('./../components/dashboards/students/team'); 
+const Loading = () => import('./../components/loading'); 
+const GetWelcome = () => import('./../components/auth/students/getstarted/welcome'); 
+const StudentDashProfile = () => import('./../components/dashboards/students/profile'); 
+const StudentBoard = () => import('./../components/dashboards/students/board/board'); 
+const StudentBoardOverview = () => import('./../components/dashboards/students/board/overview'); 
+const StudentBoardStorage = () => import('./../components/dashboards/students/board/storage'); 
+const StudentBoardTask = () => import('./../components/dashboards/students/board/task'); 
+const StudentBoardTeam = () => import('./../components/dashboards/students/board/team'); 
+const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting'); 
+const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity'); 
 
 export default new Router({
     routes: [

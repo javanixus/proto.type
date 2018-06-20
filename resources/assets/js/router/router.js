@@ -32,12 +32,12 @@ const StudentDash = resolve => {
         resolve(require('./../components/dashboards/students/dashboard'));
     })
 }
-const StudentsDashProject = resolve => {
+const StudentDashProject = resolve => {
     require.ensure(['./../components/dashboards/students/project'],() => {
         resolve(require('./../components/dashboards/students/project'));
     })
 }
-const StudentsDashTeam = resolve => {
+const StudentDashTeam = resolve => {
     require.ensure(['./../components/dashboards/students/team'],() => {
         resolve(require('./../components/dashboards/students/team'));
     })
@@ -52,12 +52,12 @@ const GetWelcome = resolve => {
         resolve(require('./../components/auth/students/getstarted/welcome'));
     })
 }
-const StudentsDashProfile = resolve => {
+const StudentDashProfile = resolve => {
     require.ensure(['./../components/dashboards/students/profile'],() => {
         resolve(require('./../components/dashboards/students/profile'));
     })
 }
-const StudentsBoard = resolve => {
+const StudentBoard = resolve => {
     require.ensure(['./../components/dashboards/students/board/board'],() => {
         resolve(require('./../components/dashboards/students/board/board'));
     })
@@ -67,27 +67,27 @@ const StudentsBoardOverview = resolve => {
         resolve(require('./../components/dashboards/students/board/overview'));
     })
 }
-const StudentsBoardStorage = resolve => {
+const StudentBoardStorage = resolve => {
     require.ensure(['./../components/dashboards/students/board/storage'],() => {
         resolve(require('./../components/dashboards/students/board/storage'));
     })
 }
-const StudentsBoardTask = resolve => {
+const StudentBoardTask = resolve => {
     require.ensure(['./../components/dashboards/students/board/task'],() => {
         resolve(require('./../components/dashboards/students/board/task'));
     })
 }
-const StudentsBoardTeam = resolve => {
+const StudentBoardTeam = resolve => {
     require.ensure(['./../components/dashboards/students/board/team'],() => {
         resolve(require('./../components/dashboards/students/board/team'));
     })
 }
-const StudentsBoardSetting = resolve => {
+const StudentBoardSetting = resolve => {
     require.ensure(['./../components/dashboards/students/board/setting'],() => {
         resolve(require('./../components/dashboards/students/board/setting'));
     })
 }
-const StudentsBoardActivity = resolve => {
+const StudentBoardActivity = resolve => {
     require.ensure(['./../components/dashboards/students/board/activity'],() => {
         resolve(require('./../components/dashboards/students/board/activity'));
     })

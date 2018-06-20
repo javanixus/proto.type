@@ -121,6 +121,7 @@ typings/
 .history
 
 # public genoc
+public/*.json
 public/js/
 public/*.js
 public/images/

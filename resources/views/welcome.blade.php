@@ -8,7 +8,10 @@
         <meta name="theme-color" content="#1e88e5">
         <meta name="description" content="Our website is currently undergoing scheduled maintenance. We should be back shortly. Thank you for your patient.">
         <title>Proto.type</title>
-        <link rel="manifest" href="/manifest-mix.json">
+        <link rel="manifest" href="{{url('/manifest.json')}}">
+        <style>
+            *{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;box-sizing:border-box;letter-spacing:-.15px}html{text-size-adjust:100%;text-rendering:optimizeLegibility!important;-webkit-font-smoothing:subpixel-antialiased!important;text-shadow:rgba(0,0,0,.01) 0 0 1px}
+        </style>
         <link rel="stylesheet" href="{{secure_asset('css/app.css')}}" >
     </head>
     <body>

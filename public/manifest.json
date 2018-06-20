@@ -3,8 +3,9 @@
     "short_name": "prototype",
     "description": "Project and task management software for teams",
     "lang": "en-US",
-    "start_url": "/",
+    "start_url": "https://prototype-alpha.herokuapp.com",
     "display": "standalone",
     "theme_color": "#1e88e5",
+    "orientation": "portrait",
     "background_color": "#eee"
   }

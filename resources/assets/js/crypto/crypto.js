@@ -1,6 +1,5 @@
 import aes from 'crypto-js/aes';
 import latin from 'crypto-js/enc-latin1';
-import pbkdf2 from 'crypto-js/pbkdf2';
 
 export default {
     methods: {

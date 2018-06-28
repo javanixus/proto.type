@@ -1,7 +1,6 @@
 // default deb
 import Vue from 'vue';
 import Router from 'vue-router';
-import { resolve } from 'path';
 
 //exec
 Vue.use(Router);
@@ -24,6 +23,7 @@ const StudentBoardTask = () => import('./../components/dashboards/students/board
 const StudentBoardTeam = () => import('./../components/dashboards/students/board/team'); 
 const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting'); 
 const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity'); 
+const StudentExplore = () => import('./../components/dashboards/students/explore/explore');
 
 export default new Router({
     routes: [
@@ -65,6 +65,11 @@ export default new Router({
                 path: 'team',
                 component: StudentDashTeam,
                 name: 'studentteam'
+            },
+            {
+                path: 'explore',
+                component: StudentExplore,
+                name: 'studentexplore'
             },
             {
                 path: 'profile',

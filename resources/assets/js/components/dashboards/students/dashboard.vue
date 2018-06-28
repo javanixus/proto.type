@@ -17,7 +17,7 @@
                             <router-link :to="{name: 'studentproject'}" active-class="nav-active" exact>Project</router-link>
                         </li>
                         <li>
-                            <router-link :to="{name: 'studentteam'}" active-class="nav-active">Todos</router-link>
+                            <router-link :to="{name: 'studentexplore'}" active-class="nav-active">Explore</router-link>
                         </li>
                     </ul>
                 </div>

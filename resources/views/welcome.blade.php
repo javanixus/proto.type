@@ -13,7 +13,7 @@
         <style>
             *{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;box-sizing:border-box;letter-spacing:-.15px}html{text-size-adjust:100%;text-rendering:optimizeLegibility!important;-webkit-font-smoothing:subpixel-antialiased!important;text-shadow:rgba(0,0,0,.01) 0 0 1px}
         </style>
-        <link rel="stylesheet" href="{{asset('css/app.css')}}" >
+        <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet'" href="{{asset('css/app.css')}}" >
     </head>
     <body>
     <div id="app">

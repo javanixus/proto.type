@@ -8,8 +8,8 @@
             <div class="appHeader__content">
                 <div class="appHeader__content__navigation">
                     <div role="button" class="appHeader__content__logo">
-                        <div class="logo-small" style="margin-left: 30px;">
-                            <img src="/images/proto.type-logo-primary.svg" alt="">
+                        <div class="logo-tag tag--red">
+                            PT
                         </div>
                     </div>
                     <ul class="navigationWrap-items">

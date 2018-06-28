@@ -1,0 +1,1 @@
+webpackJsonp([15],{115:function(t,e){t.exports={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var t=this.$createElement,e=this._self._c||t;return e("div",{attrs:{id:"boardSetting"}},[e("p",[this._v("setting")])])}]}},133:function(t,e,n){var r=n(7)(null,n(115),!1,null,null,null);t.exports=r.exports}});

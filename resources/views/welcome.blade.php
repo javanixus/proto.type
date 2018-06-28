@@ -25,6 +25,6 @@
         <noscript>
             this page require Javascript :> , so enable your Javascript
         </noscript>
-        <script src="{{secure_asset('js/app.js')}}"></script>
+        <script async src="{{secure_asset('js/app.js')}}"></script>
     </body>
 </html>

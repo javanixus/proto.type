@@ -18,17 +18,24 @@
     transition: background-color ease-in-out .15s;
     transition: background-color ease-in-out .15s;
     transition: background-color ease-in-out .15s;
+}.compass {
+        transform-origin: center;
+        padding: 0px !important;
+        width: 40px!important;
+        position: absolute;
+        left: 33%;
+        top: 65%;
+        box-sizing:border-box;
+        transform: rotate(20deg);
+        animation: spin 2.0s alternate infinite;
+        -ms-transform: rotate(20deg);
+        -o-transform: rotate(20deg);
+        -o-animation: spin 2.0s alternate infinite;
+        -moz-transform: rotate(20deg);
+        -moz-animation: spin 2.0s alternate infinite;
+        -webkit-transform: rotate(20deg);
+        -webkit-animation: spin 2.0s alternate infinite;
 }
-
-
-// .pop-out-enter-active,.pop-out-leave-active{
-//     transition: all 0.5s;
-//     animation: bounce 1000ms linear both;
-// }
-
-// .pop-out-enter, .pop-out-leave-active{
-//     animation: bounce 1000ms linear both;
-// }
 
   .scale-enter-active,
   .scale-leave-active {
@@ -39,6 +46,54 @@
     opacity: 0;
     transform:  translateY(24px);
   }
+
+  @keyframes spin {
+    0%{
+        transform:scale(1) rotate(0deg);
+    }
+	50% {
+		transform:scale(1) rotate(80deg);
+	}
+	100% {
+		transform:scale(1) rotate(-180deg);
+	}
+}
+
+@-o-keyframes spin {
+    0%{
+        -webkit-transform:scale(1) rotate(0deg);
+    }
+	50% {
+		-webkit-transform:scale(1) rotate(80deg);
+	}
+	100% {
+		-webkit-transform:scale(1) rotate(-180deg);
+	}
+}
+
+@-moz-keyframes spin {
+    0%{
+        -webkit-transform:scale(1) rotate(0deg);
+    }
+	50% {
+		-webkit-transform:scale(1) rotate(80deg);
+	}
+	100% {
+		-webkit-transform:scale(1) rotate(-180deg);
+	}
+}
+
+@-webkit-keyframes spin {
+    0%{
+        -webkit-transform:scale(1) rotate(0deg);
+    }
+	50% {
+		-webkit-transform:scale(1) rotate(80deg);
+	}
+	100% {
+		-webkit-transform:scale(1) rotate(-180deg);
+	}
+}
 
 @keyframes bounce { 
     0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }

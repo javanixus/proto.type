@@ -1,0 +1,30 @@
+#getstarted {
+    min-height: 100vh;
+    background: $blue-darken;
+    background-image: url('./../../img/pattern.svg'), linear-gradient(to bottom, #4141be, #3c36ae);
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}.start {
+    width: 600px;
+    background: white;
+    @extend .borderRadius-s;
+    @extend .paddingAppear-n;
+}.start__header {
+    @extend .createProjectPopup__content__cover;
+    p {
+        font-size: 20px;
+        color: #434445;
+    }
+    img {
+        width: 50px;
+    }
+}.start__header--desc {
+    @extend .createProjectCover--tips;
+    span {
+        font-size: 12px;
+        color: #999;
+    }
+}

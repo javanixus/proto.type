@@ -6,23 +6,24 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 //root routing
-const LoginStudents = () => import('./../components/auth/students/login'); 
-const LoginStudentsForm = () => import('./../components/auth/students/loginForm'); 
-const LoginStudentsForgot = () => import('./../components/auth/students/forgot'); 
-const NotFound = () => import('./../components/404'); 
-const StudentDash = () => import('./../components/dashboards/students/dashboard'); 
-const StudentDashProject = () => import('./../components/dashboards/students/project'); 
-const StudentDashTeam = () => import('./../components/dashboards/students/team'); 
-const Loading = () => import('./../components/loading'); 
-const GetWelcome = () => import('./../components/auth/students/getstarted/welcome'); 
-const StudentDashProfile = () => import('./../components/dashboards/students/profile'); 
-const StudentBoard = () => import('./../components/dashboards/students/board/board'); 
-const StudentBoardOverview = () => import('./../components/dashboards/students/board/overview'); 
-const StudentBoardStorage = () => import('./../components/dashboards/students/board/storage'); 
-const StudentBoardTask = () => import('./../components/dashboards/students/board/task'); 
-const StudentBoardTeam = () => import('./../components/dashboards/students/board/team'); 
-const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting'); 
-const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity'); 
+const LoginStudents = () => import('./../components/auth/students/login');
+const LoginStudentsForm = () => import('./../components/auth/students/loginForm');
+const LoginStudentsForgot = () => import('./../components/auth/students/forgot');
+const NotFound = () => import('./../components/404');
+const StudentDash = () => import('./../components/dashboards/students/dashboard');
+const StudentDashProject = () => import('./../components/dashboards/students/project');
+const StudentDashTeam = () => import('./../components/dashboards/students/team');
+const Loading = () => import('./../components/loading');
+const GetWelcome = () => import('./../components/auth/students/getstarted/welcome');
+const GetWelcomeGeneral = () => import('./../components/auth/students/getstarted/general');
+const StudentDashProfile = () => import('./../components/dashboards/students/profile');
+const StudentBoard = () => import('./../components/dashboards/students/board/board');
+const StudentBoardOverview = () => import('./../components/dashboards/students/board/overview');
+const StudentBoardStorage = () => import('./../components/dashboards/students/board/storage');
+const StudentBoardTask = () => import('./../components/dashboards/students/board/task');
+const StudentBoardTeam = () => import('./../components/dashboards/students/board/team');
+const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting');
+const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity');
 const StudentExplore = () => import('./../components/dashboards/students/explore/explore');
 
 export default new Router({
@@ -114,8 +115,12 @@ export default new Router({
             }]
         },
         {
-            path: '/catchup',
-            component: GetWelcome
+            path: '/welcome',
+            component: GetWelcome,
+            children: [{
+                path: '',
+                component: GetWelcomeGeneral
+            }]
         },
     ],
     mode: 'history',

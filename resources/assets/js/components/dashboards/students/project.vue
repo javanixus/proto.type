@@ -8,24 +8,8 @@
           <div id="projectItems" class="marginTop-s">
             <!-- item list -->
             <div class="projectItems__item">
-              <div class="project__item__header" style="background-image: url(/images/wallpaper.jpg);"></div>
-              <div class="overlay"></div>
-              <div class="project__item__content">
-                <div class="project__item__core__title">
-                  <h5>
-                    Project A
-                  </h5>
-                </div>
-                <div class="project__item__core__content">
-                  
-                </div>
-                <div class="project__item__core__footer"></div>
-              </div>
-            </div>
-            <!-- item list -->
-            <div class="projectItems__item">
             <span class="headlineProjectItem">28 days left</span>
-              <div class="project__item__header" style="background-image: url(/images/image.png);"></div>
+              <div class="project__item__header" style="background-image: url(/images/wallpaper.jpg);"></div>
               <div class="overlay"></div>
               <div class="project__item__content">
                 <div class="project__item__core__title">
@@ -44,33 +28,6 @@
               </div>
             </div>
             <!-- item list -->
-            <div class="projectItems__item">
-              <div class="project__item__header" style="background-image: url(/images/image2.jpg);"></div>
-              <div class="overlay"></div>
-              <div class="project__item__content">
-                <div class="project__item__core__title">
-                  <h5>
-                    Project C
-                  </h5>
-                </div>
-                <div class="project__item__core__content"></div>
-                <div class="project__item__core__footer"></div>
-              </div>
-            </div>
-            <!-- item list -->
-            <div class="projectItems__item">
-              <div class="project__item__header" style="background-image: url(/images/sample2.png);"></div>
-              <div class="overlay"></div>
-              <div class="project__item__content">
-                <div class="project__item__core__title">
-                  <h5>
-                    Project D
-                  </h5>
-                </div>
-                <div class="project__item__core__content"></div>
-                <div class="project__item__core__footer"></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

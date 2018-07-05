@@ -8,14 +8,15 @@
           <div id="projectItems" class="marginTop-s">
             <!-- item list -->
             <div class="projectItems__item">
-            <span class="headlineProjectItem">28 days left</span>
-              <div class="project__item__header" style="background-image: url(/images/wallpaper.jpg);"></div>
+            <span class="headlineProjectItem headline--done">28 days left</span>
+              <div class="project__item__header" style="background-image: url(/images/card.png);"></div>
               <div class="overlay"></div>
               <div class="project__item__content">
                 <div class="project__item__core__title">
                   <h5>
-                    Project B
+                    Deno
                   </h5>
+                  <p>A secure TypeScript runtime on V8</p>
                 </div>
                 <div class="project__item__core__content">
                   <div class="projectPeople">

@@ -164,56 +164,6 @@ ul.navigationWrap-items li a {
     display: inline-flex;
     flex-wrap: wrap;
 }
-.appHeader__content__project {
-    // margin-left: -3%;
-}
-.projectItems__item {
-    @extend .borderRadius-s;
-    @extend .overflow-disable;
-    cursor: pointer;
-    background: white;
-    @extend .marginTop-s;
-    @extend .marginBottom-s;
-    @extend .marginRight-s;
-    @extend .easeinoutanimate;
-    position: relative;
-    &:hover {
-        @extend .easeinoutanimate;
-        box-shadow: 1px 9px 18px 1px rgba(60,60,60,.15)!important;
-    }
-    @extend .easeinoutbg;
-    &:hover > .overlay {
-        background-color: rgba(46, 47, 48, 0.9);
-        @extend .easeinoutbg;
-    }
-}.project__item__content {
-    position: absolute;
-    bottom:0;
-    @extend .paddingAppear-n;
-}.project__item__header {
-    @extend .overflow-disable;
-    @extend .bg;
-    width: 300px;
-    height: 150px;
-}.project__item__core__title {
-    h5 {
-        color: white;
-        font-weight: 500;
-    }
-}.project__item__core__content {
-    @extend .marginTop-xxs;
-}.overlay {
-    @extend .universe;
-    background-color: rgba(46, 47, 48, 0.5);
-}.projectPeople {
-    display: inline-flex;
-}div.projectPeople > div:nth-child(n + 2) { margin-left: -8px;}
-.createProjectPopup__header {
-    @extend .paddingTop-xs;
-    @extend .paddingBottom-xs;
-    @extend .paddingLeft-xs;
-    @extend .paddingRight-xs;
-}
 .createProjectPopup__content {
     position: relative;
 }.createProjectPopup__content__cover {
@@ -241,8 +191,6 @@ ul.navigationWrap-items li a {
 }.createProjectPopup__content form {
     @extend .popupContent__desc;
     padding-top: 25px!important;
-}.createProjectPopup__content__title input {
-
 }.createProjectPopup__content__desc textarea {
     width: 100%;
     height: 100px;
@@ -299,18 +247,6 @@ ul.navigationWrap-items li a {
         display: inline-flex;
         align-items: center;
     }
-}
-
-.headlineProjectItem {
-    width: 100%;
-    z-index: 99;
-    font-size: 12px;
-    text-align: center;
-    position: absolute;
-    background-color: $red;
-    color: white;
-    @extend .paddingBottom-xxs;
-    @extend .paddingTop-xxs;
 }
 
 .team--empty {

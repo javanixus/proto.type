@@ -94,15 +94,92 @@
     }
 }
 
-// logo setting 
+// logo setting
 .logo-small {
     img {
         width: 30px;
         height: 30px;
     }
 }
+//project cards
+.projectItems__item {
+    @extend .borderRadius-s;
+    @extend .overflow-disable;
+    cursor: pointer;
+    background: white;
+    @extend .marginTop-s;
+    @extend .marginBottom-s;
+    @extend .marginRight-s;
+    @extend .easeinoutanimate;
+    position: relative;
+    &:hover {
+        @extend .easeinoutanimate;
+        box-shadow: 1px 9px 18px 1px rgba(60,60,60,.15)!important;
+    }
+    @extend .easeinoutbg;
+    &:hover > .overlay {
+        background-color: rgba(46, 47, 48, 0.9);
+        @extend .easeinoutbg;
+    }
+}.project__item__content {
+    position: absolute;
+    bottom:0;
+    @extend .paddingAppear-n;
+}.project__item__header {
+    @extend .overflow-disable;
+    @extend .bg;
+    width: 300px;
+    height: 150px;
+}.project__item__core__title {
+    h5 {
+        color: white;
+        font-weight: 500;
+    }
+    p {
+        font-size: 12px;
+        color: $grey-alter;
+        @extend .marginTop-xxs;
+        @extend .marginBottom-xs;
+    }
+}.project__item__core__content {
+    @extend .marginTop-xxs;
+}.overlay {
+    @extend .universe;
+    background-color: rgba(46, 47, 48, 0.5);
+}.projectPeople {
+    display: inline-flex;
+}div.projectPeople > div:nth-child(n + 2) { margin-left: -8px;}
+.createProjectPopup__header {
+    @extend .paddingTop-xs;
+    @extend .paddingBottom-xs;
+    @extend .paddingLeft-xs;
+    @extend .paddingRight-xs;
+}
 
-// loading 
+// headline project track
+.headlineProjectItem {
+    width: 100%;
+    z-index: 99;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    color: $grey-young;
+    @extend .paddingBottom-xxs;
+    @extend .paddingTop-xxs;
+}
+.headline--warning {
+    background-color: $red;
+}.headline--done {
+    background-color: $green-darken;
+}.headline--waiting{
+    background-color: $yellow;
+    color: $yellow-darken;
+}.headline--disabled{
+    background: $black;
+}
+
+
+// loading
 .shield-pulse{
     width: 100%;
     height: 50px;

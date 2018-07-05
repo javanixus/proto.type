@@ -7,27 +7,29 @@
           </div>
           <div id="projectItems" class="marginTop-s">
             <!-- item list -->
-            <div class="projectItems__item">
-            <span class="headlineProjectItem headline--done">28 days left</span>
-              <div class="project__item__header" style="background-image: url(/images/card.png);"></div>
-              <div class="overlay"></div>
-              <div class="project__item__content">
-                <div class="project__item__core__title">
-                  <h5>
-                    Deno
-                  </h5>
-                  <p>A secure TypeScript runtime on V8</p>
-                </div>
-                <div class="project__item__core__content">
-                  <div class="projectPeople">
-                    <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/1.jpg);"></div>
-                    <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/3.jpg);"></div>
-                    <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/2.jpg);"></div>
+            <router-link to="/h/b/jvnx">
+              <div class="projectItems__item">
+              <span class="headlineProjectItem headline--waiting">Verification pending (23 days left)</span>
+                <div class="project__item__header" style="background-image: url(/images/card.png);"></div>
+                <div class="overlay"></div>
+                <div class="project__item__content">
+                  <div class="project__item__core__title">
+                    <h5>
+                      Deno
+                    </h5>
+                    <p>A secure TypeScript runtime on V8</p>
                   </div>
+                  <div class="project__item__core__content">
+                    <div class="projectPeople">
+                      <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/1.jpg);"></div>
+                      <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/3.jpg);"></div>
+                      <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/2.jpg);"></div>
+                    </div>
+                  </div>
+                  <div class="project__item__core__footer"></div>
                 </div>
-                <div class="project__item__core__footer"></div>
               </div>
-            </div>
+            </router-link>
             <!-- item list -->
           </div>
         </div>

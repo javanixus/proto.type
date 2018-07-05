@@ -293,6 +293,7 @@ ul.navigationWrap-items li a {
 .menuProfile {
     padding: 10px 15px;
     .menuProfile__header {
+        @extend .paddingTop-xxs;
         h5 {
             font-weight: 600;
             color: $black-young;
@@ -307,9 +308,8 @@ ul.navigationWrap-items li a {
         border-bottom: 1px solid #eee;
     }
     .menuProfile__content {
-        @extend .paddingTop-xxs;
         ul li {
-            padding: 5px 10px;
+            padding: 5px;
             &:hover {
                 background: $grey-young;
             }

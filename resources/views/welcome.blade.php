@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+        <base href="/" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="icon" href="/favicon.png">
@@ -26,9 +27,13 @@
         <noscript>
             this page require Javascript :> , so enable your Javascript
         </noscript>
-        <script src="/js/manifest.js"></script>
-        <script src="/js/vendor.js"></script>
-        <script src="/js/app.js"></script>
-        <!-- <script src="{{asset('js/app.js')}}"></script> -->
+        <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+  }
+</script>
+        <script src="{{asset('js/manifest.js')}}"></script>
+        <script src="{{asset('js/vendor.js')}}"></script>
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>

@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+
 mix.webpackConfig({
   output: {
     publicPath: '/',
@@ -17,6 +19,7 @@ mix.webpackConfig({
 });
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .extract(['vue'])
   .sass('resources/assets/sass/app.scss', 'public/css')
   .options({
     postCss: [

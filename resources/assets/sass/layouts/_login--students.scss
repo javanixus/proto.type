@@ -59,6 +59,14 @@
     }
 }
 
+.formBlock--inline {
+    display: flex;
+    justify-content: space-between;
+    input {
+        width: 48%;
+    }
+}
+
 .coverContent {
     @extend .formContent;
     position: relative;

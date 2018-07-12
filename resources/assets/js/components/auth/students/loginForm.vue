@@ -13,7 +13,7 @@
           <label for="passStudent">Password</label>
             <input v-model="dataLogin.password" name="password" v-validate="'required|alpha'" @focus="$event.target.select()" type="password" :disabled="Isdisabled" :class="{'input-disabled': Isdisabled, 'input': true, 'input-danger': errors.has('username or email')}" id="passStudent" placeholder="•••••••••••••••••" class="input input--primary">
             <p v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</p>
-        </div>                    
+        </div>
       </div>
       <div class="formButton">
         <router-link exact to='forgot'>forgot?</router-link>

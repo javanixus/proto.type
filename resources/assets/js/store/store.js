@@ -15,6 +15,11 @@ export default new Vuex.Store({
       issue:[],
       misc:[],
     },
+    new: {
+      name:'',
+      password: ''
+    },
+    isNew: true,
     isLogged: true,
     nextId: 1,
     encryptedKey: ''
@@ -23,6 +28,10 @@ export default new Vuex.Store({
     addItem(state, item) {
       state.items.todo.push(Object.assign(item, { id: state.nextId }));
       state.nextId += 1;
+    },
+    addNew(state,data){
+      state.new.name = data.name
+      state.new.password = data.pass
     },
     updateItems(state, { items, id }) {
       state.items[id] = items;

@@ -10,7 +10,7 @@
         <meta name="theme-color" content="#1e88e5">
         <meta name="description" content="Our website is currently undergoing scheduled maintenance. We should be back shortly. Thank you for your patient.">
         <title>Proto.type</title>
-        <link rel="manifest" href="{{url('/manifest.json')}}">
+        <link rel="manifest" href="{{url('/mix-manifest.json')}}">
         <style>
             *{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;box-sizing:border-box;letter-spacing:-.15px}html{text-size-adjust:100%;text-rendering:optimizeLegibility!important;-webkit-font-smoothing:subpixel-antialiased!important;text-shadow:rgba(0,0,0,.01) 0 0 1px}
         </style>
@@ -27,11 +27,11 @@
         <noscript>
             this page require Javascript :> , so enable your Javascript
         </noscript>
-        <script>
+        <!-- <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
   }
-</script>
+</script> -->
         <script src="{{asset('js/manifest.js')}}"></script>
         <script src="{{asset('js/vendor.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>

@@ -36,8 +36,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
         },
         test: /\.(jpe?g|png|gif|svg)$/i,
       }),
-      new WorkboxPlugin.InjectManifest({
-        swSrc: path.join(DIST_DIR, 'sw.js'),
-      }),
+      // new WorkboxPlugin.InjectManifest({
+      //   swSrc: path.join(DIST_DIR, 'sw.js'),
+      // }),
     ],
   });

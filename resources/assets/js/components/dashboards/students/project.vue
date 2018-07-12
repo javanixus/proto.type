@@ -31,6 +31,29 @@
               </div>
             </router-link>
             <!-- item list -->
+                        <!-- item list -->
+              <div class="projectItems__item">
+              <span class="headlineProjectItem headline--done">Deployed v3.0</span>
+                <div class="project__item__header" style="background-image: url(/images/card5.png);"></div>
+                <div class="overlay"></div>
+                <div class="project__item__content">
+                  <div class="project__item__core__title">
+                    <h5>
+                      meta/p256
+                    </h5>
+                    <p>Encrypt pattern using unicode and crypto.</p>
+                  </div>
+                  <div class="project__item__core__content">
+                    <div class="projectPeople">
+                      <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/1.jpg);"></div>
+                      <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/3.jpg);"></div>
+                      <div class="avatar avatar--xxs avatar--border-white--2" style="background-image: url(/images/avatar/2.jpg);"></div>
+                    </div>
+                  </div>
+                  <div class="project__item__core__footer"></div>
+                </div>
+              </div>
+            <!-- item list -->
           </div>
         </div>
       </div>

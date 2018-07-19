@@ -55,14 +55,14 @@
         },
         methods:{
             submitSetup(){
-                let self = this
-                let name = (self.setup.firstName + ' ') + self.setup.lastName
-                let combinedName = name.split(' ').join(' ')
-                console.log(combinedName + self.setup.newPass)
+                const self = this
+                const name = `${self.setup.firstName} ${self.setup.lastName}`
+                console.log(name + self.setup.newPass)
                 this.$store.commit('addNew',{
-                    name: combinedName,
+                    name: name,
                     pass: self.setup.newPass
                 })
+                this.$router.push({name: 'getwelcomefinish'})
             }
         }
     }

@@ -4,7 +4,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const DIST_DIR = './public/'
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .extract(['vue'])
+    .extract(['vue','vuex','axios','vue-router'])
   .sass('resources/assets/sass/app.scss', 'public/css/')
   .options({
     postCss: [
@@ -26,7 +26,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
   mix.webpackConfig({
     output: {
       publicPath: '',
-      chunkFilename: 'js/[name].js',
+      // chunkFilename: 'js/[name].js',
+      chunkFilename: `js/chunk[name].${ mix.inProduction() ? '[chunkhash].' : '' }js`
   },
     plugins: [
       new ImageminPlugin({

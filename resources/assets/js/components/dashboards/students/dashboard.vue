@@ -47,13 +47,11 @@
             <create-project-popup></create-project-popup>
             <menu-profile-popup></menu-profile-popup>
         </div>
-      </div>
-  </div>
+    </div>
+    </div>
 </template>
 <script>
 // import newPopup from './../students/popup/new';
-import createProjectPopup from './../students/popup/createproject';
-import menuProfilePopup from './../students/popup/menuprofile';
 
 export default {
     data: () => ({
@@ -61,13 +59,11 @@ export default {
     }),
     components: {
         // 'new-popup' : newPopup,
-        'create-project-popup': createProjectPopup,
-        'menu-profile-popup': menuProfilePopup
+        'create-project-popup': () => import('./../students/popup/createproject'),
+        'menu-profile-popup': () => import('./../students/popup/menuprofile')
     },
     created(){
-        setTimeout(() => {
-            this.loading = false;
-        },100);
+        this.loading = false
     },
     methods: {
         createproject(){

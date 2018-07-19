@@ -1,6 +1,7 @@
 // default deb
 import Vue from 'vue';
 import Router from 'vue-router';
+import store from './../store/store'
 
 //exec
 Vue.use(Router);
@@ -16,6 +17,7 @@ const StudentDashTeam = () => import('./../components/dashboards/students/team')
 const Loading = () => import('./../components/loading');
 const GetWelcome = () => import('./../components/auth/students/getstarted/welcome');
 const GetWelcomeGeneral = () => import('./../components/auth/students/getstarted/general');
+const GetWelcomeFinish = () => import('./../components/auth/students/getstarted/finish')
 const StudentDashProfile = () => import('./../components/dashboards/students/profile');
 const StudentBoard = () => import('./../components/dashboards/students/board/board');
 const StudentBoardOverview = () => import('./../components/dashboards/students/board/overview');
@@ -117,10 +119,31 @@ export default new Router({
         {
             path: '/welcome',
             component: GetWelcome,
+            meta: {requiresAuth: true},
+            beforeEnter: (to,from,next) => {
+                if(to.matched.some(record => record.meta.requiresAuth)){
+                    if(store.state.isNew === false){
+                        next({
+                            path: '/h',
+                            query: { redirect: to.fullPath}
+                        })
+                    } else {
+                        next()
+                    }
+                } else {
+                    next()
+                }
+            },
             children: [{
                 path: '',
                 component: GetWelcomeGeneral
-            }]
+            },
+            {
+                path: '/finish',
+                component: GetWelcomeFinish,
+                name: 'getwelcomefinish'
+            }
+        ]
         },
     ],
     mode: 'history',

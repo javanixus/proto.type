@@ -12,13 +12,13 @@
             <label for="userStudentForgot">Username or email</label>
             <input name="email" v-validate="'required|email'" v-model="recovery" @focus="$event.target.select()" type="text" :class="{'input-disabled': Isdisabled, 'input': true, 'input-danger': errors.has('email')}" id="userStudentForgot" :placeholder="placeholder" class="input input--primary">
             <p v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</p>
-          </div>                    
+          </div>
         </div>
         <div class="formButton">
             <router-link exact to="/">back to login</router-link>
             <button :disabled="!authUserIsPassed" :class="{'btn-disabled': !authUserIsPassed}" class="btn btn--primary" type="submit">{{buttontext}}</button>
         </div>
-      </form>    
+      </form>
   </div>
 </template>
 <script>

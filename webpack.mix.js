@@ -4,7 +4,15 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const DIST_DIR = './public/'
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .extract(['vue','vuex','axios','vue-router'])
+    .extract([
+      'vue',
+      'vuex',
+      'axios',
+      'vue-router',
+      'vee-validate',
+      'vue-js-modal',
+      'crypto-js'
+    ])
   .sass('resources/assets/sass/app.scss', 'public/css/')
   .options({
     postCss: [
@@ -41,4 +49,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
       //   swSrc: path.join(DIST_DIR, 'sw.js'),
       // }),
     ],
+    resolve: {
+      extensions: ['.js', '.json', '.vue'],
+      alias: {
+        '~': path.join(__dirname, './resources/assets/js')
+      }
+    },
   });

@@ -12,7 +12,7 @@ const LoginStudentsForm = () => import('./../components/auth/students/loginForm'
 const LoginStudentsForgot = () => import('./../components/auth/students/forgot');
 const NotFound = () => import('./../components/404');
 const StudentDash = () => import('./../components/dashboards/students/dashboard');
-const StudentDashProject = () => import('./../components/dashboards/students/project');
+const StudentDashProject = () => import('./../components/dashboards/students/project/index');
 const StudentDashTeam = () => import('./../components/dashboards/students/team');
 const Loading = () => import('./../components/loading');
 const GetWelcome = () => import('./../components/auth/students/getstarted/welcome');
@@ -22,7 +22,6 @@ const StudentDashProfile = () => import('./../components/dashboards/students/pro
 const StudentBoard = () => import('./../components/dashboards/students/board/board');
 const StudentBoardOverview = () => import('./../components/dashboards/students/board/overview');
 const StudentBoardStorage = () => import('./../components/dashboards/students/board/storage');
-const StudentBoardTask = () => import('./../components/dashboards/students/board/task');
 const StudentBoardTeam = () => import('./../components/dashboards/students/board/team');
 const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting');
 const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity');
@@ -59,6 +58,20 @@ export default new Router({
             path: '/h',
             component: StudentDash,
             meta: {requiresAuth: true},
+            beforeEnter: (to,from,next) => {
+                if(to.matched.some(record => record.meta.requiresAuth)){
+                    if(store.state.isLogged === false){
+                        next({
+                            path: '/',
+                            query: { redirect: to.fullPath}
+                        })
+                    } else {
+                        next()
+                    }
+                } else {
+                    next()
+                }
+            },
             children: [{
                 path: '',
                 component: StudentDashProject,
@@ -92,11 +105,6 @@ export default new Router({
                         path: 'storage',
                         component: StudentBoardStorage,
                         name: 'studentboardstorage'
-                    },
-                    {
-                        path: 'task',
-                        component: StudentBoardTask,
-                        name: 'studentboardtask'
                     },
                     {
                         path: 'team',
@@ -147,4 +155,4 @@ export default new Router({
         },
     ],
     mode: 'history',
-  });
+});

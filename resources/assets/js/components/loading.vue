@@ -1,14 +1,23 @@
 <template>
   <div id="loader">
-    <div class="loader__content">
-        <div class="loaderCore">
-            <img src="/images/spinner-24.png" alt="">
-        </div>
+    <div class="loader__content flexset" style="height: inherit;">
+        <img class="start--loading min" src="/images/proto.type-logo-primary.svg" alt="loading">
     </div>
   </div>
 </template>
 <script>
 export default {
-  
+
 }
 </script>
+<style scoped>
+.flexset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.min {
+  width: 100px;
+}
+</style>
+

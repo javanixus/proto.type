@@ -2,8 +2,8 @@
 <div v-if="loading">
     loading...
 </div>
-  <div v-else id="dashstudent">
-      <div class="dashstudent__content">
+<div v-else id="dashstudent">
+    <div class="dashstudent__content">
         <div id="appHeader" class="nav navbar--primary">
             <div class="appHeader__content">
                 <div class="appHeader__content__navigation">
@@ -59,8 +59,8 @@ export default {
     }),
     components: {
         // 'new-popup' : newPopup,
-        'create-project-popup': () => import('./../students/popup/createproject'),
-        'menu-profile-popup': () => import('./../students/popup/menuprofile')
+        'create-project-popup': () => import('./popup/createproject'),
+        'menu-profile-popup': () => import('./popup/menuprofile')
     },
     created(){
         this.loading = false

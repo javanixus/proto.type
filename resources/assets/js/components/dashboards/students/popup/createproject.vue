@@ -162,36 +162,36 @@
 </style>
 <script>
 export default {
-  data:() =>({
-      projectTitle:'Name your new project 😍',
-      secretPharse: 'pampam',
-      output: '',
-      dataFlow: 1,
-      dataProcess: false,
-      data: {
-          dataLinked: false,
-          dataEncrypt: true
-      },
-      encrypted: false,
-  }),
-  methods: {
-      close(){
-          this.$modal.hide('create-project')
-      },
-      swapData(val){
-          this.dataFlow = val
-          console.log(this.data)
-      },
-      swapDataValidate(val){
-          if(this.data.dataLinked === true){
-              this.dataFlow = val
-          }else{
-              this.dataFlow = 4
-          }
-      },
-      create(){
-          console.log('create');
-      },
-  },
+    data: () => ({
+        projectTitle: 'Name your new project 😍',
+        secretPharse: 'pampam',
+        output: '',
+        dataFlow: 1,
+        dataProcess: false,
+        data: {
+            dataLinked: false,
+            dataEncrypt: true
+        },
+        encrypted: false,
+    }),
+    methods: {
+        close() {
+            this.$modal.hide('create-project')
+        },
+        swapData(val) {
+            this.dataFlow = val
+            console.log(this.data)
+        },
+        swapDataValidate(val) {
+            if (this.data.dataLinked === true) {
+                this.dataFlow = val
+            } else {
+                this.dataFlow = 4
+            }
+        },
+        create() {
+            console.log('create');
+        },
+    },
 }
 </script>

@@ -3,8 +3,8 @@ import latin from 'crypto-js/enc-latin1';
 
 export default {
     methods: {
-        postData(){
-            var cryptobject = aes.encrypt(this.projectTitle, this.secretPharse);
+        postData() {
+            var cryptobject = aes.encrypt(this.datas.projectTitle, this.datas.secretPharse);
             this.encrypted = {
                 key: cryptobject.key + '', // don't send this
                 iv: cryptobject.iv + '', // don't send this
@@ -15,10 +15,10 @@ export default {
             this.dataPharse = this.encrypted.str
             window.localStorage.setItem('str', this.dataPharse)
             console.log(this.dataPharse)
-          },
-          getData(){
-            this.output = aes.decrypt(window.localStorage.getItem('str'), this.secretPharse).toString(latin)
-            console.log(this.output)
+        },
+        getData() {
+            this.datas.output = aes.decrypt(window.localStorage.getItem('str'), this.datas.secretPharse).toString(latin)
+            console.log(this.datas.output)
         },
     }
 }

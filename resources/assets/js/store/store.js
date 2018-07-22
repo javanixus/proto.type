@@ -10,6 +10,8 @@ export default new Vuex.Store({
       name:'',
       password: ''
     },
+    items: [],
+    hasProject: false,
     isNew: true,
     isLogged: true,
     nextId: 1,
@@ -20,8 +22,12 @@ export default new Vuex.Store({
       state.new.name = data.name
       state.new.password = data.pass
     },
-    updateItems(state, { items, id }) {
-      state.items[id] = items;
-    }
-  }
+    addProject(state, item){
+      state.items.push(Object.assign(item, {keyId: state.nextId}))
+      state.nextId += 1
+    },
+    validateProject(state,val){
+      state.hasProject = val
+    },
+  },
 });

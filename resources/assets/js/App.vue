@@ -17,7 +17,7 @@
         created(){
             setTimeout(() =>{
                 this.loading = false
-            },1500)
+            },3000)
         }
     }
 </script>

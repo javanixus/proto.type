@@ -11,7 +11,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
       'vue-router',
       'vee-validate',
       'vue-js-modal',
-      'crypto-js'
+      'crypto-js/aes',
+      'crypto-js/enc-latin1'
     ])
   .sass('resources/assets/sass/app.scss', 'public/css/')
   .options({

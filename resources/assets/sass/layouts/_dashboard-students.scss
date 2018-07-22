@@ -160,6 +160,11 @@ ul.navigationWrap-items li a {
     height: 100vh;
     min-width: 750px;
 }
+
+#project {
+    overflow-y: auto;
+}
+
 #projectItems {
     display: inline-flex;
     flex-wrap: wrap;

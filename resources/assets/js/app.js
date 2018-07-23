@@ -3,7 +3,7 @@ import App from '~/App.vue';
 import router from '~/router/router';
 import VeeValidate from 'vee-validate';
 import Vmodal from 'vue-js-modal';
-import store from '~/store/store';
+import store from '~/store/index';
 import crypto from '~/crypto/crypto';
 
 Vue.use(Vmodal);

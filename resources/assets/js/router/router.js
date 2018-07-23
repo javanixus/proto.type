@@ -1,7 +1,7 @@
 // default deb
 import Vue from 'vue';
 import Router from 'vue-router';
-import store from './../store/store'
+import store from './../store/index'
 
 //exec
 Vue.use(Router);
@@ -93,7 +93,7 @@ export default new Router({
                 name: 'studentprofile'
             },
             {
-                path: 'b/jvnx',
+                path: 'b/:id',
                 component: StudentBoard,
                 children: [
                     {

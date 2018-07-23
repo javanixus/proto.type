@@ -4,7 +4,7 @@
       <aside class="overviewContent__sidebar">
         <span>Project info:</span>
         <div class="overviewSidebar-title">
-          <h2>{{sidebar.title}}</h2>
+          <h2>{{$route.params.id}}</h2>
         </div>
         <div class="overviewSidebar-team">
           <div class="sidebarTeam">

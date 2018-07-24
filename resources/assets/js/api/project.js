@@ -1,4 +1,6 @@
-bg = [
+
+// call just bg
+export const bg = [
     '/images/card2.png',
     '/images/card3.png',
     '/images/card4.png',
@@ -8,8 +10,14 @@ bg = [
     '/images/card8.png',
 ]
 
-export default {
-    getBg(){
-        return bg
-    }
+export const status = [
+    'done',
+    'pending',
+    'disabled',
+    'warning'
+]
+
+//call just random
+export function random(){
+    return bg
 }

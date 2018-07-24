@@ -3,7 +3,7 @@
       <div class="project__content" v-if="this.$store.state.hasProject">
         <div class="projectCore">
           <div v-if="this.$store.state.hasProject" class="projectContentTitle">
-            <label for="projectItems">{{count}} project showed</label>
+            <label for="projectItems">{{items.length}} project showed</label>
           </div>
           <div id="projectItems" class="marginTop-s">
             <pi v-for="item in items" :key="item.keyId" :status="item.status" :headline="item.headline" :title="item.title" :members="item.members" :desc="item.desc" :bg="item.bg" :href="item.url" />
@@ -24,17 +24,16 @@ import { mapState } from 'vuex'
 export default {
   data: () => ({
     hover: false,
-    items: []
   }),
   components:{
     'pi': () => import('./project-item')
   },
-  computed: mapState({
-      count: state => state.items.length
-    }),
+  computed: {
+    ...mapState(['items'])
+  },
   created(){
-    this.items = this.$store.state.items
-    this.items.length === 0 ? this.$store.state.hasProject = false : this.$store.state.hasProject = true
+    this.$store.dispatch('getProject')
+    this.items.length === 0 ? this.$store.dispatch('validateProject', false) : this.$store.dispatch('validateProject', true)
   }
 }
 </script>

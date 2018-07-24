@@ -1,4 +1,7 @@
 export default {
+    getProject(state){
+        return state.items
+    },
     addNew(state, data) {
         state.new.name = data.name
         state.new.password = data.pass
@@ -9,7 +12,7 @@ export default {
         }))
         state.nextId += 1
     },
-    validateProject(state, val) {
-        state.hasProject = val
+    validateProject(state, status) {
+        state.hasProject = status
     },
 }

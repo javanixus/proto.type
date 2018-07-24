@@ -1,24 +1,15 @@
-import aes from 'crypto-js/aes';
-import latin from 'crypto-js/enc-latin1';
+import aes from 'crypto-js/aes'
+import latin from 'crypto-js/enc-latin1'
+import { bg,status } from './../api/project'
 
 export default {
-    data: () => ({
-        bgArray:[
-            '/images/card2.png',
-            '/images/card3.png',
-            '/images/card4.png',
-            '/images/card5.png',
-            '/images/card6.png',
-            '/images/card7.png',
-            '/images/card8.png',
-        ],
-    }),
     methods: {
         postData() {
             let _vm = this
             let _l =  window.localStorage
             let _cs = console
-            let _r = this.bgArray[Math.floor(Math.random() * this.bgArray.length)]
+            let _r = bg[Math.floor(Math.random() * bg.length)]
+            let _h = status[Math.floor(Math.random() * status.length)]
             var cryptobject = aes.encrypt(_vm.datas.projectTitle, _vm.datas.secretPharse);
             _vm.encrypted = {
                 key: cryptobject.key + '', // don't send _vm
@@ -31,12 +22,12 @@ export default {
             _l.setItem('str', _vm.dataPharse)
             _cs.log(_vm.dataPharse)
 
-            _vm.$store.commit('addProject',{
+            _vm.$store.dispatch('addProject',{
                 headline: '28 days again',
                 title: _vm.datas.projectTitle,
                 desc: _vm.datas.projectDesc,
                 bg: _r,
-                status: 'done'
+                status: _h
             })
             _vm.datas.projectTitle = ''
             _vm.datas.projectDesc = ''
@@ -49,7 +40,7 @@ export default {
             _cs.log(_vm.datas.output)
             _vm.datas.dataFlow = 1
             _vm.$modal.hide('create-project')
-            _vm.$store.state.items.length >= 1 ? _vm.$store.commit('validateProject',true) : _vm.$store.commit('validateProject',false)
+            _vm.$store.state.items.length >= 1 ? _vm.$store.dispatch('validateProject',true) : _vm.$store.dispatch('validateProject',false)
         },
     }
 }

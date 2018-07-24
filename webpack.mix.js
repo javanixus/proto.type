@@ -53,7 +53,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
     resolve: {
       extensions: ['.js', '.json', '.vue'],
       alias: {
-        '~': path.join(__dirname, './resources/assets/js')
+        '~': path.join(__dirname, './resources/assets/js'),
+        '!': path.join(__dirname, '/')
       }
     },
   });

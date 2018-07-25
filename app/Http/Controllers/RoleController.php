@@ -62,7 +62,7 @@ class RoleController extends Controller
         $role = Role::find($id);
         $role->update($request->all());
 
-        return response()->json($forum, 200);
+        return response()->json($role, 200);
     }
 
     /**

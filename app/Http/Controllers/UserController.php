@@ -15,9 +15,9 @@ class UserController extends Controller
         $users = User::with('role')->get();
         foreach ($users as $user) {
             if($user->role->name == 'teacher') {
-                $user = $user->load('teacher');
+                $profile = $user->load('teacher');
             } elseif($user->role->name == 'student') {
-                $user->load('student');
+                $profile = $user->load('student');
             }
         }
 
@@ -27,14 +27,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // $role tergantung $request->role pada pilihan inputan : 1. admin, 2. teacher, 3.student
-        $role = Role::find('3');
+
+        $role = Role::find($request->role);
 
         $role->users()->create([
-            'name' => 'ccccc',
-            'username' => 'ccccc',
-            'email' => 'ccccc@gmail.com',
-            'avatar' => 'ccccc.jpg',
-            'password' => 'ccccc123',
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'avatar' => $request->avatar,
+            'password' => $request->password,
         ]);
 
         return response()->json($role->name . ' created', 200);
@@ -57,13 +58,11 @@ class UserController extends Controller
         $user = User::find($id);
 
         $user->update([
-            'name'  => 'lovebird.jpg',
-            'avatar'  => 'lovebird.jpg',
+            'name'  => $request->name,
+            'username'  => $request->username,
+            'password'  => $request->password,
+            'email'  => $request->email,
         ]);
-
-            //  membutuhkan validasi pada email
-            // 'email'  => 'love',
-            // 'password'  => 'love',
 
         return response()->json($user, 200);
     }

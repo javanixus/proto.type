@@ -12,24 +12,24 @@
 */
 
 // role
-Route::get('role', 'RoleController@index');
-Route::get('role/create', 'RoleController@store');
-Route::get('role/show/{id}', 'RoleController@show');
-Route::get('role/update/{id}', 'RoleController@update');
-Route::get('role/delete/{id}', 'RoleController@destroy');
+Route::get('roles', 'RoleController@index');
+Route::get('roles/create', 'RoleController@store');
+Route::get('roles/show/{id}', 'RoleController@show');
+Route::get('roles/update/{id}', 'RoleController@update');
+Route::get('roles/delete/{id}', 'RoleController@destroy');
 
 // user
-Route::get('user', 'UserController@index');
-Route::get('user/create', 'UserController@store');
-Route::get('user/show/{id}', 'UserController@show');
-Route::get('user/delete/{id}', 'UserController@destroy');
-Route::get('user/update/{id}', 'UserController@update');
+Route::get('users', 'UserController@index');
+Route::get('users/create', 'UserController@store');
+Route::get('users/show/{id}', 'UserController@show');
+Route::get('users/delete/{id}', 'UserController@destroy');
+Route::get('users/update/{id}', 'UserController@update');
 
 // student
-Route::get('student', 'StudentController@index');
-Route::get('student/create', 'StudentController@store');
-Route::get('student/update/{id}', 'StudentController@update');
-Route::get('student/show/{id}', 'StudentController@show');
+Route::get('students', 'StudentController@index');
+Route::get('students/create', 'StudentController@store');
+Route::get('students/update/{id}', 'StudentController@update');
+Route::get('students/show/{id}', 'StudentController@show');
 // buat nis->profile idnya dan type orm , dengan user_id
 
 // FRONT END

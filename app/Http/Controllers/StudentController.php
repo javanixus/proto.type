@@ -30,7 +30,7 @@ class StudentController extends Controller
 
         return response()->json($user, 200);
     }
-
+q
 
     public function show($id)
     {

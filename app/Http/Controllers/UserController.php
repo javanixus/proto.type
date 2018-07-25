@@ -12,15 +12,14 @@ class UserController extends Controller
 
     public function index()
     {
-       $users = User::all();
-        // $users = User::with('role')->get();
-        // foreach ($users as $user) {
-        //     if($user->role->name == 'teacher') {
-        //         $user = $user->load('teacher');
-        //     } elseif($user->role->name == 'student') {
-        //         $user->load('student');
-        //     }
-        // }
+        $users = User::with('role')->get();
+        foreach ($users as $user) {
+            if($user->role->name == 'teacher') {
+                $user = $user->load('teacher');
+            } elseif($user->role->name == 'student') {
+                $user->load('student');
+            }
+        }
 
         return response()->json($users , 200);
     }

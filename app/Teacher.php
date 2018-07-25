@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
-    protected $fillable = [
-        'phone', 'gender', 'quotes', 'avatar'
-    ];
+
+    protected $hidden = ['created_at', 'updated_at', 'id'];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App/User');
     }
 
-    protected $hidden = [
-        'user_id',
-    ];
-
+    public function profile()
+    {
+        return $this->morphMany('App\Profile', 'profileable');
+    }
 }

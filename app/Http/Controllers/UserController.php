@@ -3,107 +3,77 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User as User;
-use App\Teacher as Teacher;
-// use App\Student as Student;
+use App\Role;
+use App\User;
+use App\Profile;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $users = User::all();
+       $users = User::all();
+        // $users = User::with('role')->get();
+        // foreach ($users as $user) {
+        //     if($user->role->name == 'teacher') {
+        //         $user = $user->load('teacher');
+        //     } elseif($user->role->name == 'student') {
+        //         $user->load('student');
+        //     }
+        // }
 
-        return response()->json($users, 201);
+        return response()->json($users , 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $user = User::create($request->all());
+        // $role tergantung $request->role pada pilihan inputan : 1. admin, 2. teacher, 3.student
+        $role = Role::find('3');
 
-        if ($request->role == 1) {
-            $user->teacher()->create($request->all());
-        } elseif ($request->role == 2) {
-            $user->student()->create($request->all());
+        $role->users()->create([
+            'name' => 'ccccc',
+            'username' => 'ccccc',
+            'email' => 'ccccc@gmail.com',
+            'avatar' => 'ccccc.jpg',
+            'password' => 'ccccc123',
+        ]);
+
+        return response()->json($role->name . ' created', 200);
+    }
+
+    public function show($id)
+    {
+        $user = User::with('role')->find($id);
+        if($user->role->name == 'teacher') {
+            $user = $user->load('teacher');
+        } elseif($user->role->name == 'student') {
+            $user = $user->load('student');
         }
 
         return response()->json($user, 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-            if ($user->role == 1) {
-                $user->teacher;
-            } elseif ($user->role == 2) {
-                $user->student;
-            }
-
-        return response()->json($user, 200);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
 
-        $user->update($request->all());
+        $user->update([
+            'name'  => 'lovebird.jpg',
+            'avatar'  => 'lovebird.jpg',
+        ]);
+
+            //  membutuhkan validasi pada email
+            // 'email'  => 'love',
+            // 'password'  => 'love',
 
         return response()->json($user, 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        $delete = User::findOrFail($id)->delete();
-            return response()->json($delete, 200);
+        $user = User::find($id);
+        $user->delete();
+
+        return response()->json('user deleted', 200);
     }
 }

@@ -13,11 +13,13 @@ class DatabaseSeeder extends Seeder
     {
 
         $clear = DB::table('users')->delete();
-        $clear = DB::table('grades')->delete();
-        $clear = DB::table('study_programs')->delete();
+        $clear = DB::table('roles')->delete();
+        // $clear = DB::table('grades')->delete();
+        // $clear = DB::table('study_programs')->delete();
 
+        $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(GradesTableSeeder::class);
-        $this->call(StudyProgramsTableSeeder::class);
+        // $this->call(GradesTableSeeder::class);
+        // $this->call(StudyProgramsTableSeeder::class);
     }
 }

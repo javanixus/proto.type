@@ -1,8 +1,8 @@
 <template>
   <div id="project">
-      <div class="project__content" v-if="this.$store.state.hasProject">
+      <div class="project__content" v-if="hasProjects">
         <div class="projectCore">
-          <div v-if="this.$store.state.hasProject" class="projectContentTitle">
+          <div class="projectContentTitle">
             <label for="projectItems">{{items.length}} project showed</label>
           </div>
           <div id="projectItems" class="marginTop-s">
@@ -30,7 +30,8 @@ export default {
   },
   computed: {
     ...mapState({
-      items: state => state.project.items
+      items: state => state.project.items,
+      hasProjects: state => state.project.hasProject
     })
   },
   created(){

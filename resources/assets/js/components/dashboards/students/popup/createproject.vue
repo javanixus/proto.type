@@ -150,8 +150,8 @@
                     </div>
                 </div>
                 <div class="createProjectPopup__footer" style="text-align: center!important; margin-top: 30px!important;">
-                    <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="postData">Go to project</button>
-                    <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="getData">Get Decrypted Data</button>
+                    <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="postData(datas)">Go to project</button>
+                    <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="getData(datas,'create-project')">Get Decrypted Data</button>
                 </div>
             </div>
         </div>

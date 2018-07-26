@@ -6,17 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    protected $fillable = [
-        'quotes', 'phone', 'avatar', 'gender',
-        'address', 'grade', 'program_id', 'nis'
-    ];
+    protected $touches = ['user'];
+    protected $fillable = ['nis'];
 
-    protected $hidden = [
-        'user_id',
-    ];
+    protected $hidden = ['created_at', 'updated_at','id', 'user_id'];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\User');
     }
 
 }

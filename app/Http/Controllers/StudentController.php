@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
 use Illuminate\Http\Request;
+use App\Student;
+use App\User;
 
 class StudentController extends Controller
 {
@@ -14,71 +15,43 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::with('user', 'user.role')->get();
+
+        return response()->json($students, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        // Example user_id || aslinya dari id user yang sedang login
+        $user = User::find(8);
+        $user->student()->create([
+            'nis' => 'testnis23',
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Student $student)
+        return response()->json($user, 200);
+    }
+q
+
+    public function show($id)
     {
-        //
+        $student = Student::find($id)->with('user', 'user.role')->first();
+        return response()->json($student, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Student $student)
+
+    public function update(Request $request, $id)
     {
-        //
+        $user = User::find(8);
+        $data = [
+            'nis' => 'testmantap',
+        ];
+        $user->student()->save($data);
+
+        return response()->json($user, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Student $student)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
         //
     }

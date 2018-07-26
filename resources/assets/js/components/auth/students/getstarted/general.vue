@@ -50,15 +50,11 @@
                 newPass: ''
             }
         }),
-        computed: {
-
-        },
         methods:{
             submitSetup(){
                 const self = this
                 const name = `${self.setup.firstName} ${self.setup.lastName}`
-                console.log(name + self.setup.newPass)
-                this.$store.commit('addNew',{
+                this.$store.dispatch('auth/addNewAuth',{
                     name: name,
                     pass: self.setup.newPass
                 })

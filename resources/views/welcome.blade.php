@@ -19,19 +19,17 @@
     <body>
     <div id="app">
     </div>
-        <script>
-           window.Laravel = <?php echo json_encode([
-               'csrfToken' => csrf_token(),
-                    ]); ?>
-          </script>
-        <noscript>
-            this page require Javascript :> , so enable your Javascript
-        </noscript>
-        <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-  }
-</script>
+    <script>
+        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
+    </script>
+    <noscript>
+        this page require Javascript :> , so enable your Javascript
+    </noscript>
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+        }
+    </script> -->
         <script src="{{mix('js/manifest.js')}}"></script>
         <script src="{{mix('js/vendor.js')}}"></script>
         <script src="{{mix('js/app.js')}}"></script>

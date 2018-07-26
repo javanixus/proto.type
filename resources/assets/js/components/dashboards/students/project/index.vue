@@ -6,7 +6,7 @@
             <label for="projectItems">{{items.length}} project showed</label>
           </div>
           <div id="projectItems" class="marginTop-s">
-            <pi v-for="item in items" :key="item.keyId" :status="item.status" :headline="item.headline" :title="item.title" :members="item.members" :desc="item.desc" :bg="item.bg" :href="item.url" />
+            <pi v-for="item in items" :key="item.key + item.keyId" :status="item.status" :headline="item.headline" :title="item.title" :members="item.members" :desc="item.desc" :bg="item.bg" :href="item.url" />
           </div>
         </div>
       </div>
@@ -22,9 +22,6 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  data: () => ({
-    hover: false,
-  }),
   components:{
     'pi': () => import('./project-item')
   },

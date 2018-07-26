@@ -7,13 +7,13 @@ export default {
         encryptedKey: ''
     },
     actions: {
-        getProject(context){
+        getProject(context) {
             context.commit('getProject')
         },
-        addProject(context, data){
+        addProject(context, data) {
             context.commit('addProject', data)
         },
-        validateProject(context,status){
+        validateProject(context, status) {
             context.commit('validateProject', status)
         }
     },
@@ -21,7 +21,7 @@ export default {
 
     },
     mutations: {
-        getProject(state){
+        getProject(state) {
             return state.items
         },
         addProject(state, item) {

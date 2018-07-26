@@ -15,13 +15,14 @@ export default new Vuex.Store({
   },
   plugins: [
     createPersistedState({
-    key: 'prototype',
-    storage: {
-      getItem: key => Cookies.get(key),
-      setItem: (key, value) => Cookies.set(key, value, { expires: 3 }),
-      removeItem: key => Cookies.remove(key)
-    }
-  }
-),
-],
+      key: 'prototype',
+      storage: {
+        getItem: key => Cookies.get(key),
+        setItem: (key, value) => Cookies.set(key, value, {
+          expires: 3
+        }),
+        removeItem: key => Cookies.remove(key)
+      }
+    }),
+  ],
 });

@@ -139,7 +139,7 @@ export default new Router({
             meta: {requiresAuth: true},
             beforeEnter: (to,from,next) => {
                 if(to.matched.some(record => record.meta.requiresAuth)){
-                    if(store.state.isNew === false){
+                    if(store.state.auth.isNew === false){
                         next({
                             path: '/h',
                             query: { redirect: to.fullPath}

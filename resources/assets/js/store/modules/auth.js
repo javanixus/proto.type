@@ -1,8 +1,8 @@
 export default {
     namespaced: true,
     state:{
-        isNew: true,
-        isLogged: true,
+        isNew: false,
+        isLogged: false,
         new: {
             name: '',
             password: ''
@@ -12,7 +12,11 @@ export default {
 
     },
     actions: {
+        loginAuth(context){
+            context.commit('loginAuthMutate')
+        }
     },
     mutations: {
+        loginAuthMutate: state => state.isLogged = true
+        }
     }
-}

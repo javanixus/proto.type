@@ -23,7 +23,9 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
+import axios from 'axios'
+import Cookies from 'js-cookie'
+
 export default {
   data: () => ({
     buttontext: 'LOG IN TO PROTO.TYPE',
@@ -46,8 +48,9 @@ export default {
       self.Isdisabled = true;
       axios.get('https://jsonplaceholder.typicode.com/users')
           .then(res => {
-            console.log(res)
+            this.$store.dispatch('auth/loginAuth')
             setTimeout(()=>{ self.buttontext = 'SUCCESS'; self.Isdisabled = false; }, 2000);
+            this.$router.push({name: 'studentproject'})
           })
           .catch(error => {
             console.log(error)

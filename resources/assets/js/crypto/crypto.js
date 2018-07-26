@@ -21,14 +21,13 @@ export default {
             _vm.dataPharse = _vm.encrypted.str
             _l.setItem('str', _vm.dataPharse)
             _cs.log(_vm.dataPharse)
-
-            _vm.$store.dispatch('addProject',{
-                headline: '28 days again',
-                title: _vm.datas.projectTitle,
-                desc: _vm.datas.projectDesc,
-                bg: _r,
-                status: _h
-            })
+            // _vm.$store.dispatch('addProject',{
+            //     headline: '28 days again',
+            //     title: _vm.datas.projectTitle,
+            //     desc: _vm.datas.projectDesc,
+            //     bg: _r,
+            //     status: _h
+            // })
             _vm.datas.projectTitle = ''
             _vm.datas.projectDesc = ''
         },

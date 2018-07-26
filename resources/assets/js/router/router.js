@@ -60,13 +60,22 @@ export default new Router({
             meta: {requiresAuth: true},
             beforeEnter: (to,from,next) => {
                 if(to.matched.some(record => record.meta.requiresAuth)){
-                    if(store.state.isLogged === false){
+                    console.log(store.state.auth.isLogged)
+                    if(store.state.auth.isLogged === false){
                         next({
                             path: '/',
                             query: { redirect: to.fullPath}
                         })
                     } else {
-                        next()
+                        console.log(store.state.auth.isNew)
+                        if(store.state.auth.isNew === true){
+                            next({
+                                path: '/welcome',
+                                query: { redirect: to.fullPath }
+                            })
+                        } else {
+                            next()
+                        }
                     }
                 } else {
                     next()

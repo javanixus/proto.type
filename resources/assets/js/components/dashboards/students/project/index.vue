@@ -29,11 +29,14 @@ export default {
     'pi': () => import('./project-item')
   },
   computed: {
-    ...mapState(['items'])
+    ...mapState({
+      items: state => state.project.items
+    })
   },
   created(){
-    this.$store.dispatch('getProject')
-    this.items.length === 0 ? this.$store.dispatch('validateProject', false) : this.$store.dispatch('validateProject', true)
+    console.log(this.items)
+    this.$store.dispatch('project/getProject')
+    this.items.length === 0 ? this.$store.dispatch('project/validateProject', false) : this.$store.dispatch('project/validateProject', true)
   }
 }
 </script>

@@ -48,7 +48,7 @@ export default {
       self.Isdisabled = true;
       axios.get('https://jsonplaceholder.typicode.com/users')
           .then(res => {
-            this.$store.dispatch('auth/loginAuth')
+            this.$store.dispatch('auth/loginAuth',true)
             setTimeout(()=>{ self.buttontext = 'SUCCESS'; self.Isdisabled = false; }, 2000);
             this.$router.push({name: 'studentproject'})
           })

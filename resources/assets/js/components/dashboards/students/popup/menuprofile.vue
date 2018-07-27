@@ -10,7 +10,7 @@
                     <li><router-link :to="{name: 'studentprofile'}">Account Preferences</router-link></li>
                     <li><a href="">Settings</a></li>
                     <li><a href="">Support</a></li>
-                    <li><a href="">Logout</a></li>
+                    <li><router-link @click.native="logout" to="/">Logout</router-link></li>
                 </ul>
             </div>
         </div>
@@ -18,6 +18,11 @@
 </template>
 <script>
 export default {
-  
+methods: {
+    logout(){
+        this.$store.dispatch('auth/logoutAuth',false)
+        this.$router.push('/')
+    }
+}
 }
 </script>

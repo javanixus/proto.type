@@ -8,19 +8,20 @@ export default {
             password: ''
         },
     },
-    getters: {
-
-    },
     actions: {
-        loginAuth(context){
-            context.commit('loginAuthMutate')
+        loginAuth(context,status){
+            context.commit('loginAuthMutate',status)
         },
         addNewAuth(context,data){
             context.commit('AddNewAuthMutate',data)
+        },
+        logoutAuth(context,status){
+            context.commit('logoutAuthMutate',status)
         }
     },
     mutations: {
-        loginAuthMutate: state => state.isLogged = true,
+        loginAuthMutate: (state,status) => state.isLogged = true & localStorage.setItem('isLogged',status),
+        logoutAuthMutate: (state,status) => state.isLogged = false & localStorage.setItem('isLogged',status),
         AddNewAuthMutate(state,data){
             state.isNew= false
             state.new = {

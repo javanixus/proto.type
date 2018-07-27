@@ -32,6 +32,10 @@ export default new Router({
         {
             path: '',
             component: LoginStudents,
+            beforeEnter(to,from,next){
+                const auth = localStorage.getItem('isLogged')
+                auth ? next({path: '/h/'}) : auth === false ? next() : next()
+            },
             children: [{
                 path: '/forgot',
                 component: LoginStudentsForgot
@@ -60,23 +64,8 @@ export default new Router({
             meta: {requiresAuth: true},
             beforeEnter: (to,from,next) => {
                 if(to.matched.some(record => record.meta.requiresAuth)){
-                    console.log(store.state.auth.isLogged)
-                    if(store.state.auth.isLogged === false){
-                        next({
-                            path: '/',
-                            query: { redirect: to.fullPath}
-                        })
-                    } else {
-                        console.log(store.state.auth.isNew)
-                        if(store.state.auth.isNew === true){
-                            next({
-                                path: '/welcome',
-                                query: { redirect: to.fullPath }
-                            })
-                        } else {
-                            next()
-                        }
-                    }
+                    const auth = localStorage.getItem('isLogged')
+                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
                 } else {
                     next()
                 }
@@ -94,16 +83,28 @@ export default new Router({
             {
                 path: 'explore',
                 component: StudentExplore,
-                name: 'studentexplore'
+                name: 'studentexplore',
+                beforeEnter(to,from,next){
+                    const auth = localStorage.getItem('isLogged')
+                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                },
             },
             {
                 path: 'profile',
                 component: StudentDashProfile,
-                name: 'studentprofile'
+                name: 'studentprofile',
+                beforeEnter(to,from,next){
+                    const auth = localStorage.getItem('isLogged')
+                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                },
             },
             {
                 path: 'b/:id',
                 component: StudentBoard,
+                beforeEnter(to,from,next){
+                    const auth = localStorage.getItem('isLogged')
+                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                },
                 children: [
                     {
                         path: '',

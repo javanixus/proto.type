@@ -25,7 +25,8 @@ export default {
                 desc: res.projectDesc,
                 bg: _r,
                 status: _h,
-                key: dataPharse
+                key: dataPharse,
+                url: res.projectTitle
             })
         },
         getData(data, val) {

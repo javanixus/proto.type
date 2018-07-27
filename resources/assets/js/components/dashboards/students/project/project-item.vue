@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{path: href}">
+    <router-link :to="{path: 'b/' + href}">
         <div class="projectItems__item">
             <span class="headlineProjectItem" :class="headmsg">{{headline}}</span>
             <div class="project__item__header" :style="{ backgroundImage: 'url(' + bg + ')' }"></div>

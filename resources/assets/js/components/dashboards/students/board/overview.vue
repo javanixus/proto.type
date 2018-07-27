@@ -51,7 +51,7 @@
 
           </div>
         </div>
-      </content> 
+      </content>
     </div>
   </div>
 </template>

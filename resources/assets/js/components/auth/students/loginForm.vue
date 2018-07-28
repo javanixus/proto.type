@@ -3,16 +3,14 @@
     <form @submit.prevent="validateBeforeSubmit">
       <div class="formBlock">
         <div class="formBlock__inner marginBottom-s">
-          <label for="userStudent">Username or email</label>
-          <input v-model="dataLogin.username" name="username or email" @focus="$event.target.select()" v-validate="'required|alpha'" type="text" :disabled="Isdisabled" :class="{'input-disabled': Isdisabled, 'input': true, 'input-danger': errors.has('username or email')}" id="userStudent" placeholder="pampam or fahmiirsyad10@protonmail.com" class="input input--primary">
-          <p v-show="errors.has('username or email')" class="help is-danger">{{ errors.first('username or email') }}</p>
+          <label for="userauth">Email</label>
+          <vinput v-model="dataLogin.username" :id="'userauth'" :type="'text'" :name="'email'" :validate="'required|email'" :placeholder="'fahmi@prototype.com'" :add="true"/>
         </div>
       </div>
       <div class="formBlock">
         <div class="formBlock__inner marginBottom-s">
-          <label for="passStudent">Password</label>
-            <input v-model="dataLogin.password" name="password" v-validate="'required|alpha'" @focus="$event.target.select()" type="password" :disabled="Isdisabled" :class="{'input-disabled': Isdisabled, 'input': true, 'input-danger': errors.has('username or email')}" id="passStudent" placeholder="•••••••••••••••••" class="input input--primary">
-            <p v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</p>
+          <label for="passauth">Password</label>
+            <vinput v-model="dataLogin.password" :id="'passauth'" :type="'password'" :name="'password'" :validate="'required'" :placeholder="'•••••••••••'" :add="true"/>
         </div>
       </div>
       <div class="formButton">

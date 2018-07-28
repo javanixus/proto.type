@@ -65,7 +65,7 @@ export default new Router({
             beforeEnter: (to,from,next) => {
                 if(to.matched.some(record => record.meta.requiresAuth)){
                     const auth = localStorage.getItem('isLogged')
-                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                    auth ? next() : next({path: '/'}) & localStorage.removeItem('isLogged')
                 } else {
                     next()
                 }
@@ -86,7 +86,7 @@ export default new Router({
                 name: 'studentexplore',
                 beforeEnter(to,from,next){
                     const auth = localStorage.getItem('isLogged')
-                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                    auth ? next() : next({path: '/'}) & localStorage.removeItem('isLogged')
                 },
             },
             {
@@ -95,7 +95,7 @@ export default new Router({
                 name: 'studentprofile',
                 beforeEnter(to,from,next){
                     const auth = localStorage.getItem('isLogged')
-                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                    auth ? next() : next({path: '/'}) & localStorage.removeItem('isLogged')
                 },
             },
             {
@@ -103,7 +103,7 @@ export default new Router({
                 component: StudentBoard,
                 beforeEnter(to,from,next){
                     const auth = localStorage.getItem('isLogged')
-                    auth ? next() : auth === false ? next({path: '/'}) & localStorage.removeItem('isLogged') : auth === null ? next({path: '/'}) : store.state.auth.isLogged ? next() : store.state.auth.isLogged === false ? next({path: '/'}) : next(false)
+                    auth ? next() : next({path: '/'}) & localStorage.removeItem('isLogged')
                 },
                 children: [
                     {

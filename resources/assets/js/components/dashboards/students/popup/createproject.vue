@@ -16,7 +16,7 @@
                 </div>
                 <form>
                     <div class="createProjectPopup__content__title">
-                        <input name="title" :class="{'input': true, 'input-danger': errors.has('title')}" v-validate="'required'" @focus="$event.target.select()" v-model="datas.projectTitle" type="text" value="Project title" class="input input--primary" placeholder="fill project title">
+                        <vinput v-model="datas.projectTitle" :id="'title'" :type="'text'" :name="'titlename'" :validate="'required'" :placeholder="'fill project title'"/>
                     </div>
                     <div class="createProjectPopup__content__desc">
                         <textarea :class="{'input': true, 'input-danger': errors.has('desc')}" v-validate="'required'" @focus="$event.target.select()" v-model="datas.projectDesc" name="desc" id="" rows="8" placeholder="fill the desc">We need to create a few different alternative for a colorfull, fun and vibrant sidebar. So far our best sources of inspirations are in bucket on the team.</textarea>

@@ -2,7 +2,6 @@ export default {
     namespaced: true,
     state:{
         isNew: true,
-        isLogged: false,
         new: {
             name: '',
             password: ''
@@ -21,7 +20,7 @@ export default {
     },
     mutations: {
         loginAuthMutate: (state,status) => state.isLogged = true & localStorage.setItem('isLogged',status),
-        logoutAuthMutate: (state,status) => state.isLogged = false & localStorage.setItem('isLogged',status),
+        logoutAuthMutate: (state,status) => state.isLogged = false & localStorage.removeItem('isLogged'),
         AddNewAuthMutate(state,data){
             state.isNew= false
             state.new = {

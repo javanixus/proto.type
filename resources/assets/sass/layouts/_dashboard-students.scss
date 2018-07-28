@@ -202,7 +202,7 @@ ul.navigationWrap-items li a {
     @extend .borderRadius-s;
     resize: none;
     @extend .marginTop-xs;
-    padding: 5px;
+    @extend .padding-xs;
     color: $grey;
     outline: none;
     border: 1px solid rgba(0,0,0,.15);
@@ -296,7 +296,7 @@ ul.navigationWrap-items li a {
 // popup profile
 
 .menuProfile {
-    padding: 10px 15px;
+    @extend .paddingAppear-n;
     .menuProfile__header {
         @extend .paddingTop-xxs;
         h5 {
@@ -331,7 +331,7 @@ ul.navigationWrap-items li a {
 }
 .explore {
     width: 120px;
-    margin: 0 auto;
+    @extend .marginMagic;
     position: relative;
 }
 

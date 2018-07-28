@@ -41,16 +41,16 @@
 }
 
 .input-danger {
-    border-color: $red;
+    border-color: $red!important;
 }
 
 .checkbox--circle {
     position: relative;
     @extend .marginRight-s;
     font-weight: 500;
-  }
-  
-  .checkbox--circle label {
+}
+
+.checkbox--circle label {
     transition: all 150ms linear;
     background-color: #fff;
     border: 1px solid #ccc;

@@ -16,15 +16,15 @@
                 </div>
                 <form>
                     <div class="createProjectPopup__content__title">
-                        <input v-model="datas.projectTitle" type="text" value="Project title" class="input input--primary" placeholder="fill project title">
+                        <input name="title" :class="{'input': true, 'input-danger': errors.has('title')}" v-validate="'required'" @focus="$event.target.select()" v-model="datas.projectTitle" type="text" value="Project title" class="input input--primary" placeholder="fill project title">
                     </div>
                     <div class="createProjectPopup__content__desc">
-                        <textarea v-model="datas.projectDesc" name="" id="" rows="8" placeholder="fill the desc">We need to create a few different alternative for a colorfull, fun and vibrant sidebar. So far our best sources of inspirations are in bucket on the team.</textarea>
+                        <textarea :class="{'input': true, 'input-danger': errors.has('desc')}" v-validate="'required'" @focus="$event.target.select()" v-model="datas.projectDesc" name="desc" id="" rows="8" placeholder="fill the desc">We need to create a few different alternative for a colorfull, fun and vibrant sidebar. So far our best sources of inspirations are in bucket on the team.</textarea>
                     </div>
                 </form>
             </div>
             <div class="createProjectPopup__footer">
-                <button class="btn btn--primary paddingLeft-m paddingRight-m" @click="swapData(2)">Next</button>
+                <button :disabled="!IsPassed" :class="{'btn-disabled': !IsPassed}"  class="btn btn--primary paddingLeft-m paddingRight-m" @click="validateBeforeSubmit(2)">Next</button>
             </div>
         </div>
         <div v-else-if="datas.dataFlow === 2">
@@ -172,26 +172,36 @@ export default {
             dataProcess: false,
             dataLinked: false,
             dataEncrypt: true,
-            encrypted: false
         }
     }),
+    computed: {
+    IsPassed() {
+        return this.datas.projectTitle && this.datas.projectDesc;
+        },
+    },
     methods: {
         close() {
             this.$modal.hide('create-project')
+            this.datas.dataFlow= 1
+            this.datas.projectTitle = ''
+            this.datas.projectDesc = ''
         },
-        swapData(val) {
-            this.datas.dataFlow = val
-        },
-        swapDataValidate(val) {
-            if (this.datas.dataLinked === true) {
-                this.datas.dataFlow = val
-            } else {
-                this.datas.dataFlow = 4
-            }
+        swapData(val){this.datas.dataFlow = val},
+        swapDataValidate(val){
+            this.datas.dataLinked ? this.datas.dataFlow = val : this.datas.dataFlow = 4
         },
         create() {
-            console.log('create');
+            console.log('create')
         },
+        validateBeforeSubmit(val) {
+            this.$validator.validateAll().then((result) => {
+            if (result) {
+                this.swapData(val)
+                return
+            }
+            alert('Correct them errors!')
+    });
+    }
     },
 }
 </script>

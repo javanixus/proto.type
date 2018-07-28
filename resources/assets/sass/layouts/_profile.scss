@@ -32,7 +32,7 @@
     @extend .universe;
 }.profileCore__header {
     border-bottom: 1px solid #eee;
-    padding: 10px 15px;
+    @extend .paddingAppear-n;
     h4 {
         font-weight: 500;
         color: $grey;
@@ -112,7 +112,7 @@ p.emailtitle {
     overflow-y: auto;
     max-height: 200px;
 }.projectSidebar--item {
-    padding: 10px 15px;
+    @extend .paddingAppear-n;
     cursor: pointer;
     background: $grey-alter;
     @extend .borderRadius-s;

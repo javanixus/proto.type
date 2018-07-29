@@ -73,13 +73,13 @@
 
 <script>
   import vueFilePond from 'vue-filepond';
-  
+
   // Import FilePond styles
   import 'filepond/dist/filepond.min.css';
-  
+
   // Import image preview plugin styles
   import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
-  
+
   // Import image preview and file type validation plugins
   import FilePondPluginFileEncode from 'filepond-plugin-file-encode'
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'

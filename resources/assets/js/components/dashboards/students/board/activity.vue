@@ -1,6 +1,6 @@
 <template>
-  <div class="boardStorage">
-      <task-sidebar></task-sidebar>
+    <div class="boardStorage">
+    <task-sidebar></task-sidebar>
         <div class="taskNavbar">
             <div class="taskNavbar--left">
                 <h3>
@@ -11,7 +11,7 @@
                 <div class="sidebar-small" @click="sidebarOpen"></div>
             </div>
         </div>
-  </div>
+</div>
 </template>
 <script>
 import taskSidebar from './../popup/sidebar';

@@ -22,7 +22,6 @@
 </template>
 <script>
 import axios from 'axios'
-import Cookies from 'js-cookie'
 
 export default {
   data: () => ({
@@ -40,14 +39,12 @@ export default {
   },
   methods: {
     fetchData() {
-    var self = this;
+      var self = this;
       self.buttontext = 'LOGIN IN...';
-      console.log(self.buttontext);
       self.Isdisabled = true;
       axios.get('https://jsonplaceholder.typicode.com/users')
           .then(res => {
             this.$store.dispatch('auth/loginAuth',true)
-            setTimeout(()=>{ self.buttontext = 'SUCCESS'; self.Isdisabled = false; }, 2000);
             this.$router.push({name: 'studentproject'})
           })
           .catch(error => {

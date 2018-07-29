@@ -25,24 +25,24 @@
             <label for="overviewSummary">Summary:</label>
             <div id="overviewSummary">
               <div class="overviewSummary--item">
-                <div class="overviewSummaryItem__count">Private</div>
-                <div class="overviewSummaryItem__title">Project type</div>
+                <span>Project type</span>
+                <p>Private</p>
               </div>
               <div class="overviewSummary--item">
-                <div class="overviewSummaryItem__count">4</div>
-                <div class="overviewSummaryItem__title">Members</div>
+                <span>Members</span>
+                <p>4</p>
               </div>
               <div class="overviewSummary--item">
-                <div class="overviewSummaryItem__count">Development</div>
-                <div class="overviewSummaryItem__title">Status</div>
+                <span>Status</span>
+                <p>Development</p>
               </div>
               <div class="overviewSummary--item">
-                <div class="overviewSummaryItem__count">28 Days left</div>
-                <div class="overviewSummaryItem__title">Deadline</div>
+                <span>Deadline</span>
+                <p>28 Days left</p>
               </div>
               <div class="overviewSummary--item">
-                <div class="overviewSummaryItem__count" style="color: #25c782;">3/4</div>
-                <div class="overviewSummaryItem__title">Member actives</div>
+                <span>Member actives</span>
+                <p style="color: #25c782;">3/4</p>
               </div>
             </div>
           </div>
@@ -60,7 +60,6 @@ export default {
   data(){
     return {
       sidebar : {
-        title: 'Project Javanixus',
         desc: 'flexible tools are designed for any project or workflow.'
       }
     }

@@ -12,7 +12,7 @@
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
 
-**ALERT: 🚧 THIS PROJECT IS COPYRIGHT BY JAVANIXUS, DONT USE FOR COMMERCIAL. 🚧
+**ALERT: 🚧 THIS PROJECT IS COPYRIGHT BY JAVANIXUS, DONT USE FOR COMMERCIAL.** 🚧
 
 `more documentation coming soon`.
 

@@ -1,5 +1,10 @@
 #loader {
-    width: 100%;
+    @extend .universe;
+    z-index: 999;
+    background: white;
+}
+
+.loader__content {
     height: 100vh;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div id="loader">
-    <div class="loader__content flexset" style="height: inherit;">
+    <div class="loader__content flexset">
         <img class="start--loading min" src="/images/proto.type-logo-primary.svg" alt="loading">
     </div>
   </div>

@@ -1,8 +1,5 @@
 <template>
-<div v-if="loading">
-    loading...
-</div>
-<div v-else id="dashstudent">
+<div id="dashstudent">
     <div class="dashstudent__content">
         <div id="appHeader" class="nav navbar--primary">
             <div class="appHeader__content">
@@ -43,7 +40,6 @@
         </div>
         <div id="appContent">
             <router-view></router-view>
-            <!-- <new-popup></new-popup> -->
             <create-project-popup></create-project-popup>
             <menu-profile-popup></menu-profile-popup>
         </div>
@@ -51,19 +47,10 @@
     </div>
 </template>
 <script>
-// import newPopup from './../students/popup/new';
-
 export default {
-    data: () => ({
-        loading: true
-    }),
     components: {
-        // 'new-popup' : newPopup,
         'create-project-popup': () => import('./popup/createproject'),
         'menu-profile-popup': () => import('./popup/menuprofile')
-    },
-    created(){
-        this.loading = false
     },
     methods: {
         createproject(){

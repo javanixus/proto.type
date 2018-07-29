@@ -34,16 +34,15 @@ export default {
         'members'
     ],
     created() {
-            if(this.status == 'done'){
-                this.headmsg = 'headline--done'
-            } else if(this.status == 'pending'){
-                this.headmsg = 'headline--waiting'
-            } else if(this.status == 'disabled'){
-                this.headmsg = 'headline--disabled'
-            } else {
-                this.headmsg = 'headline--warning'
-            }
-            console.log(this.status)
+        if(this.status == 'done'){
+            this.headmsg = 'headline--done'
+        } else if(this.status == 'pending'){
+            this.headmsg = 'headline--waiting'
+        } else if(this.status == 'disabled'){
+            this.headmsg = 'headline--disabled'
+        } else {
+            this.headmsg = 'headline--warning'
+        }
     }
 }
 </script>

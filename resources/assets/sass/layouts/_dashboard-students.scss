@@ -79,64 +79,6 @@ ul.navigationWrap-items li a {
     text-decoration: none!important;
 }
 
-.popupClose {
-    width: 100%;
-    @extend .paddingAppear-n;
-    display: flex;
-    color: white;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    justify-content: flex-end;
-    span {
-        width: 20px;
-        cursor: pointer;
-        font-size: 14px;
-        text-align: center;
-        height: 20px;
-        @extend .borderRadius-circle;
-        background: $red;
-    }
-}
-
-.popupContent__desc {
-    @extend .paddingAppear-n;
-    label {
-        color: $black-young;
-        font-weight: 600;
-    }
-    #informations {
-        @extend .paddingLeft-xs;
-        @extend .paddingRight-s;
-        @extend .marginTop-xs;
-        @extend .marginLeft-xs;
-        border-left: 3px solid $blue;
-        span {
-            font-size: 14px;
-            color: $black-young;
-        }
-    }
-}
-.popupContent__images {
-    @extend .overflow-disable;
-    position: relative;
-    width: 100%;
-    max-height: 200px;
-    .popupContent__images__dp {
-        position: absolute;
-        top: 0;
-        @extend .flexCenter;
-        align-items: center;
-        width: inherit;
-        height: 200px;
-    }
-}
-
-.informations__button {
-    @extend .paddingAppear-n;
-    text-align: center;
-}
-
 .project__content {
     @extend .paddingAppear-n;
     .projectCore {
@@ -195,7 +137,11 @@ ul.navigationWrap-items li a {
         }
     }
 }.createProjectPopup__content form {
-    @extend .popupContent__desc;
+    @extend .paddingAppear-n;
+    label {
+        color: $black-young;
+        font-weight: 600;
+    }
     padding-top: 25px!important;
 }.createProjectPopup__content__desc textarea {
     width: 100%;

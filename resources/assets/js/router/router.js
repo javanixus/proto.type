@@ -24,7 +24,6 @@ const StudentBoardOverview = () => import('./../components/dashboards/students/b
 const StudentBoardStorage = () => import('./../components/dashboards/students/board/storage');
 const StudentBoardTeam = () => import('./../components/dashboards/students/board/team');
 const StudentBoardSetting = () => import('./../components/dashboards/students/board/setting');
-const StudentBoardActivity = () => import('./../components/dashboards/students/board/activity');
 const StudentExplore = () => import('./../components/dashboards/students/explore/explore');
 
 export default new Router({
@@ -125,11 +124,6 @@ export default new Router({
                         path: 'setting',
                         component: StudentBoardSetting,
                         name: 'studentboardsetting'
-                    },
-                    {
-                        path: 'activity',
-                        component: StudentBoardActivity,
-                        name: 'studentboardactivity'
                     }
                 ]
             }]

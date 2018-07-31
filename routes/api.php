@@ -18,19 +18,32 @@ use Illuminate\Http\Request;
 // });
 
 Route::group(['prefix'=>'v1'], function(){
-    // role
+    // ROLE
     Route::get('roles', 'RoleController@index');
-    Route::get('roles/{id}', 'RoleController@show');
     Route::post('roles/create', 'RoleController@store');
-    Route::patch('roles/update/{id}', 'RoleController@update');
-    Route::delete('roles/delete/{id}', 'RoleController@destroy');
+    Route::get('roles/{id}', 'RoleController@show');
+    Route::patch('roles/{id}', 'RoleController@update');
+    Route::delete('roles/{id}', 'RoleController@destroy');
 
-    // user
+    // USERS
     Route::get('users', 'UserController@index');
-    Route::get('users/{id}', 'UserController@show');
     Route::post('users/create', 'UserController@store');
-    Route::patch('users/update/{id}', 'UserController@update');
-    Route::delete('users/delete/{id}', 'UserController@destroy');
+    Route::get('users/{id}', 'UserController@show');
+    Route::patch('users/{id}', 'UserController@update');
+    Route::delete('users/{id}', 'UserController@destroy');
+
+    // STUDENT
+    Route::get('students', 'StudentController@index');
+    Route::post('students/create', 'StudentController@store');
+    Route::get('students/{id}', 'StudentController@show');
+    Route::patch('students/{id}', 'StudentController@update');
+    // buat nis->profile idnya dan type orm , dengan user_id
+
+    // TEACHER
+    Route::get('teachers', 'TeacherController@index');
+    Route::post('teachers/create', 'TeacherController@store');
+    Route::get('teachers/{id}', 'TeacherController@show');
+    Route::patch('teachers/{id}', 'TeacherController@update');
 });
 
 

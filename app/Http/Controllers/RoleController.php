@@ -16,22 +16,31 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::get();
-        return response()->json($roles, 200);
+
+        if ($roles != null) {
+            return response()->json($roles, 200);
+        }
+
+        return response()->json([
+            'info' => 'roles is empty',
+        ], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $role = Role::create([
             'name' => $request->name,
         ]);
 
-        return response()->json('role created', 201);
+        if ($role ===  $role) {
+            return response()->json([
+             'info' => $request->name . ' role created',
+            ], 201);
+        }
+
+        return response()->json([
+            'info' => 'creating ' . $request->name . ' role fail',
+        ], 201);
     }
 
     /**
@@ -43,11 +52,24 @@ class RoleController extends Controller
     public function show($id)
     {
         $role = Role::find($id);
-        $data = [
-            'name' => $role->name,
-            'users' => $role->users ,
-        ];
-        return response()->json($data, 200);
+        if ($role != false) {
+            if ($role->users->count() > 0 ) {
+                $data = [
+                    'name' => $role->name,
+                    'users' => $role->users ,
+                ];
+            } else {
+                $data = [
+                    'name' => $role->name,
+                    'users' => 'users is empty' ,
+                ];
+            }
+            return response()->json($data, 200);
+        }
+
+            return response()->json([
+                'info' => 'tidak ada data dengan id '. $id,
+            ], 200);
     }
 
     /**
